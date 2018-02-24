@@ -46,7 +46,7 @@
                                                     </a>
                                                 </td>
                                                 <td class="text-right">
-                                                    <a href="{{route('caravan-users.show', $caravan->id)}}" class="btn btn-info btn-xs">
+                                                    <a href="{{route('caravan-users.show', $caravan->id)}}" class="btn btn-default btn-sm">
                                                         <i class="fas fa-bars" aria-hidden="true"></i> Detalhes
                                                     </a>
                                                 </td>
