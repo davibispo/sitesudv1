@@ -18,13 +18,13 @@ class CalendarController extends Controller {
         //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
         //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
 
-        return view('maceio-stakes.tabuleiro-stake.calendars.index', compact('calendars', 'stake'));
+        return view('stakes.calendars.index', compact('calendars', 'stake'));
     }
 
     public function create() {
         $stake = auth()->user()->stake;
 
-        return view('maceio-stakes.tabuleiro-stake.calendars.create', compact('stake'));
+        return view('stakes.calendars.create', compact('stake'));
     }
 
     public function store(Request $request) {
@@ -53,7 +53,7 @@ class CalendarController extends Controller {
     public function showCalendar() {
         $stake = auth()->user()->stake;
 
-        return view('maceio-stakes.tabuleiro-stake.calendars.show', compact('stake'));
+        return view('stakes.calendars.show', compact('stake'));
     }
 
     public function show($id){
@@ -64,7 +64,7 @@ class CalendarController extends Controller {
         $stake = auth()->user()->stake;
         $calendar = Calendar::find($id);
 
-        return view('maceio-stakes.tabuleiro-stake.calendars.update', compact('calendar', 'stake'));
+        return view('stakes.calendars.update', compact('calendar', 'stake'));
     }
 
     public function update(Request $request, $id) {

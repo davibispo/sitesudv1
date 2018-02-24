@@ -10,12 +10,12 @@ class EquipmentController extends Controller {
     public function index() {
         $stake = auth()->user()->stake;
         $equipments = Equipment::all()->where('stake', $stake)->where('ativo','1');
-        return view('maceio-stakes.tabuleiro-stake.equipments.index', compact('stake', 'equipments'));
+        return view('stakes.equipments.index', compact('stake', 'equipments'));
     }
 
     public function create() {
         $stake = auth()->user()->stake;
-        return view('maceio-stakes.tabuleiro-stake.equipments.create', compact('stake'));
+        return view('stakes.equipments.create', compact('stake'));
     }
 
     public function store(Request $request) {
@@ -41,7 +41,7 @@ class EquipmentController extends Controller {
     public function edit($id) {
         $stake = auth()->user()->stake;
         $equipment = Equipment::find($id);
-        return view('maceio-stakes.tabuleiro-stake.equipments.update', compact('equipment', 'stake'));
+        return view('stakes.equipments.update', compact('equipment', 'stake'));
     }
 
     public function update(Request $request, $id) {

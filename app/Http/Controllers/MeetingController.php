@@ -10,7 +10,7 @@ class MeetingController extends Controller
     public function index()
     {
         $stake = auth()->user()->stake;
-        return view('maceio-stakes.tabuleiro-stake.meetings.index', compact('stake'));
+        return view('stakes.meetings.index', compact('stake'));
     }
 
 

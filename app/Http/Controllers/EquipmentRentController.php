@@ -16,14 +16,14 @@ class EquipmentRentController extends Controller
         $users = User::all()->where('stake', $stake);
         $equipmentRents = EquipmentRent::all()->where('stake', $stake)->where('ativo','1');
         
-        return view('maceio-stakes.tabuleiro-stake.equipment-rents.index', compact('stake','equipmentRents','users'));
+        return view('stakes.equipment-rents.index', compact('stake','equipmentRents','users'));
     }
 
     public function create()
     {
         $stake = auth()->user()->stake;
         $equipments = Equipment::all()->where('stake', $stake)->where('ativo','1');
-        return view('maceio-stakes.tabuleiro-stake.equipment-rents.create', compact('stake','equipments'));
+        return view('stakes.equipment-rents.create', compact('stake','equipments'));
     }
 
     public function store(Request $request)
@@ -62,7 +62,7 @@ class EquipmentRentController extends Controller
         $userWard = User::where('id',$equipmentRent->user_id)->value('ward');
         $equipment = Equipment::where('id', $equipmentRent->equipment_id)->value('name');
         
-        return view('maceio-stakes.tabuleiro-stake.equipment-rents.update', compact('equipmentRent','stake','userName','userLastname','userPhone','userWard','equipment'));
+        return view('stakes.equipment-rents.update', compact('equipmentRent','stake','userName','userLastname','userPhone','userWard','equipment'));
         
     }
 

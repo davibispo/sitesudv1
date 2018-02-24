@@ -20,14 +20,14 @@ class InterviewController extends Controller
         $users = User::all()->where('stake', $stake);
         $interviews = Interview::all()->where('ativo','1')->where('stake', $stake)->sortByDesc('created_at');
 
-        return view('maceio-stakes.tabuleiro-stake.interviews.index', compact('stake','interviews','users'));
+        return view('stakes.interviews.index', compact('stake','interviews','users'));
     }
 
     public function create()
     {
         $stake = auth()->user()->stake;
         $interviewTypes = InterviewType::all()->where('ativo', '1');
-        return view('maceio-stakes.tabuleiro-stake.interviews.create', compact('stake','interviewTypes'));
+        return view('stakes.interviews.create', compact('stake','interviewTypes'));
     }
 
     public function store(Request $request)
@@ -65,7 +65,7 @@ class InterviewController extends Controller
         $userWard = User::where('id',$interview->user_id)->value('ward');
         $interviewType = InterviewType::where('id', $interview->interview_type_id)->value('description');
         
-        return view('maceio-stakes.tabuleiro-stake.interviews.update', compact('stake','interview','userName','userLastname','userPhone','interviewType','userWard'));
+        return view('stakes.interviews.update', compact('stake','interview','userName','userLastname','userPhone','interviewType','userWard'));
     }
 
     public function update(Request $request, $id)

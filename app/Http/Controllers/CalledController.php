@@ -15,13 +15,13 @@ class CalledController extends Controller
         $calleds = Called::all()->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
         $users = User::all()->where('stake', $stake);
 
-        return view('maceio-stakes.tabuleiro-stake.calleds.index', compact('stake','calleds','users'));
+        return view('stakes.calleds.index', compact('stake','calleds','users'));
     }
 
     public function create()
     {
         $stake = auth()->user()->stake;
-        return view('maceio-stakes.tabuleiro-stake.calleds.create', compact('stake'));
+        return view('stakes.calleds.create', compact('stake'));
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class CalledController extends Controller
         
         $called->save();
         
-        return redirect()->route('maceio-stakes.tabuleiro-stake.index')->with('alertSuccess', 'Indicação enviada! Obrigado, analisaremos sua indicação!');
+        return redirect()->route('stakes.index')->with('alertSuccess', 'Indicação enviada! Obrigado, analisaremos sua indicação!');
     }
 
     public function show($id)

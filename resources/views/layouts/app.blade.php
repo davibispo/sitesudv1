@@ -39,7 +39,7 @@
                     <div class="collapse navbar-collapse" id="app-navbar-collapse">
                         <!-- Left Side Of Navbar -->
                         <ul class="nav navbar-nav">
-                            <li><a href="{{route('maceio-stakes.tabuleiro-stake.index')}}"><i class="fas fa-home"></i></a></li>
+                            <li><a href="{{route('stakes.index')}}"><i class="fas fa-home"></i></a></li>
                             <li><a href="{{route('roles.index')}}"><i class="fas fa-address-book"></i></a></li>
                             <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i></a></li>
                             <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i></a></li>
@@ -53,7 +53,7 @@
                                         <li><a href="#">Maceió Colina</a></li>
                                         <li><a href="#">Maceió Litoral</a></li>
                                         <li><a href="#">Maceió Pajuçara</a></li>
-                                        <li><a href="{{route('maceio-stakes.tabuleiro-stake.index')}}">Maceió Tabuleiro</a></li>
+                                        <li><a href="#">Maceió Tabuleiro</a></li>
                                         <li><a href="#">Aracajú Norte</a></li>
                                         <li><a href="#">Aracajú Sul</a></li>
                                         <li><a href="#">Aracajú Sul</a></li>

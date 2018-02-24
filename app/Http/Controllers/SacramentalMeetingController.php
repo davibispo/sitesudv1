@@ -16,7 +16,7 @@ class SacramentalMeetingController extends Controller
         $stake  = auth()->user()->stake;
         $ward   = auth()->user()->ward;
         $sacramentalMeetings = SacramentalMeeting::all()->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
-        return view('maceio-stakes.tabuleiro-stake.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));
+        return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));
     }
 
     public function create()
@@ -24,7 +24,7 @@ class SacramentalMeetingController extends Controller
         $stake  = auth()->user()->stake;
         $ward   = auth()->user()->ward;
         $hinos  = DB::table('hinos')->get();
-        return view('maceio-stakes.tabuleiro-stake.sacramental-meetings.create', compact('stake','ward','hinos'));
+        return view('stakes.sacramental-meetings.create', compact('stake','ward','hinos'));
     }
 
     public function store(Request $request)
@@ -180,7 +180,7 @@ class SacramentalMeetingController extends Controller
         $hinos  = DB::table('hinos')->get();
         $sacramentalMeeting = SacramentalMeeting::find($id);
 
-        return view('maceio-stakes.tabuleiro-stake.sacramental-meetings.show', compact('sacramentalMeeting','stake','ward','user_id','hinos'));
+        return view('stakes.sacramental-meetings.show', compact('sacramentalMeeting','stake','ward','user_id','hinos'));
     }
 
     public function edit($id)
@@ -191,7 +191,7 @@ class SacramentalMeetingController extends Controller
         $hinos  = DB::table('hinos')->get();
 
         $sacramentalMeeting = SacramentalMeeting::find($id);
-        return view('maceio-stakes.tabuleiro-stake.sacramental-meetings.update', compact('sacramentalMeeting','stake','ward','user_id','hinos'));
+        return view('stakes.sacramental-meetings.update', compact('sacramentalMeeting','stake','ward','user_id','hinos'));
     }
 
     public function update(Request $request, $id)

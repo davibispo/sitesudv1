@@ -92,7 +92,7 @@
                 </div>
                 @endif
                 <div class="links">
-                    <a href="{{route('maceio-stakes.tabuleiro-stake.index')}}">Estaca Tabuleiro</a>
+                    <a href="{{route('stakes.index')}}">Estaca Tabuleiro</a>
                 </div>
 
                 <div class="text-center">

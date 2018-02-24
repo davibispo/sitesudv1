@@ -11,13 +11,13 @@ class CaravanController extends Controller
     {
         $stake = auth()->user()->stake;
         $caravans = Caravan::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
-        return view('maceio-stakes.tabuleiro-stake.caravans.index', compact('stake','caravans'));
+        return view('stakes.caravans.index', compact('stake','caravans'));
     }
 
     public function create()
     {
         $stake = auth()->user()->stake;
-        return view('maceio-stakes.tabuleiro-stake.caravans.create', compact('stake'));
+        return view('stakes.caravans.create', compact('stake'));
     }
 
     public function store(Request $request)
@@ -46,7 +46,7 @@ class CaravanController extends Controller
     public function show($id)
     {
         $caravan = Caravan::find($id);
-        return view('maceio-stakes.tabuleiro-stake.caravans.show', compact('caravan'));
+        return view('stakes.caravans.show', compact('caravan'));
     }
 
     public function edit($id)
@@ -54,7 +54,7 @@ class CaravanController extends Controller
         $stake = auth()->user()->stake;
         $caravan = Caravan::find($id);
         //dd($caravan);
-        return view('maceio-stakes.tabuleiro-stake.caravans.update', compact('caravan','stake'));
+        return view('stakes.caravans.update', compact('caravan','stake'));
     }
 
     public function update(Request $request, $id)

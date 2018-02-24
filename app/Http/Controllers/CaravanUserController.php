@@ -34,7 +34,7 @@ class CaravanUserController extends Controller {
         $criancaComPoltrona = 3;
         $criancaSemPoltrona = 4;
 
-        return view('maceio-stakes.tabuleiro-stake.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona'));
+        return view('stakes.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona'));
     }
 
     public function createCaravanUser($caravanId) {
@@ -43,7 +43,7 @@ class CaravanUserController extends Controller {
         $stake = auth()->user()->stake;
         $userId = auth()->user()->id;
 
-        return view('maceio-stakes.tabuleiro-stake.caravan-users.create-caravan-user', compact('stake', 'caravan', 'userId'));
+        return view('stakes.caravan-users.create-caravan-user', compact('stake', 'caravan', 'userId'));
     }
 
     public function createCaravanUserKid($caravanId) {
@@ -52,7 +52,7 @@ class CaravanUserController extends Controller {
         $stake = auth()->user()->stake;
         $userId = auth()->user()->id;
 
-        return view('maceio-stakes.tabuleiro-stake.caravan-users.create-caravan-user-kid', compact('stake', 'caravan', 'userId'));
+        return view('stakes.caravan-users.create-caravan-user-kid', compact('stake', 'caravan', 'userId'));
     }
 
     public function store(Request $request) {
@@ -129,7 +129,7 @@ class CaravanUserController extends Controller {
         //total geral principal + reserva
         $totalCadastrados = $listaPrincipal + $listaReserva;
 
-        return view('maceio-stakes.tabuleiro-stake.caravan-users.show', compact('caravan', 'stake', 'caravanUsers', 'users', 'listaPrincipal', 'listaReserva', 'totalCadastrados', 'caravanPrice', 'statusPrincipal', 'statusReserva', 'criancaComPoltrona', 'criancaSemPoltrona'));
+        return view('stakes.caravan-users.show', compact('caravan', 'stake', 'caravanUsers', 'users', 'listaPrincipal', 'listaReserva', 'totalCadastrados', 'caravanPrice', 'statusPrincipal', 'statusReserva', 'criancaComPoltrona', 'criancaSemPoltrona'));
     }
 
     //metodo para impressao dos detalhes da caravana
@@ -168,7 +168,7 @@ class CaravanUserController extends Controller {
         //total geral principal + reserva
         $totalCadastrados = $listaPrincipal + $listaReserva;
 
-        return view('maceio-stakes.tabuleiro-stake.caravan-users.show-print', compact('caravan', 'stake', 'caravanUsers', 'users', 'listaPrincipal', 'listaReserva', 'totalCadastrados', 'caravanPrice', 'statusPrincipal', 'statusReserva'));
+        return view('stakes.caravan-users.show-print', compact('caravan', 'stake', 'caravanUsers', 'users', 'listaPrincipal', 'listaReserva', 'totalCadastrados', 'caravanPrice', 'statusPrincipal', 'statusReserva'));
     }
 
     public function edit($id) {

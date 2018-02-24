@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class StakeController extends Controller
 {
-    public function indexTabuleiro() {
-        return view('maceio-stakes.tabuleiro-stake.index');
+    public function index() {
+        return view('stakes.index');
     }
 }
