@@ -33,8 +33,6 @@ class CalendarController extends Controller {
             'organizacao' => 'required|string|max:50',
             'evento' => 'required|string|max:300',
             'data' => 'required|date',
-            'horario' => 'required|string|max:30',
-            'publico' => 'required|string|max:100',
         ]);
 
         $calendar = new Calendar();

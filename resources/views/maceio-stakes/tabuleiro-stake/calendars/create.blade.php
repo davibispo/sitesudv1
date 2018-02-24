@@ -10,8 +10,9 @@
                 <div class="panel-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'CalendarController@store', 'class'=>'form-horizontal']) !!}
                     <div class="form-group">
+                        {!! Form::label('stake', 'Estaca', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::hidden('stake', $stake, ['class' => 'form-control', 'required', 'readonly']) !!}
+                            {!! Form::text('stake', $stake, ['class' => 'form-control', 'required', 'readonly']) !!}
                         </div>
                     </div>
                     <div class="form-group">
@@ -48,7 +49,7 @@
                     <div class="form-group">
                         {!! Form::label('horario', 'Horário', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('horario', null, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::text('horario', null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
                     <div class="form-group">
@@ -60,7 +61,7 @@
                     <div class="form-group">
                         {!! Form::label('publico', 'Público alvo', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('publico', null, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::text('publico', null, ['class' => 'form-control']) !!}
                         </div>
                     </div>
 
