@@ -33,7 +33,7 @@
                                             <td>{{$called->ward}}</td>
                                             <td>{{$called->priesthood}}</td>
                                             <td>{{$called->obs}}</td>
-                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->name}} {{$user->lastname}}</td>
                                             <td>{{date('d/m/Y', strtotime($called->created_at))}}</td>
                                             <td>
                                                 {!! Form::open(['method'=>'DELETE', 'action'=>['CalledController@destroy', $called->id], 'style'=>'display:inline']) !!}
