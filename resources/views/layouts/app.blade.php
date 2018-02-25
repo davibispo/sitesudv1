@@ -61,10 +61,37 @@
                             </li>
                             <li><a href="{{route('calendars.index')}}">Calendário</a></li>
                             <li><a href="{{route('interviews.index')}}">Entrevistas</a></li>
-                            <li><a href="{{route('caravan-users.index')}}">Caravanas</a></li>
-                            <li><a href="{{route('calleds.create')}}">Chamados</a></li>
-                            <li><a href="{{route('equipment-rents.index')}}">Equipamentos</a></li>
-                            <li><a href="{{route('meetings.index')}}">Reuniões</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Caravanas
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('caravans.index')}}">Gerenciar</a></li>
+                                    <li><a href="{{route('caravan-users.index')}}">Reservas</a></li>
+                                </ul>
+                            </li> 
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Chamados
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">   
+                                    <li><a href="{{route('calleds.index')}}">Gerenciar</a></li>
+                                    <li><a href="{{route('calleds.create')}}">Indicar</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipamentos
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('equipments.index')}}">Gerenciar</a></li>
+                                    <li><a href="{{route('equipment-rents.index')}}">Empréstimos</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reuniões
+                                <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('meetings.index')}}">Agendas</a></li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
