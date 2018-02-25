@@ -82,19 +82,20 @@
                     Site<b>SUD</b>
                 </div>
                 @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="links">
                     @auth
-                    <a href="{{ url('/home') }}">Home</a>
+                    <a href="{{ route('stakes.index') }}">Acesse sua estaca</a>
                     @else
                     <a href="{{ route('login') }}">Fazer Login</a>
                     <a href="{{ route('register') }}">Registrar</a>
                     @endauth
                 </div>
                 @endif
+                <!--
                 <div class="links">
                     <a href="{{route('stakes.index')}}">Estaca Tabuleiro</a>
                 </div>
-
+                -->
                 <div class="text-center">
                     <br>
                     <p>Copyright &#174 {{date('Y')}} | Todos os direitos reservados</p>
