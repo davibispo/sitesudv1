@@ -18,14 +18,21 @@
                     {!! Form::hidden('user_id', $userId) !!}
                     {!! Form::hidden('status', '1') !!}
                     <div class="well">
+                        <!--Verifica se o membro já reservou vaga -->
+                        @if (DB::table('caravan_users')->where('ativo','1')->where('caravan_id', $caravan->id)->value('user_id') == $userId)
+                        
+                        <div class="alert alert-danger text-center">
+                            <p>
+                                Você já se cadastrou nesta caravana!
+                            </p>
+                        </div>
+                        <!-- Em caso negativo mostra as vagas existentes -->
+                        @else
                         <table class="table table-bordered">
-                            <tbody>
-                                
-                                    
-                                
+                            <tbody>           
                                 <tr>
-                                    @for($i=3;$i<=50;$i++)
-                                    @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
+                                       @for($i=3;$i<=50;$i++)
+                                       @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
                                     <td style="background-color: green; color:white; width: 50px;">
                                         {{$i}} <input type="radio" name="poltrona" value="{{$i}}" required>
                                     </td>
@@ -78,7 +85,7 @@
                             </tbody>
                         </table>
                     </div>
-
+                    
                     <div>
                         <p class="text-center">Após clicar no botão abaixo, verifique se seu nome consta na lista.</p>
                     </div>
@@ -87,11 +94,15 @@
                             {!! Form::submit('Reservar Vaga', ['class'=>'btn btn-success']) !!}
                         </div>
                     </div>
+                    @endif
                     {!! Form::close() !!}
 
                     <table class="table">
                         <tr>
                             <td>
+                            @if (DB::table('caravan_users')->where('ativo','1')->where('caravan_id', $caravan->id)->value('user_id') == $userId)
+                                
+                            @else
                                 <div class="text-left">
                                     {!! Form::open(['method'=>'POST', 'action'=>['CaravanUserController@store', $caravan->id], 'class'=>'form-horizontal']) !!}
                                     {!! Form::hidden('caravan_id', $caravan->id) !!}
@@ -101,6 +112,7 @@
                                     {!! Form::submit('Desejo ficar na Lista Reserva', ['class'=>'btn btn-warning']) !!}
                                     {!! Form::close() !!}
                                 </div>
+                            @endif
                             </td>
                             <td>
                                 <div class="text-right">
