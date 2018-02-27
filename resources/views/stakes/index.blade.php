@@ -15,28 +15,40 @@
                     
                     <div class="col-sm-3">
                         <div class="well">
-                            <h4><a href="{{route('calendars.index')}}">Calendário</a></h4>
-                            <p>Atividades</p>    
+                            <h4>Calendário</h4>
+                            @can('calendar_index')
+                            <p><a href="{{route('calendars.index')}}">Ver</a></p>    
+                            @endcan
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="well">
-                            <h4><a href="{{route('interviews.index')}}">Entrevistas</a></h4>
-                            <p>Marcar</p> 
+                            <h4>Entrevistas</h4>
+                            @can('interview_index')
+                            <p><a href="{{route('interviews.index')}}">Solicitar</a></p> 
+                            @endcan
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Caravanas</h4>
+                            @can('caravan_index')
                             <p><a href="{{route('caravans.index')}}">Criar</a></p>
+                            @endcan
+                            @can('caravan_user_index')
                             <p><a href="{{route('caravan-users.index')}}">Reservas</a></p> 
+                            @endcan
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Chamados</h4>
+                            @can('called_index')
                             <p><a href="{{route('calleds.index')}}">Ver Indicações</a></p> 
+                            @endcan
+                            @can('called_create')
                             <p><a href="{{route('calleds.create')}}">Indicar</a></p> 
+                            @endcan
                             
                         </div>
                     </div>
@@ -46,8 +58,12 @@
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Equipamentos</h4>
+                            @can('equipment_index')
                             <p><a href="{{route('equipments.index')}}">Cadastrar</a></p> 
+                            @endcan
+                            @can('equipment_rent_index')
                             <p><a href="{{route('equipment-rents.index')}}">Empréstimos</a></p> 
+                            @endcan
                         </div>
                     </div>
                     <div class="col-sm-3">

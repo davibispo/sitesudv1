@@ -14,7 +14,7 @@
                         <a href="{{route('permissions.create')}}" class="btn btn-default"><i class="fas fa-plus"></i></a>
                     </div>
                     <div class="perfil">
-                        <table class="table">
+                        <table class="table table-striped" style="font-size:12px">
                             <thead>
                                 <tr>
                                     <th>Id</th>
@@ -31,14 +31,14 @@
                                     <td>{{$permission->description}}</td>
                                     <td>
                                         @can('view_role', $permission)
-                                        <a href="{{route('permissions.show', $permission->id)}}" class="btn btn-info btn-xs">Show</a>
+                                        <a href="{{route('permissions.show', $permission->id)}}" class="btn btn-info btn-xs">Ver</a>
                                         @endcan
                                         @can('edit_role', $permission)
                                         <a href="{{route('permissions.edit', $permission->id)}}" class="btn btn-warning btn-xs">Edit</a>
                                         @endcan   
                                         @can('delete_role', $permission)
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['PermissionController@destroy', $permission->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Deletar', ['class'=>'btn btn-danger btn-xs']) !!}
+                                        {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
                                         {!! Form::close() !!}
                                         @endcan 
                                     </td>
