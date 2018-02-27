@@ -1,5 +1,0 @@
-INSERT INTO interview_types (description) VALUES ('Recomendação para o Templo');
-INSERT INTO interview_types (description) VALUES ('Missão de Tempo Integral');
-INSERT INTO interview_types (description) VALUES ('Sacerdócio de Melquisedeque');
-INSERT INTO interview_types (description) VALUES ('Motivo Particular');
-INSERT INTO interview_types (description) VALUES ('Bênção Patriarcal');
