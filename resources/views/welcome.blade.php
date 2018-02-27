@@ -84,22 +84,19 @@
                 @if (Route::has('login'))
                 <div class="links">
                     @auth
-                    <a href="{{ route('stakes.index') }}">Acesse sua estaca</a>
+                    <a href="{{ route('stakes.index') }}">
+                        Acesse sua estaca    
+                    </a>
                     @else
                     <a href="{{ route('login') }}">Fazer Login</a>
                     <a href="{{ route('register') }}">Registrar</a>
                     @endauth
                 </div>
                 @endif
-                <!--
-                <div class="links">
-                    <a href="{{route('stakes.index')}}">Estaca Tabuleiro</a>
-                </div>
-                -->
                 <div class="text-center">
                     <br>
                     <p>Copyright &#174 {{date('Y')}} | Todos os direitos reservados</p>
-                    <p>by Davi Bispo | Contato: (82) 99969-3407 | davibispo.sud@gmail.com</p>
+                    <p>by Davi Bispo | Contato: (82) 99969-3407 | contato@sitesud.com.br</p>
                     <p><i>Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias</i></p>
                 </div>
             </div>
