@@ -23,7 +23,7 @@
                         </thead>
                         <tbody>
                             @if($interview->interview_type_id == 5)
-                            @can('somente_patriarca')
+                            @can('interview_update_patriarca')
                             <tr>
                                 <td>{{$userName}} {{$userLastname}}</td>
                                 <td>{{$userPhone}}</td>
@@ -48,7 +48,7 @@
                             </tr>
                             @endcan
                             @else
-                            @can('adm')
+                            @can('interview_update_presidencia')
                             <tr>
                                 <td>{{$userName}} {{$userLastname}}</td>
                                 <td>{{$userPhone}}</td>

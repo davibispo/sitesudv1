@@ -22,9 +22,11 @@
                             </td>
                             <td>
                                 <div class="text-right">
+                                    @can('caravan_user_update')
                                     <a href="{{route('caravan-users.show-print', $caravan->id)}}" class="btn btn-default btn-xs">
                                         <i class="fas fa-print fa-lg"></i> Versão impressão
                                     </a>
+                                    @endcan
                                 </div>
                             </td>
                         </tr>    
@@ -80,7 +82,8 @@
                             </tr>
                         </table>
                     </div>
-                    
+
+                    @can('caravan_user_update')
                     <div class="well">
                         <p class="text-left">Lista Principal</p>
                         <table class="table table-striped table-hover">
@@ -238,6 +241,7 @@
                             </tbody>
                         </table>
                     </div>
+                    @endcan
                 </div>
             </div>
         </div> 

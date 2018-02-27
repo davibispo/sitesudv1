@@ -39,11 +39,15 @@
                     <div class="collapse navbar-collapse" id="app-navbar-collapse">
                         <!-- Left Side Of Navbar -->
                         <ul class="nav navbar-nav">
+                            @can('stakes_index')
                             <li><a href="{{route('stakes.index')}}"><i class="fas fa-home"></i></a></li>
+                            @endcan
+                            @can('adm')
                             <li><a href="{{route('roles.index')}}"><i class="fas fa-address-book"></i></a></li>
                             <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i></a></li>
                             <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i></a></li>
                             <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i></a></li>
+                           
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Estacas
                                     <span class="caret"></span></a>
@@ -59,37 +63,68 @@
                                         <li><a href="#">Aracajú Sul</a></li>
                                     </ul>
                             </li>
+                            @endcan
+                            @can('calendar_index')
                             <li><a href="{{route('calendars.index')}}">Calendário</a></li>
+                            @endcan
+                            @can('interview_index')
                             <li><a href="{{route('interviews.index')}}">Entrevistas</a></li>
+                            @endcan
                             <li class="dropdown">
+                                @can('caravan_user_index')
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Caravanas
-                                <span class="caret"></span></a>
+                                    <span class="caret"></span>
+                                </a>
+                                @endcan
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('caravans.index')}}">Gerenciar</a></li>
+                                    @can('caravan_user_index')
                                     <li><a href="{{route('caravan-users.index')}}">Reservas</a></li>
+                                    @endcan
+                                    @can('caravan_index')
+                                    <li><a href="{{route('caravans.index')}}">Criar</a></li>
+                                    @endcan
                                 </ul>
                             </li> 
                             <li class="dropdown">
+                                @can('called_create')    
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Chamados
-                                <span class="caret"></span></a>
-                                <ul class="dropdown-menu">   
-                                    <li><a href="{{route('calleds.index')}}">Gerenciar</a></li>
+                                    <span class="caret"></span>
+                                </a>
+                                @endcan
+                                <ul class="dropdown-menu">
+                                    @can('called_create')   
                                     <li><a href="{{route('calleds.create')}}">Indicar</a></li>
+                                    @endcan
+                                    @can('called_index')
+                                    <li><a href="{{route('calleds.index')}}">Ver Indicações</a></li>
+                                    @endcan
                                 </ul>
                             </li>
                             <li class="dropdown">
+                                @can('equipment_rent_index')
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipamentos
-                                <span class="caret"></span></a>
+                                    <span class="caret"></span>
+                                </a>
+                                @endcan
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{route('equipments.index')}}">Gerenciar</a></li>
+                                    @can('equipment_rent_index')
                                     <li><a href="{{route('equipment-rents.index')}}">Empréstimos</a></li>
+                                    @endcan
+                                    @can('equipment_index')
+                                    <li><a href="{{route('equipments.index')}}">Cadastrar</a></li>
+                                    @endcan
                                 </ul>
                             </li>
                             <li class="dropdown">
+                                @can('meeting_index')
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reuniões
-                                <span class="caret"></span></a>
+                                    <span class="caret"></span>
+                                </a>
+                                @endcan
                                 <ul class="dropdown-menu">
+                                    @can('meeting_index')
                                     <li><a href="{{route('meetings.index')}}">Agendas</a></li>
+                                    @endcan
                                 </ul>
                             </li>
                         </ul>
@@ -143,7 +178,7 @@
 
             <div class="text-center">
                 <br>
-                <p>Copyright &#174 {{date('Y')}} | by Davi Bispo - (82) 99969-3407 | davibispo.sud@gmail.com</p>
+                <p>Copyright &#174 {{date('Y')}} | by Davi Bispo - (82) 99969-3407 | contato@sitesud.com.br</p>
                 <p><i>Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias</i></p>
             </div>
         </div>

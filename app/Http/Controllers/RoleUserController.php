@@ -17,7 +17,7 @@ class RoleUserController extends Controller
      */
     public function index()
     {
-        $roleUsers = DB::table('role_user')->get();
+        $roleUsers = DB::table('role_user')->get()->sortBy('user_id');
         $roles = Role::all();
         $users = User::all();
         

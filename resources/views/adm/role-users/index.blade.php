@@ -16,10 +16,9 @@
                         </a>
                     </div>
                     <div class="perfil">
-                        <table class="table table-striped">
+                        <table class="table table-striped" style="font-size:12px">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
                                     <th>Perfil</th>
                                     <th>Usuário</th>
                                     <th>Descrição do Perfil</th>
@@ -32,13 +31,12 @@
                                     @foreach($users as $user)
                                         @if ($roleUser->role_id == $role->id && $roleUser->user_id == $user->id)
                                         <tr>
-                                            <td>{{$roleUser->id}}</td>
                                             <td>{{$role->name}}</td>
                                             <td>{{$user->name}} {{$user->lastname}}</td>
                                             <td>{{$role->description}}</td>
                                             <td>
                                                 {!! Form::open(['method'=>'DELETE', 'action'=>['RoleUserController@destroy', $roleUser->id], 'style'=>'display:inline']) !!}
-                                                    {!! Form::submit('Deletar', ['class'=>'btn btn-danger btn-xs']) !!}
+                                                    {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
                                                 {!! Form::close() !!}
                                             </td>
                                         </tr>

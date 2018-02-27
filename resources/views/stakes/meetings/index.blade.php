@@ -9,7 +9,9 @@
                 <div class="panel-heading"><b>Agendas de Reuniões da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    @can('sacramental_meeting_index')
                     <a href="{{route('sacramental-meetings.index')}}">Agenda da Reunião Sacramental</a>
+                    @endcan
                 </div>
             </div>
         </div>

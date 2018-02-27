@@ -47,7 +47,7 @@ class CalendarController extends Controller {
 
         $calendar->save();
 
-        return redirect()->route('calendars.index')->with('alertSuccess', 'Evento cadastrado!');
+        return redirect()->route('calendars.index')->with('alertSuccess', 'Evento adicionado!');
     }
 
     public function showCalendar() {

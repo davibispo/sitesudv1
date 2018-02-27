@@ -53,9 +53,11 @@
                                                 @endswitch
                                             </td>
                                             <td>
+                                                @can('equipment_rent_update')
                                                 <a href="{{route('equipment-rents.edit', $equipmentRent->id)}}" data-toggle="tooltip" title="Ações">
                                                     <i class="fas fa-sign-in-alt fa-lg"></i>
                                                 </a>
+                                                @endcan
                                             </td>
                                         </tr>
                                     @endif

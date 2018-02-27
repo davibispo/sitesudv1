@@ -9,11 +9,13 @@
                 <div class="panel-heading"><b>Calendário da Estaca {{$stake}} - {{date('Y')}}</b></div>
 
                 <div class="panel-body">
+                    @can('calendar_create')    
                     <div>
                         <a href="{{route('calendars.create')}}" class="btn btn-primary btn-sm">
                             <i class="fas fa-plus"></i> Adicionar Evento
                         </a>
-                    </div>
+                        </div>
+                    @endcan
                     <br>
                     <table class="table table-striped table-hover">
                         <thead>
@@ -38,6 +40,7 @@
                                     <td>{{$calendar->local}}</td>
                                     <td>{{$calendar->organizacao}}</td>
                                     <td>{{$calendar->publico}}</td>
+                                    @can('calendar_create')
                                     <td>
                                         <a href="{{route('calendars.edit', $calendar->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a> 
                                     </td>
@@ -46,6 +49,7 @@
                                             {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
                                         {!! Form::close() !!}
                                     </td>
+                                    @endcan
                                 </tr>
                                 @endif
                             @empty

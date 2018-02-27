@@ -11,7 +11,8 @@
                 <div class="panel-body">
                     <div>
                         <a href="{{route('interviews.create')}}" class="btn btn-primary btn-sm">
-                            Solicitar Entrevista
+                            <i class="fas fa-plus"></i> 
+                            Solicitar
                         </a>
                     </div>
                     <br>
@@ -19,9 +20,11 @@
                         <thead>
                             <tr>
                                 <th>Membro</th>
+                                @can('interview_update')
                                 <th>Telefone</th> 
                                 <th>Unidade</th> 
                                 <th>Motivo da entrevista</th>
+                                @endcan
                                 <th>Entrevistador</th>
                                 <th>Status</th>
                                 <th>Solicitada em</th>
@@ -36,9 +39,11 @@
                                         
                                         <tr>
                                             <td>{{$user->name}} {{$user->lastname}}</td>
+                                            @can('interview_update')
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
                                             <td>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</td>
+                                            @endcan
                                             <td>{{$interview->interviewer}}</td>
                                             <td>
                                                 @switch($interview->status)
@@ -56,9 +61,11 @@
                                                 @endif
                                             </td>
                                             <td>
+                                                @can('interview_update_patriarca')
                                                 <a href="{{route('interviews.edit', $interview->id)}}" data-toggle="tooltip" title="Ações">
                                                     <i class="fas fa-sign-in-alt fa-lg"></i>
                                                 </a>
+                                                @endcan
                                             </td>
                                         </tr>
                                         
@@ -66,9 +73,11 @@
                                         
                                         <tr>
                                             <td>{{$user->name}} {{$user->lastname}}</td>
+                                            @can('interview_update')
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
                                             <td>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</td>
+                                            @endcan
                                             <td>{{$interview->interviewer}}</td>
                                             <td>
                                                 @switch($interview->status)
@@ -86,9 +95,11 @@
                                                 @endif
                                             </td>
                                             <td>
+                                                @can('interview_update_presidencia')
                                                 <a href="{{route('interviews.edit', $interview->id)}}" data-toggle="tooltip" title="Ações">
                                                     <i class="fas fa-sign-in-alt fa-lg"></i>
                                                 </a>
+                                                @endcan
                                             </td>
                                         </tr>
                                         
