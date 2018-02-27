@@ -47,22 +47,6 @@
                             <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i></a></li>
                             <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i></a></li>
                             <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i></a></li>
-                           
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Estacas
-                                    <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Arapiraca</a></li>
-                                        <li><a href="#">Maceió</a></li>
-                                        <li><a href="#">Maceió Colina</a></li>
-                                        <li><a href="#">Maceió Litoral</a></li>
-                                        <li><a href="#">Maceió Pajuçara</a></li>
-                                        <li><a href="#">Maceió Tabuleiro</a></li>
-                                        <li><a href="#">Aracajú Norte</a></li>
-                                        <li><a href="#">Aracajú Sul</a></li>
-                                        <li><a href="#">Aracajú Sul</a></li>
-                                    </ul>
-                            </li>
                             @endcan
                             @can('calendar_index')
                             <li><a href="{{route('calendars.index')}}">Calendário</a></li>
