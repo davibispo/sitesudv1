@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class StakeController extends Controller
 {
     public function index() {
-        return view('stakes.index');
+        $stake = auth()->user()->stake;
+        return view('stakes.index', compact('stake'));
     }
 }

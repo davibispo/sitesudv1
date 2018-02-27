@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
         <div class="panel panel-default">
-            <div class="panel-heading">Estaca Maceió Brasil <b>Tabuleiro</b></div>
+            <div class="panel-heading">Estaca <b>{{$stake}}</b></div>
             <div class="col-sm-12">
 
                 <div class="well well-xs">
