@@ -20,6 +20,9 @@
                     <div class="well">
                         <table class="table table-bordered">
                             <tbody>
+                                
+                                    
+                                
                                 <tr>
                                     @for($i=3;$i<=50;$i++)
                                     @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
