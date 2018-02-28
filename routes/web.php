@@ -49,3 +49,6 @@ Route::resource('/stakes/meetings', 'MeetingController');
 
 //Agenda da Reunião Sacramental
 Route::resource('/stakes/sacramental-meetings', 'SacramentalMeetingController');
+
+//Contato
+Route::resource('/stakes/contacts', 'ContactController');

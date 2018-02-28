@@ -13,7 +13,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $stake = auth()->user()->stake;
+        return view('stakes.contacts.index', compact('stake'));
     }
 
     /**
