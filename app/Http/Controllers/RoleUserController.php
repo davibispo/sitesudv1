@@ -48,7 +48,7 @@ class RoleUserController extends Controller
             $users = User::all()->where('stake', $stake);
         }
 
-        $roles = Role::all()->where('name','<>','adm');
+        $roles = Role::all()->where('name','<>','adm')->where('name','<>','presidente');
 
         return view('adm.role-users.create', compact('roles','users'));
     }
