@@ -28,7 +28,7 @@ class AuthServiceProvider extends ServiceProvider {
      */
     public function boot() {
         $this->registerPolicies();
-        /*
+       
         $permissions = Permission::with('roles')->get();
 
         foreach($permissions as $permission){
@@ -42,7 +42,7 @@ class AuthServiceProvider extends ServiceProvider {
                 return true;
             }
         });
-        */
+       
     }
 
 }
