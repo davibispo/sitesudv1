@@ -27,7 +27,7 @@ class RoleUserController extends Controller
         }
 
         $roleUsers = DB::table('role_user')->get()->sortBy('user_id');
-        $roles = Role::all();
+        $roles = Role::all()->where('name','<>','membro');
         
         return view('adm.role-users.index', compact('roleUsers','roles','users'));
     }
