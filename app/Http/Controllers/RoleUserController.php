@@ -17,9 +17,17 @@ class RoleUserController extends Controller
      */
     public function index()
     {
+        $stake = auth()->user()->stake;
+        $userId = auth()->user()->id;
+        
+        if($userId == 1){
+            $users = User::all();
+        }else{
+            $users = User::all()->where('stake', $stake);
+        }
+
         $roleUsers = DB::table('role_user')->get()->sortBy('user_id');
         $roles = Role::all();
-        $users = User::all();
         
         return view('adm.role-users.index', compact('roleUsers','roles','users'));
     }
@@ -31,8 +39,17 @@ class RoleUserController extends Controller
      */
     public function create()
     {
-        $roles = Role::all();
-        $users = User::all();
+        $stake = auth()->user()->stake;
+        $userId = auth()->user()->id;
+        
+        if($userId == 1){
+            $users = User::all();
+        }else{
+            $users = User::all()->where('stake', $stake);
+        }
+
+        $roles = Role::all()->where('name','<>','adm');
+
         return view('adm.role-users.create', compact('roles','users'));
     }
 

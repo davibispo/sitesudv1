@@ -44,8 +44,14 @@
                             @endcan
                             @can('adm')
                             <li><a href="{{route('roles.index')}}"><i class="fas fa-address-book"></i></a></li>
+                            @endcan
+                            @can('adm')
                             <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i></a></li>
+                            @endcan
+                            @can('role_user_index')
                             <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i></a></li>
+                            @endcan
+                            @can('adm')
                             <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i></a></li>
                             @endcan
                             @can('calendar_index')
@@ -177,7 +183,7 @@
             @yield('content')
 
             <div class="text-center">
-                <br>
+                <p><i>(versão teste)</i></p>
                 <p>Copyright &#174 {{date('Y')}} | by Davi Bispo - (82) 99969-3407 | contato@sitesud.com.br</p>
                 <p><i>(Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias)</i></p>
             </div>
