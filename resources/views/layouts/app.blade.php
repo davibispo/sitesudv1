@@ -111,6 +111,22 @@
                                     @endcan
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                @can('contact_create')
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contato
+                                    <span class="caret"></span>
+                                </a>
+                                @endcan
+                                <ul class="dropdown-menu">
+                                    @can('contact_create')
+                                    <li><a href="{{route('contacts.create')}}">Enviar Mensagem</a></li>
+                                    @endcan
+                                    @can('contact_index')
+                                    <li><a href="{{route('contacts.index')}}">Ver Respostas</a></li>
+                                    @endcan
+                                </ul>
+                            </li>
+                            
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -163,7 +179,7 @@
             <div class="text-center">
                 <br>
                 <p>Copyright &#174 {{date('Y')}} | by Davi Bispo - (82) 99969-3407 | contato@sitesud.com.br</p>
-                <p><i>Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias</i></p>
+                <p><i>(Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias)</i></p>
             </div>
         </div>
 

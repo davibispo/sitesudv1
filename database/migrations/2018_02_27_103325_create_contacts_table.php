@@ -19,6 +19,8 @@ class CreateContactsTable extends Migration
             $table->integer('user_id');
             $table->string('message_type');
             $table->text('message');
+            $table->text('answer')->nullable();
+            $table->char('ativo',1)->nullable()->default('1');
             $table->timestamps();
         });
     }
