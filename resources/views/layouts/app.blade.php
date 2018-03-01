@@ -152,7 +152,7 @@
                                     <li>
                                         <a href="{{route('users.edit', auth()->user()->id)}}">
                                             <i class="fas fa-user"></i> 
-                                            Meu perfil
+                                            Editar Perfil
                                         </a>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
