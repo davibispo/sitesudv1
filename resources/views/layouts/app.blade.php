@@ -150,6 +150,10 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{route('users.edit', auth()->user()->id)}}">
+                                            <i class="fas fa-user"></i> 
+                                            Meu perfil
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">

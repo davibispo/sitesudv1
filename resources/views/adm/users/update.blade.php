@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Atualizar Dados de Usuário</b></div>
+                <div class="panel-heading"><b>Meu perfil</b></div>
 
                 <div class="panel-body">
                     {!! Form::model($user,['method'=>'PATCH', 'action'=>['UserController@update', $user->id], 'class'=>'form-horizontal']) !!}
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('genre', 'Sobrenome', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('genre', 'Sexo', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::select('genre', 
                                 [
@@ -71,6 +71,8 @@
                             <select name="city" id="cidade" class="form-control" style="display:none;" required></select>
                         </div>
                     </div>
+
+                    @can('user_update_stake')     
                     <div class="form-group">
                         {!! Form::label('stake', 'Estaca', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
@@ -85,6 +87,8 @@
                             <select name="ward" id="ward" class="form-control" style="display:none;" required></select>
                         </div>
                     </div>
+                    @endcan
+                    
                     <div class="form-group">
                         {!! Form::label('email', 'E-mail', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">

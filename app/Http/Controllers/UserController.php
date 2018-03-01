@@ -121,7 +121,7 @@ class UserController extends Controller {
      */
     public function update(Request $request, $id) {
         $user = User::find($id);
-        //dd($request);
+        ///dd($request);
 
         $this->validate($request, [
             'name' => 'required|string|max:30',
@@ -133,9 +133,7 @@ class UserController extends Controller {
             'phone' => 'required|string|max:15',
             'uf' => 'required|string',
             'city' => 'required|string',
-            'stake' => 'required|string',
-            'ward' => 'required|string',
-            'email' => 'required|string|email|unique:users|max:100',
+            'email' => 'required|string|email|max:100',
         ]);
 
         $user->name = strtoupper($request->name);
@@ -147,13 +145,19 @@ class UserController extends Controller {
         $user->phone = $request->phone;
         $user->uf = $request->uf;
         $user->city = $request->city;
-        $user->stake = $request->stake;
-        $user->ward = $request->ward;
+
+        if(auth()->user()->id == 1){
+            $user->stake = $request->stake;
+            $user->ward = $request->ward;
+        }else{
+            $user->stake = auth()->user()->stake;
+            $user->ward = auth()->user()->ward;
+        }
         $user->email = $request->email;
 
         $user->update();
 
-        return redirect()->route('users.index');
+        return redirect()->route('stakes.index')->with('alertSuccess','Dados atualizados com sucesso!');
     }
 
     /**
