@@ -66,13 +66,14 @@
                             @endcan
                         </div>
                     </div>
+                    @can('meeting_index')
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Reuniões</h4>
                             <p><a href="{{route('meetings.index')}}">Agendas</a></p> 
                         </div>
                     </div>
-                    
+                    @endcan
                 </div>
                
             </div>

@@ -37,7 +37,7 @@
                                             <td>{{$role->description}}</td>
                                             <td>
                                                 {!! Form::open(['method'=>'DELETE', 'action'=>['RoleUserController@destroy', $roleUser->id], 'style'=>'display:inline']) !!}
-                                                    {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
+                                                    {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs','data-toggle'=>'tooltip', 'title'=>'Remover perfil de usuário']) !!}
                                                 {!! Form::close() !!}
                                             </td>
                                         </tr>
