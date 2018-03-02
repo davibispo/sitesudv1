@@ -5,8 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
+                @if (auth()->user()->id == $user->id)
                 <div class="panel-heading"><b>Meu perfil</b></div>
-
+                    
                 <div class="panel-body">
                     {!! Form::model($user,['method'=>'PATCH', 'action'=>['UserController@update', $user->id], 'class'=>'form-horizontal']) !!}
                     <div class="form-group">
@@ -26,11 +27,11 @@
                         <div class="col-md-6">
                             {!! Form::select('genre', 
                                 [
-                                'M' => 'Masculino', 
-                                'F' => 'Feminino', 
+                                    'M' => 'Masculino', 
+                                    'F' => 'Feminino', 
                                 ], 
                                 null, ['class' => 'form-control', 'placeholder' => '-- Escolha o sexo --']) 
-                            !!}
+                                !!}
                         </div>
                     </div>
                     <div class="form-group">
@@ -71,7 +72,7 @@
                             <select name="city" id="cidade" class="form-control" style="display:none;" required></select>
                         </div>
                     </div>
-
+                    
                     @can('user_update_stake')     
                     <div class="form-group">
                         {!! Form::label('stake', 'Estaca', ['class'=>'col-md-4 control-label']) !!}
@@ -103,6 +104,11 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            @else
+            <div class="alert alert-danger text-center">
+                <p>Acesso Negado!</p>
+            </div>
+            @endif
         </div>
     </div>
 </div>

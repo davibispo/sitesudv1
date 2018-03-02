@@ -13,6 +13,7 @@
                     <div>
                         <a href="{{route('role-users.create')}}" class="btn btn-default">
                             <i class="fa fa-plus" aria-hidden="true"></i>
+                            Cadastrar Perfil a Usuário
                         </a>
                     </div>
                     <div class="perfil">

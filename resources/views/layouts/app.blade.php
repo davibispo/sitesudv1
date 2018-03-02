@@ -101,7 +101,7 @@
                                     <li><a href="{{route('equipment-rents.index')}}">Empréstimos</a></li>
                                     @endcan
                                     @can('equipment_index')
-                                    <li><a href="{{route('equipments.index')}}">Cadastrar</a></li>
+                                    <li><a href="{{route('equipments.index')}}">Lista de Equipamentos</a></li>
                                     @endcan
                                 </ul>
                             </li>
