@@ -54,7 +54,7 @@
                     <div class="form-group">
                         {!! Form::label('phone', 'Telefone', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('phone', null, ['class' => 'form-control', 'required']) !!}
+                            <input type="tel" name="phone" id="phone" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4,5}" class="form-control" required/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -117,6 +117,7 @@
 @endsection
 
 @push('scripts')
+
 <!-- Script para trazer os estados e cidades nos selects -->
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script type="text/javascript">
