@@ -96,8 +96,7 @@
                             <label for="phone" class="col-md-4 control-label">Telefone</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}" required autofocus>
-
+                                <input type="tel" name="phone" id="phone" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4,5}" value="{{ old('phone') }}" class="form-control" required autofocus>
                                 @if ($errors->has('phone'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('phone') }}</strong>
