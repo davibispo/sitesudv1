@@ -74,6 +74,14 @@
                         </div>
                     </div>
                     @endcan
+                    @can('conselor_index')
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4>Conselho Maceió</h4>
+                            <p><a href="{{route('conselor.index')}}">Acessar</a></p> 
+                        </div>
+                    </div>
+                    @endcan
                 </div>
                
             </div>
