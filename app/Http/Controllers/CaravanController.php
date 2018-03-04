@@ -36,7 +36,7 @@ class CaravanController extends Controller
         $caravan->phone = $request->phone;
         $caravan->bus = $request->bus;
         $caravan->accommodation = $request->accommodation;
-        $caravan->obs = strtoupper($request->obs);
+        $caravan->obs = $request->obs;
         
         $caravan->save();
         

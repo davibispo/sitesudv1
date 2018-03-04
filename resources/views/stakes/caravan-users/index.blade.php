@@ -38,6 +38,9 @@
                                 </div>
                                 <div id="collapse{{$caravan->id}}" class="panel-collapse collapse out">
                                     <div class="panel-body">
+                                        <div class="alert alert-warning">
+                                            {{$caravan->obs}}
+                                        </div>
                                         <table class="table">
                                             <tr>
                                                 <td class="text-left">
