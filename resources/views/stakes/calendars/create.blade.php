@@ -9,12 +9,7 @@
 
                 <div class="panel-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'CalendarController@store', 'class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        {!! Form::label('stake', 'Estaca', ['class'=>'col-md-4 control-label']) !!}
-                        <div class="col-md-6">
-                            {!! Form::text('stake', $stake, ['class' => 'form-control', 'required', 'readonly']) !!}
-                        </div>
-                    </div>
+                        {!! Form::hidden('stake', $stake) !!}
                     <div class="form-group">
                         {!! Form::label('organizacao', 'Organização', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
