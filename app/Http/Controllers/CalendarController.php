@@ -50,12 +50,6 @@ class CalendarController extends Controller {
         return redirect()->route('calendars.index')->with('alertSuccess', 'Evento adicionado!');
     }
 
-    public function showCalendar() {
-        $stake = auth()->user()->stake;
-
-        return view('stakes.calendars.show', compact('stake'));
-    }
-
     public function show($id){
         //
     }
@@ -101,6 +95,17 @@ class CalendarController extends Controller {
         return redirect()->route('calendars.index')->with('alertDanger', 'Excluído!');
     }
 
-    
+    public function imprimir(){
+        $stake = auth()->user()->stake;
 
+        $calendars = Calendar::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
+
+        //pega data por extenso em portugues
+        setlocale(LC_TIME, 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
+        //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
+
+        return view('stakes.calendars.print.imprimir', compact('stake','calendars'));
+    }
 }
