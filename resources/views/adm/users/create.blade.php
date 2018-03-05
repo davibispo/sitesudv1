@@ -36,7 +36,7 @@
                     <div class="form-group">
                         {!! Form::label('rg', 'RG', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('rg', null, ['class' => 'form-control','placeholder'=>'ou Reg. Nasc.(últimos 20 números)', 'required']) !!}
+                            {!! Form::text('rg', null, ['class' => 'form-control','placeholder'=>'ou Registro Nasc.(últimos 10 números)', 'required']) !!}
                         </div>
                     </div>
                     <div class="form-group">

@@ -54,7 +54,7 @@
                             <label for="rg" class="col-md-4 control-label">RG</label>
 
                             <div class="col-md-6">
-                                <input id="rg" type="text" class="form-control" name="rg" value="{{ old('rg') }}" required autofocus>
+                                <input id="rg" type="text" class="form-control" name="rg" value="{{ old('rg') }}" placeholder="ou Registro Nasc.(últimos 10 números)" required autofocus>
 
                                 @if ($errors->has('rg'))
                                 <span class="help-block">
