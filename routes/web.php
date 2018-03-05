@@ -16,9 +16,11 @@ Route::group(['middleware'=>'web'], function(){
     Route::resource('/adm/permissions', 'PermissionController');
     //user
     Route::resource('/adm/users', 'UserController');
+    Route::get('/adm/users/create', 'UserController@create')->name('users.create');
+    Route::post('/adm/users/create', 'UserController@store');
     //calendar
     Route::resource('/stakes/calendars', 'CalendarController');
-    Route::get('/stakes/calendars/show-calendar', 'CalendarController@showCalendar')->name('calendars.show-calendar');
+    Route::get('/stakes/calendars/print/imprimir','CalendarController@imprimir')->name('calendars.print.imprimir');
     //interview
     Route::resource('/stakes/interviews', 'InterviewController');
     //caravan
@@ -28,9 +30,7 @@ Route::group(['middleware'=>'web'], function(){
     Route::get('/stakes/caravan-users/{caravanId}/create-caravan-user', 'CaravanUserController@createCaravanUser')->name('caravan-users.create-caravan-user');
     Route::get('/stakes/caravan-users/{caravanId}/create-caravan-user-kid', 'CaravanUserController@createCaravanUserKid')->name('caravan-users.create-caravan-user-kid');
     Route::get('/stakes/caravan-users/{caravanId}/show-print', 'CaravanUserController@showPrint')->name('caravan-users.show-print');
-    Route::get('/adm/users/create', 'UserController@create')->name('users.create');
-    Route::post('/adm/users/create', 'UserController@store');
-    
+
     //Stakes
     Route::get('/stakes/index', 'StakeController@index')->name('stakes.index');
     
