@@ -55,7 +55,7 @@
                     <div class="form-group">
                         {!! Form::label('phone', 'Telefone', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('phone', null, ['class' => 'form-control', 'required']) !!}
+                            {!! Form::tel('phone', null, ['class' =>'form-control', 'required']) !!}
                         </div>
                     </div>
                     <div class="form-group">

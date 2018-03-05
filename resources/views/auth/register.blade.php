@@ -96,7 +96,7 @@
                             <label for="phone" class="col-md-4 control-label">Telefone</label>
 
                             <div class="col-md-6">
-                                <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" placeholder="82999998888" equired autofocus>
+                                <input type="tel" name="phone" value="{{ old('phone') }}" class="form-control" placeholder="82999998888" equired autofocus>
                                 @if ($errors->has('phone'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('phone') }}</strong>
