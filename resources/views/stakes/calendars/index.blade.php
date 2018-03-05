@@ -9,13 +9,16 @@
                 <div class="panel-heading"><b>Calendário da Estaca {{$stake}} - {{date('Y')}}</b></div>
 
                 <div class="panel-body">
-                    @can('calendar_create')    
                     <div>
+                        @can('calendar_create')    
                         <a href="{{route('calendars.create')}}" class="btn btn-primary btn-sm">
                             <i class="fas fa-plus"></i> Adicionar Evento
                         </a>
-                        </div>
-                    @endcan
+                        @endcan
+                        <a href="{{route('calendars.print.imprimir')}}" target="_blank" class="btn btn-default btn-sm">
+                            <i class="fas fa-print"></i> Imprimir
+                        </a>
+                    </div>
                     <br>
                     <table class="table table-striped table-hover">
                         <thead>
@@ -34,7 +37,7 @@
                             @forelse($calendars as $calendar)
                                 @if(date('Y', strtotime($calendar->data)) == date('Y'))
                                 <tr>
-                                    <td><b>{{strftime('%d/%b/%y', strtotime($calendar->data))}}</d></tb>
+                                    <td><b>{{strftime('%d/%b', strtotime($calendar->data))}}</d></tb>
                                     <td>{{$calendar->horario}}</td>
                                     <td>{{$calendar->evento}}</td>
                                     <td>{{$calendar->local}}</td>
