@@ -23,7 +23,7 @@
                             <td>
                                 <div class="text-right">
                                     @can('caravan_user_update')
-                                    <a href="{{route('caravan-users.show-print', $caravan->id)}}" class="btn btn-default btn-xs">
+                                    <a href="{{route('caravan-users.show-print', $caravan->id)}}" target="_blank" class="btn btn-default btn-xs">
                                         <i class="fas fa-print fa-lg"></i> Versão impressão
                                     </a>
                                     @endcan

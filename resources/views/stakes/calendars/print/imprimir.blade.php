@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover" style="font-size:10px">
                         <thead>
                             <tr>
                                 <th>Data</th>

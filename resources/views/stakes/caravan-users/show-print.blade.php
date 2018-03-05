@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.print-version')
 
 @section('content')
 <div class="container">
@@ -17,9 +17,7 @@
                             <i class="fas fa-print"></i>
                             <b>Imprimir</b>
                         </a>
-                    </div>
-                                        
-                    
+                    </div>        
                         <table class="table table-striped">
                             <tr class="text-center">
                                 <td colspan="4"><b>Líder da caravana:</b> {{$caravan->leader}} - <b>Telefone:</b> {{$caravan->phone}}</td>
