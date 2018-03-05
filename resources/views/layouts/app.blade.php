@@ -195,11 +195,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
-        <!-- Masks -->
-        <script src="{{ asset('js/jquery.mask.min.js')}}"></script>
-        <script type="text/javascript">
-            $("#phone").mask("(00) 00000-0009");
-        </script>
+        
         <!-- Tooltip -->
         <script>
             $(document).ready(function () {
