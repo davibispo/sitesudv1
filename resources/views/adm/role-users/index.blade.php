@@ -11,11 +11,12 @@
                 <div class="panel-body">
 
                     <div>
-                        <a href="{{route('role-users.create')}}" class="btn btn-default">
+                        <a href="{{route('role-users.create')}}" class="btn btn-info">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                             Cadastrar Perfil a Usuário
                         </a>
                     </div>
+                    <br>
                     <div class="perfil">
                         <table class="table table-striped" style="font-size:12px">
                             <thead>
