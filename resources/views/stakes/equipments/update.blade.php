@@ -43,7 +43,7 @@
                     <div class="form-group">
                         {!! Form::label('qtd', 'Quantidade', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('qtd', 1, ['class'=>'form-control']) !!}
+                            {!! Form::text('qtd', null, ['class'=>'form-control']) !!}
                         </div>
                     </div>
 
