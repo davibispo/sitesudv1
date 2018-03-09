@@ -119,7 +119,7 @@
                             </li>
                             <li class="dropdown">
                                 @can('contact_create')
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contato
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suporte
                                     <span class="caret"></span>
                                 </a>
                                 @endcan

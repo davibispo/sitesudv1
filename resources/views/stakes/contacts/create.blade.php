@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Contato</b></div>
+                <div class="panel-heading"><b>Suporte do Sistema SiteSUD</b></div>
                 
                 <div class="panel-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'ContactController@store', 'class'=>'form-horizontal']) !!}

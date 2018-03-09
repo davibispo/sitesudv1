@@ -32,7 +32,7 @@
                                 <td>{{$sacramentalMeeting->frequencia}}</td>
                                 <td>
                                     <a href="{{route('sacramental-meetings.edit',$sacramentalMeeting->id)}}" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i> editar</a>
-                                    <a href="{{route('sacramental-meetings.show',$sacramentalMeeting->id)}}" class="btn btn-success btn-xs"><i class="fas fa-print"></i> imprimir</a>
+                                    <a href="{{route('sacramental-meetings.show',$sacramentalMeeting->id)}}" target="_blank" class="btn btn-success btn-xs"><i class="fas fa-print"></i> imprimir</a>
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['SacramentalMeetingController@destroy', $sacramentalMeeting->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('excluir', ['class'=>'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
