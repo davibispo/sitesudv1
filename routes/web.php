@@ -57,4 +57,8 @@ Route::group(['middleware'=>'web'], function(){
     
     //Conselor
     Route::get('/conselor/index','ConselorController@index')->name('conselor.index');
+
+    //Mensagem da presidencia de estaca
+    Route::resource('/stakes/messages', 'MessageController');
+
 });

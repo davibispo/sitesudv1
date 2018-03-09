@@ -54,7 +54,7 @@
                     <div class="form-group">
                         {!! Form::label('phone', 'Telefone', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            <input type="tel" name="phone" id="phone" pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{4,5}" class="form-control" required/>
+                            <input type="tel" name="phone" class="form-control" required/>
                         </div>
                     </div>
                     <div class="form-group">

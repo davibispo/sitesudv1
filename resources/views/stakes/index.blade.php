@@ -8,7 +8,24 @@
             <div class="col-sm-12">
 
                 <div class="well well-xs">
-                    <h4>Acesso rápido</h4>
+                    <div style="font-size:12px; text-align:justify;">
+                        Mensagem da Presidência da Estaca: 
+                        
+                            @forelse($messages as $message)
+                                @foreach($users as $user)
+                                    @if($message->stake == $user->stake && $message->user_id == $user->id)
+                                        <b>{{$message->message}}</b>
+                                        <i>(Pres. {{$user->name}})</i>
+                                    @endif
+                                @endforeach
+                            @empty
+                                <b>Não há mensagem!</b>
+                            @endforelse
+                        <br>
+                        @can('message_create')
+                        <a href="{{route('messages.index')}}">Editar</a>
+                        @endcan
+                    </div>
                 </div>
 
                 <div class="row">
@@ -33,7 +50,7 @@
                         <div class="well">
                             <h4>Caravanas</h4>
                             @can('caravan_index')
-                            <p><a href="{{route('caravans.index')}}">Criar</a></p>
+                            <p><a href="{{route('caravans.index')}}">Criar/editar</a></p>
                             @endcan
                             @can('caravan_user_index')
                             <p><a href="{{route('caravan-users.index')}}">Reservas</a></p> 
