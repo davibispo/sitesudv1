@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Usuários</b></div>
+            <div class="panel-heading"><b>Usuários: {{DB::table('users')->select('id')->count()}}</b></div>
 
                 <div class="panel-body">
                     <div>
