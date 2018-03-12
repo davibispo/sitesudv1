@@ -10,7 +10,7 @@
                 <div class="panel-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'UserController@store', 'class'=>'form-horizontal']) !!}
                     <div class="form-group">
-                        {!! Form::label('name', 'Nome', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('name', 'Primeiro Nome', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
                         </div>

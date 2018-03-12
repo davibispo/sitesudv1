@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     {!! Form::model($user,['method'=>'PATCH', 'action'=>['UserController@update', $user->id], 'class'=>'form-horizontal']) !!}
                     <div class="form-group">
-                        {!! Form::label('name', 'Nome', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('name', 'Primeiro nome', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('name', null, ['class' => 'form-control', 'required']) !!}
                         </div>
