@@ -8,8 +8,8 @@
             <div class="panel-heading text-center">Agenda da Reunião Sacramental - <b>{{strtoupper($ward)}}</b> - Estaca {{$stake}}</div>
 
                     <a onclick="javascript:window.print();" class="btn btn-link btn-xs">
-                        <i class="fas fa-print"></i>
-                        Imprimir
+                        <i class="fas fa-print fa-xs"></i>
+                        impressão
                     </a>
                 
                 <!--Cabeçalho-->
@@ -128,6 +128,7 @@
                 </table>
 
                 <!--Confirmação de conversos-->
+                <i style="font-size:10px">"Pedimos aos membros da congregação que expressem sua plena aceitação do(s) novo(s) membro(s) na ala erguendo a mão"</i>
                 <table class="table table-hover" style="font-size:10px">
                     <tr>
                         <td><b>Confirmações</b></td>
@@ -162,6 +163,7 @@
                 </table>
 
                 <!--Desobrigações-->    
+                <i style="font-size:10px">“[Nome] foi desobrigado do cargo de [cargo] e propomos dar-lhe um voto de agradecimento pelo serviço prestado. Os que desejarem manifestar sua gratidão queiram manifestar-se levantando a mão”</i>
                 <table class="table table-hover" style="font-size:10px"> 
                     <tr>
                         <td><b>Desobrigações</b></td>
@@ -208,6 +210,7 @@
                 </table>
 
                 <!--Apoios-->
+                <i style="font-size:10px">“[Nome] foi chamado para [cargo] e propomos que seja apoiado. Os que estiverem a favor queiram manifestar-se levantando a mão. Se houver alguém que se oponha, queira manifestar-se."</i>
                 <table class="table table-hover" style="font-size:10px">
                     <tr>
                         <td><b>Apoios</b></td>
