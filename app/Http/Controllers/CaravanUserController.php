@@ -13,7 +13,7 @@ class CaravanUserController extends Controller {
     public function index() {
         $stake = auth()->user()->stake;
         $caravans = Caravan::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
-        $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('poltrona');
+        $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('ward');
         $users = User::all()->where('stake', $stake);
 
         //pega data por extenso em portugues
