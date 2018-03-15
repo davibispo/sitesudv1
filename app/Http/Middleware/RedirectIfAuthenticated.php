@@ -19,8 +19,6 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard($guard)->check()) {
             return redirect('/');
-        }else{
-            return redirect('/login');
         }
 
         return $next($request);
