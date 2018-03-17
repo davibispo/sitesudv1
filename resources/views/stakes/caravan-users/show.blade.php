@@ -125,7 +125,7 @@
                                         <td>{{$caravanUser->kid_age}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
-                                        <td>{{$user->rg}}</td>
+                                        <td>{{$user->rg}} {{$user->orgao_exp}}</td>
                                         <td>
                                             @php
                                             $dataNasc = $user->dt_nasc;
@@ -203,7 +203,7 @@
                                         <td>{{$caravanUser->kid_doc}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
-                                        <td>{{$user->rg}}</td>
+                                        <td>{{$user->rg}} {{$user->orgao_exp}}</td>
                                     @endif
                                     <td>
                                         @php

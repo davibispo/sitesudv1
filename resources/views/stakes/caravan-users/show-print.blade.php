@@ -74,7 +74,7 @@
                                     <th>Pol.</th> 
                                     <th>Membros</th> 
                                     <th>RG</th> 
-                                    <th>Id.</th> 
+                                    <th>Id</th> 
                                     <th>Telefone</th> 
                                     <th>Unidade</th> 
                                 </tr>
@@ -91,7 +91,7 @@
                                         <td>{{$caravanUser->kid_age}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
-                                        <td>{{$user->rg}}</td>
+                                        <td>{{$user->rg}} {{$user->orgao_exp}}</td>
                                         <td>
                                             @php
                                             $dataNasc = $user->dt_nasc;
@@ -133,7 +133,7 @@
                                     <th>Pol.</th>
                                     <th>Membros</th> 
                                     <th>RG</th> 
-                                    <th>Id.</th> 
+                                    <th>Id</th> 
                                     <th>Telefone</th> 
                                     <th>Unidade</th> 
                                 </tr>
@@ -149,7 +149,7 @@
                                         <td>{{$caravanUser->kid_doc}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
-                                        <td>{{$user->rg}}</td>
+                                        <td>{{$user->rg}} {{$user->orgao_exp}}</td>
                                     @endif
                                     <td>
                                         @php
