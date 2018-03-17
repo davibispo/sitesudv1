@@ -47,12 +47,16 @@
                                 <td>{{$evento->org}}</td>
                                 <td>{{$evento->obs}}</td>
                                 <td>
+                                    @can('conselor_edit')
                                     <a href="{{route('conselor.calendars.edit', $evento->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a> 
+                                    @endcan
                                 </td>
                                 <td>
+                                    @can('conselor_edit')
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['ConselorController@calendarDestroy', $evento->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
                                     {!! Form::close() !!}
+                                    @endcan
                                 </td>
                             </tr>                           
                                 
