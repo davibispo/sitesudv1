@@ -11,11 +11,11 @@
                 </div>
 
                 <div class="panel-body">
-                    <!--
+                    
                     <div class="well text-center">
-                        Mensagem do Sententa de Área responsável.
+                        Esta página é visualizada apenas pelos membros do Conselho de Coordenação Maceió.
                     </div>
-                    -->
+                    
                     <div class="btn-group btn-group-justified">
                         <a href="{{route('conselor.calendars.index')}}" class="btn btn-default btn-lg"><i class="fas fa-calendar-alt"></i> Calendário</a>
                         <a href="{{route('conselor.stakes.index')}}" class="btn btn-default btn-lg"><i class="fas fa-home"></i> Estacas/Distritos</a>
