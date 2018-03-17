@@ -139,7 +139,13 @@ class CaravanUserController extends Controller {
         $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('poltrona');
         $users = User::all()->where('stake', $stake);
 
-        //status 1 = lista principal, e 2 = lista reserva
+        /*
+         * status   
+         * 1 = lista principal,
+         * 2 = lista reserva,
+         * 3 = criança com poltrona
+         * 4 = criança sem poltrona
+         */
         $statusPrincipal = 1;
         $statusReserva = 2;
         $criancaComPoltrona = 3;
@@ -148,10 +154,11 @@ class CaravanUserController extends Controller {
         // contagem de quantos membros se cadastraram na lista principal e na lista reserva
         $listaPrincipal = 0;
         $listaReserva = 0;
+
         foreach ($caravanUsers as $caravanUser) {
-            if ($caravanUser->caravan_id == $caravan->id && ($caravanUser->status == 1 || $caravanUser->status == 3)) {
+            if ($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0) {
                 $listaPrincipal++;
-            } else {
+            } elseif ($caravanUser->caravan_id == $caravan->id && $caravanUser->status == '2') {
                 $listaReserva++;
             }
         }
