@@ -45,7 +45,7 @@
                                         @endcan   
                                         @can('delete_role', $user)
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['UserController@destroy', $user->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Excluir', ['class'=>'btn btn-danger btn-xs']) !!}
+                                        {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
                                         {!! Form::close() !!}
                                         @endcan 
                                     </td>
