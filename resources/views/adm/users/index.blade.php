@@ -13,7 +13,7 @@
                         <a href="{{route('users.create')}}" class="btn btn-default"><i class="fas fa-user-plus"></i></a>
                     </div>
                     <div class="perfil">
-                        <table class="table table-striped">
+                        <table class="table table-striped" style="font-size:10px">
                             <thead>
                                 <tr>
                                     <th>Id</th>
