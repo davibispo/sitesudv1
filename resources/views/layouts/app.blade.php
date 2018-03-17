@@ -8,6 +8,9 @@
         <!--Fonts Icons - Awesome 5-->
         <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
 
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{!! asset('assets/img/favicon.ico') !!}">
+
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
