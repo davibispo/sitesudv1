@@ -68,11 +68,4 @@ class User extends Authenticatable {
         return $this->roles->contains('name', $roles);
     }
 
-    //MOdificar mensagem de notificação de recuperar senha
-    public function sendPasswordResetNotification($token)
-    {
-        // Não esquece: use App\Notifications\ResetPassword;
-        $this->notify(new ResetPassword($token));
-    }
-
 }
