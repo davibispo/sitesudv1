@@ -23,7 +23,18 @@
                     <table class="table table-striped table-hover">
                         <tbody>
                             <tr>
+                                <th>SECRETÁRIO DO CONSELHO</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>ELITON OLIVEIRA</b></p>
+                                    <p>ESTACA MACEIÓ LITORAL</p>
+                                    <p>(82) 99800-6439  - secretarioconselhomaceio@gmail.com </p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
                                 <th>ESPECIALISTA DE BEM-ESTAR</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>BRUNO VASCONCELOS BARROS</b></p>
                                     <p>ESTACA MACEIÓ</p>
@@ -33,6 +44,7 @@
                             </tr>
                             <tr>
                                 <th>AUDITOR ASSISTENTE DA ÁREA</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>SÉRGIO DA SILVA GALVÃO</b></p>
                                     <p></p>
@@ -42,6 +54,7 @@
                             </tr>
                             <tr>
                                 <th>ESPECIALISTA EM TECNOLOGIA</th>
+                                <td><img src="{!! asset('assets/img/foto.jpg') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>DAVI BISPO DE OLIVEIRA</b></p>
                                     <p>ESTACA MACEIÓ TABULEIRO</p>
@@ -51,6 +64,7 @@
                             </tr>
                             <tr>
                                 <th>CONSULTOR DO TEMPLO E HISTÓRIA DA FAMÍLIA</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>JOSUALDO DOS SANTOS MOTA</b></p>
                                     <p>ESTACA MACEIÓ LITORAL</p>
@@ -60,6 +74,7 @@
                             </tr>
                             <tr>
                                 <th>CONSULTOR DO TEMPLO E HISTÓRIA DA FAMÍLIA</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>MÁRCIA DO NASCIMENTO MOTA</b></p>
                                     <p>ESTACA MACEIÓ LITORAL</p>
@@ -69,6 +84,7 @@
                             </tr>
                             <tr>
                                 <th>DIRETORA DE ASSUNTOS PÚBLICOS</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>RUTH DE CARVALHO ROMÃO DE MELO</b></p>
                                     <p>ESTACA MACEIÓ TABULEIRO</p>

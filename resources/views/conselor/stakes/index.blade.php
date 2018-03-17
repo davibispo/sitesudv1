@@ -27,6 +27,7 @@
                                     R. Santa Luzia, S/N - Tabuleiro do Martins <br>
                                     57060-150 Maceió - AL
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. MANOEL MESSIAS</b><br>
                                     82 98756-9898 <br>
@@ -39,6 +40,7 @@
                                     R. Dom Adelmo Machado, 160 - Ponta Grossa <br>
                                     51015-000 Maceió - AL
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. MARCOS PEDRO</b><br>
                                     82 98859-3349 <br>
@@ -51,6 +53,7 @@
                                     R. Valdomiro Nunes De A. Barros, 116 - Jacintinho <br>
                                     57041-000 Maceió - AL
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. ROGÉRIO DOS SANTOS</b><br>
                                     82 99314-0191 <br>
@@ -63,6 +66,7 @@
                                     Av. Santa Rita de Cássia, 287 - Farol <br>
                                     57051-600 Maceió - AL
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. FRAZIO TENÓRIO</b><br>
                                     82 99985-1507 <br>
@@ -75,6 +79,7 @@
                                     R. Carlos Francisco de Farias, 105 - Tabuleiro <br>
                                     57082-320 Maceió - AL
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. GENIVAL DOS SANTOS</b><br>
                                     82 99950-6765 <br>
@@ -87,6 +92,7 @@
                                     R. Pedro Nunes de Albuquerque, 277 - Centro <br>
                                     57300-550 Arapiraca - AL
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. JAILSON OLIVEIRA</b><br>
                                     82 99931-5098 <br>
@@ -99,6 +105,7 @@
                                     Rua São Jorge n°606 - Santos Dumont <br>
                                     49087-560 Aracaju - SE
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. LUIZ PIEDADE</b><br>
                                     79 99964-6782 <br>
@@ -111,6 +118,7 @@
                                     Av: Gonçalo Rolembergue Leite nº 1633 - Grageru <br>
                                     49025-230 Aracaju - SE
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. RUBENS PRADO</b><br>
                                     79 99660-0070 <br>
@@ -123,6 +131,7 @@
                                     Rua Otaviano Siqueira,299, Bairro Alagoas - Centro <br>
                                     49200-000 Estância - SE
                                 </td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. MANOEL BATISTA</b><br>
                                     79 99950-9061 <br>
