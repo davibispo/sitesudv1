@@ -7,6 +7,9 @@
 
         <title>SiteSUD</title>
 
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="{!! asset('assets/img/favicon.ico') !!}">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
