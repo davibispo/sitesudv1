@@ -57,8 +57,21 @@ Route::group(['middleware'=>'web'], function(){
     
     //Conselor
     Route::get('/conselor/index','ConselorController@index')->name('conselor.index');
+    Route::get('/conselor/calendars','ConselorController@calendarIndex')->name('conselor.calendars.index');
+    Route::get('/conselor/calendars/create','ConselorController@calendarCreate')->name('conselor.calendars.create');
+    Route::post('/conselor/calendars/create','ConselorController@calendarStore');
+    Route::get('/conselor/calendars/{id}/edit','ConselorController@calendarEdit')->name('conselor.calendars.edit');
+    Route::post('/conselor/calendars/{id}/edit','ConselorController@calendarUpdate');
+    Route::delete('/conselor/calendars/{id}','ConselorController@calendarDestroy');
+    Route::get('/conselor/files','ConselorController@fileIndex')->name('conselor.files.index');
+    Route::get('/conselor/leaders','ConselorController@leaderIndex')->name('conselor.leaders.index');
+    Route::get('/conselor/meetings','ConselorController@meetingIndex')->name('conselor.meetings.index');
+    Route::get('/conselor/stakes','ConselorController@stakeIndex')->name('conselor.stakes.index');
 
     //Mensagem da presidencia de estaca
     Route::resource('/stakes/messages', 'MessageController');
+
+    //Self Reliance
+    Route::resource('/stakes/self-reliances', 'SelfRelianceController');
 
 });

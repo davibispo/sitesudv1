@@ -99,6 +99,14 @@
                         </div>
                     </div>
                     @endcan
+                    @can('adm')
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4>Autossuficiência</h4>
+                            <p><a href="{{route('self-reliances.create')}}">Grupos</a></p> 
+                        </div>
+                    </div>
+                    @endcan
                 </div>
                
             </div>
