@@ -54,7 +54,7 @@
                             </tr>
                             <tr>
                                 <th>ESPECIALISTA EM TECNOLOGIA</th>
-                                <td><img src="{!! asset('assets/img/foto.jpg') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/davi.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>DAVI BISPO DE OLIVEIRA</b></p>
                                     <p>ESTACA MACEIÓ TABULEIRO</p>
