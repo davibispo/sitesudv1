@@ -40,7 +40,7 @@
                                     R. Dom Adelmo Machado, 160 - Ponta Grossa <br>
                                     51015-000 Maceió - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-pedro.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. MARCOS PEDRO</b><br>
                                     82 98859-3349 <br>
@@ -53,7 +53,7 @@
                                     R. Valdomiro Nunes De A. Barros, 116 - Jacintinho <br>
                                     57041-000 Maceió - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-rogerio.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. ROGÉRIO DOS SANTOS</b><br>
                                     82 99314-0191 <br>
@@ -92,7 +92,7 @@
                                     R. Pedro Nunes de Albuquerque, 277 - Centro <br>
                                     57300-550 Arapiraca - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-jailson.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. JAILSON OLIVEIRA</b><br>
                                     82 99931-5098 <br>
