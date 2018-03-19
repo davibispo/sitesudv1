@@ -105,7 +105,7 @@
                             </td>
                             <td>
                                 <div class="text-right">
-                                    <a href="{{route('caravan-users.create-caravan-user-kid', $caravan->id)}}" class="btn btn-default">Cadastrar Criança</a>
+                                    <a href="{{route('caravan-users.create-caravan-user-kid', $caravan->id)}}" class="btn btn-info">Cadastrar Criança</a>
                                 </div>
                             </td>
                         </tr>
