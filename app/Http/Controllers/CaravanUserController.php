@@ -86,7 +86,7 @@ class CaravanUserController extends Controller {
                             ->where('user_id', auth()->user()->id)
                             ->value('user_id');
        
-        if (!$userExist) {
+        if (!$userExist || $caravanUser->kid) {
             $caravanUser->save();
             return redirect()->route('caravan-users.index')->with('alertSuccess', 'Vaga reservada com sucesso!');
         } else {
