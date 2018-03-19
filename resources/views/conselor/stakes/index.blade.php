@@ -27,7 +27,7 @@
                                     R. Santa Luzia, S/N - Tabuleiro do Martins <br>
                                     57060-150 Maceió - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-messias.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. MANOEL MESSIAS</b><br>
                                     82 98756-9898 <br>
@@ -66,7 +66,7 @@
                                     Av. Santa Rita de Cássia, 287 - Farol <br>
                                     57051-600 Maceió - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-frazio.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. FRAZIO TENÓRIO</b><br>
                                     82 99985-1507 <br>
@@ -79,7 +79,7 @@
                                     R. Carlos Francisco de Farias, 105 - Tabuleiro <br>
                                     57082-320 Maceió - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-genival.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. GENIVAL DOS SANTOS</b><br>
                                     82 99950-6765 <br>
@@ -131,7 +131,7 @@
                                     Rua Otaviano Siqueira,299, Bairro Alagoas - Centro <br>
                                     49200-000 Estância - SE
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-manoel.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. MANOEL BATISTA</b><br>
                                     79 99950-9061 <br>
