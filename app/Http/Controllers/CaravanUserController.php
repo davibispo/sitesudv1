@@ -80,7 +80,11 @@ class CaravanUserController extends Controller {
             $caravanUser->status = $request->status;
         }
 
-        $userExist = DB::table('caravan_users')->where('ativo','1')->where('user_id', auth()->user()->id)->value('user_id');
+        $userExist = DB::table('caravan_users')
+                            ->where('ativo','1')
+                            ->where('caravan_id', $caravanUser->caravan_id)
+                            ->where('user_id', auth()->user()->id)
+                            ->value('user_id');
        
         if (!$userExist) {
             $caravanUser->save();
