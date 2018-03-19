@@ -105,7 +105,7 @@
                                     Rua São Jorge n°606 - Santos Dumont <br>
                                     49087-560 Aracaju - SE
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-piedade.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. LUIZ PIEDADE</b><br>
                                     79 99964-6782 <br>
@@ -118,7 +118,7 @@
                                     Av: Gonçalo Rolembergue Leite nº 1633 - Grageru <br>
                                     49025-230 Aracaju - SE
                                 </td>
-                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/pres-prado.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <b>PRES. RUBENS PRADO</b><br>
                                     79 99660-0070 <br>
