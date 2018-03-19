@@ -42,8 +42,9 @@ class CaravanUserController extends Controller {
         $caravan = Caravan::find($caravanId);
         $stake = auth()->user()->stake;
         $userId = auth()->user()->id;
+        $caravanUsers = CaravanUser::all()->where('ativo','1')->where('caravan_id',$caravanId);
 
-        return view('stakes.caravan-users.create-caravan-user', compact('stake', 'caravan', 'userId'));
+        return view('stakes.caravan-users.create-caravan-user', compact('stake', 'caravan', 'userId','caravanUsers'));
     }
 
     public function createCaravanUserKid($caravanId) {
@@ -79,11 +80,13 @@ class CaravanUserController extends Controller {
             $caravanUser->status = $request->status;
         }
 
-        if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', '!=', $caravanUser->poltrona)) {
+        $userExist = DB::table('caravan_users')->where('ativo','1')->where('user_id', auth()->user()->id)->value('user_id');
+       
+        if (!$userExist) {
             $caravanUser->save();
             return redirect()->route('caravan-users.index')->with('alertSuccess', 'Vaga reservada com sucesso!');
         } else {
-            return redirect()->back()->with('alertDanger', 'Não há mais vagas!');
+            return redirect()->back()->with('alertDanger', 'Desculpe! Já existe um cadastrado seu nesta caravana!');
         }
     }
 
