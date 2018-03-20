@@ -30,7 +30,7 @@
                                     <p>ESTACA MACEIÓ LITORAL</p>
                                     <p>(82) 99800-6439  - secretarioconselhodeareamaceio@gmail.com </p>
                                 </td>
-                                <td></td>
+                                <td>Apoiado em 2012</td>
                             </tr>
                             <tr>
                                 <th>ESPECIALISTA DE BEM-ESTAR</th>
@@ -91,6 +91,37 @@
                                     <p>(82) 98721-5712</p>
                                 </td>
                                 <td>Apoiado em 2013</td>
+                            </tr>
+
+                            <tr>
+                                <th>RESPONSÁVEL PELO MAS</th>
+                                <td><img src="{!! asset('assets/img/soares.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>JOSÉ SOARES DA SILVA</b></p>
+                                    <p>ESTACA MACEIÓ TABULEIRO</p>
+                                    <p>(82) </p>
+                                </td>
+                                <td>Apoiado em </td>
+                            </tr>
+                            <tr>
+                                <th>RESPONSÁVEL PELO MAS</th>
+                                <td><img src="{!! asset('assets/img/esposa-soares.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>MARIA JOSÉ DE LIMA SOARES</b></p>
+                                    <p>ESTACA MACEIÓ TABULEIRO</p>
+                                    <p>(82) </p>
+                                </td>
+                                <td>Apoiado em </td>
+                            </tr>
+                            <tr>
+                                <th>LÍDER DO MAS</th>
+                                <td><img src="{!! asset('assets/img/jorge.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>JORGE ANDRÉ AMORIM</b></p>
+                                    <p>ESTACA</p>
+                                    <p>(82) </p>
+                                </td>
+                                <td>Apoiado em </td>
                             </tr>
                             
                         </tbody>
