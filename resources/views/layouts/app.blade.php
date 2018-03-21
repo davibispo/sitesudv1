@@ -46,16 +46,18 @@
                             <li><a href="{{route('stakes.index')}}"><i class="fas fa-home"></i></a></li>
                             @endcan
                             @can('adm')
-                            <li><a href="{{route('roles.index')}}"><i class="fas fa-address-book"></i></a></li>
-                            @endcan
-                            @can('adm')
-                            <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i></a></li>
-                            @endcan
-                            @can('role_user_index')
-                            <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i></a></li>
-                            @endcan
-                            @can('adm')
-                            <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i></a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fas fa-cog"></i>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{route('roles.index')}}"><i class="fas fa-address-book"></i> Perfis</a></li>
+                                    <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i> Permissões</a></li>
+                                    <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i> Usuários-Perfis</a></li>
+                                    <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i> Usuários</a></li>
+                                </ul>
+                            </li>
                             @endcan
                             @can('calendar_index')
                             <li><a href="{{route('calendars.index')}}">Calendário</a></li>

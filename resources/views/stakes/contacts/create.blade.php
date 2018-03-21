@@ -14,6 +14,7 @@
                         {!! Form::label('message_type', 'Assunto Principal', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::select('message_type', [
+                                'Dúvida'=>'Dúvida',
                                 'Sugestão'=>'Sugestão',
                                 'Reclamação'=>'Reclamação',
                             ], null, ['class'=>'form-control','required', 'placeholder'=>' -- Escolha o assunto -- ']) !!}
