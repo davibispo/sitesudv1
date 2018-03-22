@@ -14,7 +14,7 @@ class EquipmentRentController extends Controller
     {
         $stake = auth()->user()->stake;
         $users = User::all()->where('stake', $stake);
-        $equipmentRents = EquipmentRent::all()->where('stake', $stake)->where('ativo','1');
+        $equipmentRents = EquipmentRent::all()->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
         
         return view('stakes.equipment-rents.index', compact('stake','equipmentRents','users'));
     }
