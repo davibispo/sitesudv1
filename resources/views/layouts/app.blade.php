@@ -55,7 +55,7 @@
                                     <li><a href="{{route('roles.index')}}"><i class="fas fa-address-book"></i> Perfis</a></li>
                                     <li><a href="{{route('permissions.index')}}"><i class="fas fa-ban"></i> Permissões</a></li>
                                     <li><a href="{{route('role-users.index')}}"><i class="fas fa-user-secret"></i> Usuários-Perfis</a></li>
-                                    <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i> Usuários</a></li>
+                                    <li><a href="{{route('users.index')}}"><i class="fas fa-users"></i> <span class="badge">{!!DB::table('users')->count()!!}</span></a></li>
                                 </ul>
                             </li>
                             @endcan
