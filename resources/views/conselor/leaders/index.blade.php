@@ -114,10 +114,20 @@
                                 <td>Apoiado em </td>
                             </tr>
                             <tr>
-                                <th>RESPONSÁVEL PELO JAS</th>
+                                <th>LÍDER DO JAS</th>
                                 <td><img src="{!! asset('assets/img/jorge.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>JORGE ANDRÉ AMORIM</b></p>
+                                    <p>ESTACA</p>
+                                    <p>(82) </p>
+                                </td>
+                                <td>Apoiado em </td>
+                            </tr>
+                            <tr>
+                                <th>LÍDER DO JAS</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>RITA DE CASSIA SANTOS AMORIM</b></p>
                                     <p>ESTACA</p>
                                     <p>(82) </p>
                                 </td>
