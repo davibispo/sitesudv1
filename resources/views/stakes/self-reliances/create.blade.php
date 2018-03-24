@@ -10,11 +10,12 @@
                 <div class="panel-body">
                     
                     {!! Form::open(['method'=>'POST', 'action'=>'SelfRelianceController@store', 'class'=>'form-horizontal']) !!}
+                        
                     <div class="text-left">
                         <table class="table table-striped table-hover">
                             <tbody>
                                 <tr>
-                                    <td><input type="radio" name="grupo" required></td>
+                                    <td><input type="radio" name="grupo" value="Educação para um Emprego Melhor" required></td>
                                     <td><img src="{!! asset('assets/img/self/educacao.png') !!}" ></td>
                                     <td>Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
                                         Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
@@ -22,7 +23,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="grupo" required></td>
+                                    <td><input type="radio" name="grupo" value="Encontrar um Emprego Melhor" required></td>
                                     <td><img src="{!! asset('assets/img/self/emprego.png') !!}" ></td>
                                     <td>Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
                                         Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
@@ -30,7 +31,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="grupo" required></td>
+                                    <td><input type="radio" name="grupo" value="Finanças Pessoais" required></td>
                                     <td><img src="{!! asset('assets/img/self/financas.png') !!}" ></td>
                                     <td>Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
                                         Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
@@ -38,7 +39,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><input type="radio" name="grupo" required></td>
+                                    <td><input type="radio" name="grupo" value="Iniciar e Melhorar Meu Negócio" required></td>
                                     <td><img src="{!! asset('assets/img/self/negocio.png') !!}" ></td>
                                     <td>Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso
                                         Breve resumo do curso Breve resumo do curso Breve resumo do curso Breve resumo do curso

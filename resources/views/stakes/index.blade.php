@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     @endcan
-                    @can('adm')
+                    @can('self-reliance_index')
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Autossuficiência</h4>
