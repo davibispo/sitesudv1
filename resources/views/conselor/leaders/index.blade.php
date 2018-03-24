@@ -114,7 +114,7 @@
                                 <td>Apoiado em </td>
                             </tr>
                             <tr>
-                                <th>LÍDER DO MAS</th>
+                                <th>RESPONSÁVEL PELO JAS</th>
                                 <td><img src="{!! asset('assets/img/jorge.png') !!}" class="img-circle" width="80"></td>
                                 <td>
                                     <p><b>JORGE ANDRÉ AMORIM</b></p>
