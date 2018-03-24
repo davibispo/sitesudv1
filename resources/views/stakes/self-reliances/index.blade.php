@@ -18,6 +18,13 @@
                         </a>
                     </div>
                     <br>
+                    <div class="well well-sm text-center">
+                        <p>
+                            Ao se cadastrar em um dos grupos, seu líder de autossuficiência poderá atualizar seu status de '<font color='orange'>Solicitado</font>' 
+                            para '<font color='green'>Matriculado</font>'.
+                            Procure seu líder para mais informações.
+                        </p>
+                    </div>
                     <table class="table table-bordered" style="font-size:12px;">
                         <thead>
                             <tr>
