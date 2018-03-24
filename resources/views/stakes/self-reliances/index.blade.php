@@ -62,7 +62,7 @@
                                             @endforeach
                                         @empty
                                             <div>
-                                                <p>Não há membros cadastrados para neste curso!</p>
+                                                <p>Não há membros cadastrados neste grupo!</p>
                                             </div>
                                         @endforelse
                                     </ol>
@@ -100,7 +100,7 @@
                                             @endforeach
                                         @empty
                                             <div>
-                                                <p>Não há membros cadastrados para neste curso!</p>
+                                                <p>Não há membros cadastrados neste grupo!</p>
                                             </div>
                                         @endforelse
                                     </ol>
@@ -138,7 +138,7 @@
                                             @endforeach
                                         @empty
                                             <div>
-                                                <p>Não há membros cadastrados para neste curso!</p>
+                                                <p>Não há membros cadastrados neste grupo!</p>
                                             </div>
                                         @endforelse
                                     </ol>
@@ -176,7 +176,7 @@
                                             @endforeach
                                         @empty
                                             <div>
-                                                <p>Não há membros cadastrados para neste curso!</p>
+                                                <p>Não há membros cadastrados neste grupo!</p>
                                             </div>
                                         @endforelse
                                     </ol>
