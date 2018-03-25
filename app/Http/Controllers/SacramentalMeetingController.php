@@ -15,7 +15,7 @@ class SacramentalMeetingController extends Controller
     {
         $stake  = auth()->user()->stake;
         $ward   = auth()->user()->ward;
-        $sacramentalMeetings = SacramentalMeeting::all()->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
+        $sacramentalMeetings = SacramentalMeeting::all()->where('ward', $ward)->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
         return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));
     }
 
