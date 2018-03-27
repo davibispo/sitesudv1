@@ -8,6 +8,14 @@
                 <div class="panel-heading"><b>Solicitar entrevista com presidência da Estaca {{$stake}} ou Bênção Patriarcal</b></div>
 
                 <div class="panel-body">
+                    <div class="alert alert-warning">
+                    <ul>
+                        <li><b>Renovações de recomendação</b> serão realizadas pelos <b>Conselheiros</b> da Estaca e o membro
+                        deve ter passado por entrevista com o bispado antes.</li>
+                        <li><b>Primeira recomendação</b> e Entrevista para Missão serão realizadas pelo <b>Presidente</b> da Estaca.</li>
+                        <li>Antes de agendar a <b>Bênção Patriarcal</b>, o membro deve ter passado por <b>entrevista com o bispo</b> da unidade.</li>
+                    </ul>
+                    </div>
                     {!! Form::open(['method'=>'POST', 'action'=>'InterviewController@store', 'class'=>'form-horizontal']) !!}
                     
                     <div class="form-group">
