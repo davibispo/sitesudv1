@@ -17,8 +17,14 @@ class InterviewController extends Controller
     public function index()
     {
         $stake = auth()->user()->stake;
+        $user = auth()->user()->id;
         $users = User::all()->where('stake', $stake);
-        $interviews = Interview::all()->where('ativo','1')->where('stake', $stake)->sortByDesc('created_at');
+
+        $interviews = Interview::all()
+                        ->where('ativo','1')
+                        ->where('stake', $stake)
+                        ->where('user_id',$user)
+                        ->sortByDesc('created_at');
 
         return view('stakes.interviews.index', compact('stake','interviews','users'));
     }
