@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Interview;
 use App\Models\InterviewType;
 use App\User;
-use App\Models\RoleUser;
 use Illuminate\Support\Facades\DB;
 
 class InterviewController extends Controller
@@ -21,21 +20,31 @@ class InterviewController extends Controller
         $stake = auth()->user()->stake;
         $user = auth()->user()->id;
         $users = User::all()->where('stake', $stake);
-        $roleUser = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->value('role_id');
-        //dd($roleUser);
-        if($roleUser == 5){
+        
+        $perfilPatriarca = DB::table('role_user')->where('user_id', $user)->where('role_id', 6)->value('role_id');
+        $perfilPresidencia = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->value('role_id');
+        $perfilPresidente = DB::table('role_user')->where('user_id', $user)->where('role_id', 8)->value('role_id');
+        //dd($perfilPresidencia);
+        // mostra as solicitações de acordo com o perfil do usuário logado.
+        if($perfilPresidencia == 5){
             $interviews = Interview::all()
                             ->where('ativo','1')
                             ->where('stake', $stake)
+                            ->sortByDesc('created_at');
+        }elseif($perfilPatriarca == 6){
+            $interviews = Interview::all()
+                            ->where('ativo','1')
+                            ->where('stake', $stake)
+                            ->where('interviewer', 'Patriarca')
                             ->sortByDesc('created_at');
         }else{
             $interviews = Interview::all()
                             ->where('ativo','1')
                             ->where('stake', $stake)
-                            ->where('user_id',$user)
+                            ->where('user_id', $user)
                             ->sortByDesc('created_at');
         }
-    
+
         return view('stakes.interviews.index', compact('stake','interviews','users'));
     }
 
