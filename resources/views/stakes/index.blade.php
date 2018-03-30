@@ -7,7 +7,7 @@
             <div class="panel-heading">Estaca <b>{{$stake}}</b></div>
             <div class="col-sm-12">
 
-                <div class="well well-xs">
+                <div class="alert alert-warning">
                     <div style="font-size:12px; text-align:justify;">
                         Mensagem da Presidência da Estaca: 
                         
@@ -61,12 +61,8 @@
                         <div class="well">
                             <h4>Chamados</h4>
                             @can('called_index')
-                            <p><a href="{{route('calleds.index')}}">Ver Indicações</a></p> 
+                            <p><a href="{{route('calleds.index')}}">Indicar</a></p> 
                             @endcan
-                            @can('called_create')
-                            <p><a href="{{route('calleds.create')}}">Indicar</a></p> 
-                            @endcan
-                            
                         </div>
                     </div>
                 </div>
@@ -86,8 +82,8 @@
                     @can('meeting_index')
                     <div class="col-sm-3">
                         <div class="well">
-                            <h4>Reuniões</h4>
-                            <p><a href="{{route('meetings.index')}}">Agendas</a></p> 
+                            <h4>Agendas</h4>
+                            <p><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></p> 
                         </div>
                     </div>
                     @endcan
@@ -107,6 +103,28 @@
                         </div>
                     </div>
                     @endcan
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4>Arquivos</h4>
+                            @can('adm')
+                            <p><a href="#">Enviar</a></p> 
+                            @endcan
+                            @can('adm')
+                            <p><a href="{!! route('files.index') !!}">Acessar</a></p> 
+                            @endcan
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="well">
+                            <h4>Aulas Dominicais</h4>
+                            @can('adm')
+                            <p><a href="{!! route('sunday-school.index') !!}">Calendário</a></p> 
+                            @endcan
+                        </div>
+                    </div>
                 </div>
                
             </div>
