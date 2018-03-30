@@ -24,9 +24,7 @@
                             <th>Presidida</th>
                             <th>Dirigida</th>
                             <th>Frequência</th>
-                            @can('sacramentais_stake')
-                                <th>Unidade</th>
-                            @endcan
+                            <th>Unidade</th>
                             <th></th>
                         </tr>
                         @foreach ($sacramentalMeetings as $sacramentalMeeting)
@@ -34,10 +32,8 @@
                                 <th>{{date('d/m/Y',strtotime($sacramentalMeeting->date))}}</th>
                                 <td>{{$sacramentalMeeting->presidida}}</td>
                                 <td>{{$sacramentalMeeting->dirigida}}</td>
-                                <td>{{$sacramentalMeeting->frequencia}}</td>
-                                @can('sacramentais_stake')
-                                    <td>{{$sacramentalMeeting->ward}}</td>
-                                @endcan
+                                <td><b>{{$sacramentalMeeting->frequencia}}</b></td>
+                                <td>{{$sacramentalMeeting->ward}}</td>
                                 <td>
                                     @can('sacramental_meeting_update')
                                     <a href="{{route('sacramental-meetings.edit',$sacramentalMeeting->id)}}" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i> editar</a>
