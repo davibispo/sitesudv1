@@ -108,14 +108,14 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                @can('meeting_index')
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Reuniões
+                                @can('agendas')
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agendas
                                     <span class="caret"></span>
                                 </a>
                                 @endcan
                                 <ul class="dropdown-menu">
-                                    @can('meeting_index')
-                                    <li><a href="{{route('meetings.index')}}">Agendas</a></li>
+                                    @can('sacramental_meeting_index')
+                                    <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>
                                     @endcan
                                 </ul>
                             </li>
