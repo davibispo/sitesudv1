@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Indicações de Chamados para servir na Estaca {{$stake}}</b></div>
+                <div class="panel-heading"><b>Indicações de Chamados para servir na Estaca {!!$stake!!}</b></div>
 
                 <div class="panel-body">
                     <div>
@@ -29,16 +29,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="width:20%"><b>{{$called->called}}</b></td>
-                                <td style="width:20%"><b>{{$called->member}}</b></td>
-                                <td style="width:10%">{{$called->ward}}</td>
-                                <td style="width:10%">{{$called->priesthood}}</td>
-                                <td style="width:30%">{{$userName}} {{$userLastname}}</td>
-                                <td style="width:10%">{{date('d/m/Y', strtotime($called->created_at))}}</td>
+                                <td style="width:20%"><b>{!!$called->called!!}</b></td>
+                                <td style="width:20%"><b>{!!$called->member!!}</b></td>
+                                <td style="width:10%">{!!$called->ward!!}</td>
+                                <td style="width:10%">{!!$called->priesthood!!}</td>
+                                <td style="width:30%">{!!$userName!!} {!!$userLastname!!}</td>
+                                <td style="width:10%">{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
                             </tr>
                             <tr>   
-                                <td colspan="3"><b>OBS:</b> {{$called->obs}}</td>
-                                <td colspan="2"><b>Status:</b> Foi aprovado e será apoiado</td>
+                                <td colspan="3"><b>OBS:</b> {!!$called->obs!!}</td>
+                                <td colspan="2"><b>Status:</b> 
+                                    @switch($called->status)
+                                        @case('1') <font color='orange'>{!!'Analisando indicação'!!}</font> @break
+                                        @case('2') <font color='green'>{!!'Foi aprovado e será apoiado(a)'!!}</font> @break
+                                        @case('3') <font color='blue'>{!!'Já apoiado em congregação e designado'!!}</font> @break
+                                        @case('4') <font color='red'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
+                                        @default    
+                                    @endswitch
+                                </td>
 
                                 <td></td>
                             </tr>   

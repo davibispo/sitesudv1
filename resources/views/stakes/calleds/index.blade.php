@@ -39,13 +39,13 @@
                                             <td style="width:10%">{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
                                         </tr>
                                         <tr>   
-                                            <td colspan="3"><b>OBS:</b> {!!$called->obs!!}</td>
+                                            <td colspan="3"><b>Obs:</b> {!!$called->obs!!}</td>
                                             <td colspan="2"><b>Status:</b>
                                                 @switch($called->status)
                                                     @case('1') <font color='orange'>{!!'Analisando indicação'!!}</font> @break
                                                     @case('2') <font color='green'>{!!'Foi aprovado e será apoiado(a)'!!}</font> @break
                                                     @case('3') <font color='blue'>{!!'Já apoiado em congregação e designado'!!}</font> @break
-                                                    @case('4') <font color='blue'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
+                                                    @case('4') <font color='red'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
                                                     @default    
                                                 @endswitch
                                             </td>
