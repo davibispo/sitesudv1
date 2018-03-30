@@ -31,7 +31,7 @@
                                 @foreach($users as $user)
                                     @if($user->id == $called->user_id)
                                         <tr>
-                                            <td style="width:25%"><b>{!!$called->called!!}</b></td>
+                                            <td style="width:25%"><i class="fas fa-dot-circle"></i> <b>{!!$called->called!!}</b></td>
                                             <td style="width:20%"><b>{!!$called->member!!}</b></td>
                                             <td style="width:10%">{!!$called->ward!!}</td>
                                             <td style="width:10%">{!!$called->priesthood!!}</td>

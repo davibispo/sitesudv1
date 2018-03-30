@@ -87,11 +87,8 @@
                                 </a>
                                 @endcan
                                 <ul class="dropdown-menu">
-                                    @can('called_create')   
-                                    <li><a href="{{route('calleds.create')}}">Indicar</a></li>
-                                    @endcan
                                     @can('called_index')
-                                    <li><a href="{{route('calleds.index')}}">Ver Indicações</a></li>
+                                    <li><a href="{{route('calleds.index')}}">Indicar</a></li>
                                     @endcan
                                 </ul>
                             </li>
