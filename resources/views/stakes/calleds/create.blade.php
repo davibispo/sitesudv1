@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Indicar para Chamado na Estaca {{$stake}}</b></div>
+                <div class="panel-heading"><b>Indicar Membro para servir na Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'CalledController@store', 'class'=>'form-horizontal']) !!}
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('priesthood', 'Ofício do sacerdócio', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('priesthood', 'Ofício (caso se aplique)', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::select('priesthood', [
                                 'Sacerdote'=>'Sacerdote',
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('ward', 'Unidade', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('ward', 'Ala/Ramo', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('ward', null, ['class' => 'form-control','required', 'placeholder' => 'Digite a unidade do membro']) !!}
                         </div>

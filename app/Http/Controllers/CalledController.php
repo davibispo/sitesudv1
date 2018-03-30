@@ -45,7 +45,7 @@ class CalledController extends Controller
         
         $called->save();
         
-        return redirect()->route('stakes.index')->with('alertSuccess', 'Indicação enviada! Obrigado, analisaremos sua indicação!');
+        return redirect()->route('calleds.index')->with('alertSuccess', 'Indicação enviada! Obrigado, analisaremos sua indicação!');
     }
 
     public function show($id)
@@ -55,12 +55,25 @@ class CalledController extends Controller
 
     public function edit($id)
     {
-        //
+        $called = Called::find($id);
+
+        $stake = auth()->user()->stake;
+        $userName = User::where('id',$called->user_id)->value('name');
+        $userLastname = User::where('id',$called->user_id)->value('lastname');
+
+        return view('stakes.calleds.update', compact('called', 'stake','userName','userLastname'));
     }
 
     public function update(Request $request, $id)
     {
-        //
+        $called = Called::find($id);
+
+        $called->status = $request->status;
+        $called->reason_reject = $request->reason_reject;
+
+        $called->update();
+
+        return redirect()->route('calleds.index')->with('alertSuccess','O status da indicação foi atualizado!');
     }
 
     public function destroy($id)

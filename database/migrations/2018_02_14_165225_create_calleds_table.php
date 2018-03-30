@@ -22,7 +22,8 @@ class CreateCalledsTable extends Migration
             $table->string('ward',50);
             $table->integer('user_id');
             $table->text('obs')->nullable();
-            $table->char('status',1)->nullable();
+            $table->char('status',1)->nullable()->default('1'); 
+            $table->text('reason_reject')->nullable(); //novo
             $table->char('ativo',1)->nullable()->default('1');
             $table->timestamps();
         });

@@ -6,10 +6,15 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Indicações de chamados para Estaca {{$stake}}</b></div>
+                <div class="panel-heading"><b>Indicações para servir em cargos na Estaca {!!$stake!!}</b></div>
 
                 <div class="panel-body">
-                    
+                    <div>
+                        <a href="{!! route('calleds.create') !!}" class="btn btn-primary btn-sm">
+                            <i class="fas fa-plus"></i> Indicar
+                        </a>
+                    </div>
+                    <br>
                     <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
@@ -17,10 +22,8 @@
                                 <th>Membro</th>
                                 <th>Unidade</th> 
                                 <th>Ofício</th>
-                                <th>Observações</th>
                                 <th>Indicado por</th>
                                 <th>Enviado em</th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,24 +31,37 @@
                                 @foreach($users as $user)
                                     @if($user->id == $called->user_id)
                                         <tr>
-                                            <td><b>{{$called->called}}</b></td>
-                                            <td><b>{{$called->member}}</b></td>
-                                            <td>{{$called->ward}}</td>
-                                            <td>{{$called->priesthood}}</td>
-                                            <td>{{$called->obs}}</td>
-                                            <td>{{$user->name}} {{$user->lastname}}</td>
-                                            <td>{{date('d/m/Y', strtotime($called->created_at))}}</td>
+                                            <td style="width:25%"><b>{!!$called->called!!}</b></td>
+                                            <td style="width:20%"><b>{!!$called->member!!}</b></td>
+                                            <td style="width:10%">{!!$called->ward!!}</td>
+                                            <td style="width:10%">{!!$called->priesthood!!}</td>
+                                            <td style="width:25%">{!!$user->name!!} {!!$user->lastname!!}</td>
+                                            <td style="width:10%">{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
+                                        </tr>
+                                        <tr>   
+                                            <td colspan="3"><b>OBS:</b> {!!$called->obs!!}</td>
+                                            <td colspan="2"><b>Status:</b>
+                                                @switch($called->status)
+                                                    @case('1') <font color='orange'>{!!'Analisando indicação'!!}</font> @break
+                                                    @case('2') <font color='green'>{!!'Foi aprovado e será apoiado(a)'!!}</font> @break
+                                                    @case('3') <font color='blue'>{!!'Já apoiado em congregação e designado'!!}</font> @break
+                                                    @case('4') <font color='blue'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
+                                                    @default    
+                                                @endswitch
+                                            </td>
                                             <td>
-                                                {!! Form::open(['method'=>'DELETE', 'action'=>['CalledController@destroy', $called->id], 'style'=>'display:inline']) !!}
-                                                    {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
-                                                {!! Form::close() !!}
+                                                @can('calleds_update')
+                                                <a href="{!!route('calleds.edit', $called->id)!!}" data-toggle="tooltip" title="Ações">
+                                                    <i class="fas fa-sign-in-alt fa-lg"></i>
+                                                </a>
+                                                @endcan
                                             </td>
                                         </tr>   
                                     @endif
                                 @endforeach
                             @empty
                         <div class=" well alert-warning">
-                            <p>Não tem Indicações enviadas!</p>
+                            <p>Você não tem Indicações enviadas!</p>
                         </div>
                         @endforelse
                         </tbody>
