@@ -83,6 +83,6 @@ class CalledController extends Controller
         $called->ativo = '0';
         $called->update();
 
-        return redirect()->back()->with('alertDanger','Excluído!');
+        return redirect()->route('calleds.index')->with('alertDanger','Excluído!');
     }
 }
