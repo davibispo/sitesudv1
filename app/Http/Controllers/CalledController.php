@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Called;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class CalledController extends Controller
 {

@@ -15,7 +15,26 @@ class SacramentalMeetingController extends Controller
     {
         $stake  = auth()->user()->stake;
         $ward   = auth()->user()->ward;
-        $sacramentalMeetings = SacramentalMeeting::all()->where('ward', $ward)->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
+        $user   = auth()->user()->id;
+
+        $perfilPresidencia = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->value('role_id');
+        $perfilSecretarios = DB::table('role_user')->where('user_id', $user)->where('role_id', 11)->value('role_id');
+
+        // mostra as agendas de acordo com o perfil do usuário logado.
+        if($perfilPresidencia == 5 || $perfilSecretarios == 11){
+            $sacramentalMeetings = SacramentalMeeting::all()
+                                        ->where('stake', $stake)
+                                        ->where('ativo','1')
+                                        ->sortByDesc('created_at')
+                                        ->sortBy('ward');
+        }else{
+            $sacramentalMeetings = SacramentalMeeting::all()
+                                        ->where('ward', $ward)
+                                        ->where('stake', $stake)
+                                        ->where('ativo','1')
+                                        ->sortByDesc('created_at');
+        }
+
         return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));
     }
 
