@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('lastname', 'Sobrenome', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('lastname', 'Sobrenomes', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}
                         </div>
