@@ -12,8 +12,27 @@ class CalledController extends Controller
     public function index()
     {
         $stake = auth()->user()->stake;
-        $calleds = Called::all()->where('stake', $stake)->where('ativo','1')->sortByDesc('created_at');
+        $user = auth()->user()->id;
+        
         $users = User::all()->where('stake', $stake);
+
+        $perfilPresidencia = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->value('role_id');
+        $perfilSecretarios = DB::table('role_user')->where('user_id', $user)->where('role_id', 11)->value('role_id');
+
+        // mostra as indicações de acordo com o perfil do usuário logado.
+        if($perfilPresidencia == 5 || $perfilSecretarios == 11){
+            $calleds = Called::all()
+                            ->where('ativo','1')
+                            ->where('stake', $stake)
+                            ->sortByDesc('created_at');
+        }else{
+            $calleds = Called::all()
+                            ->where('ativo','1')
+                            ->where('stake', $stake)
+                            ->where('user_id', $user)
+                            ->sortByDesc('created_at');
+        }
+
 
         return view('stakes.calleds.index', compact('stake','calleds','users'));
     }
