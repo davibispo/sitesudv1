@@ -113,7 +113,7 @@
                             <p><a href="#">Enviar</a></p> 
                             @endcan
                             @can('adm')
-                            <p><a href="{!! route('files.index') !!}">Acessar</a></p> 
+                            <p><a href="#">Acessar</a></p> 
                             @endcan
                         </div>
                     </div>
@@ -121,7 +121,7 @@
                         <div class="well">
                             <h4>Aulas Dominicais</h4>
                             @can('adm')
-                            <p><a href="{!! route('sunday-school.index') !!}">Calendário</a></p> 
+                            <p><a href="#">Calendário</a></p> 
                             @endcan
                         </div>
                     </div>
