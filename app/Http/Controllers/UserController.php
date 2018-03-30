@@ -14,7 +14,7 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $users = User::all()->where('ativo', true)->sortBy('stake');
+        $users = User::all()->where('ativo', true)->sortByDesc('id');
         
         return view('adm.users.index', compact('users','roles','roleUser'));
     }
