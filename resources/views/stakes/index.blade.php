@@ -61,7 +61,7 @@
                         <div class="well">
                             <h4>Chamados</h4>
                             @can('called_index')
-                            <p><a href="{{route('calleds.index')}}">Indicar</a></p> 
+                            <p><a href="{{route('calleds.index')}}">Indicações</a></p> 
                             @endcan
                         </div>
                     </div>

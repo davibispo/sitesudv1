@@ -88,7 +88,7 @@
                                 @endcan
                                 <ul class="dropdown-menu">
                                     @can('called_index')
-                                    <li><a href="{{route('calleds.index')}}">Indicar</a></li>
+                                    <li><a href="{{route('calleds.index')}}">Indicações</a></li>
                                     @endcan
                                 </ul>
                             </li>
