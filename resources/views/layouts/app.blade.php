@@ -80,15 +80,15 @@
                                     @endcan
                                 </ul>
                             </li> 
-                            <li class="dropdown">   
+                            <li class="dropdown"> 
+                                @can('called_index')  
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Chamados
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    @can('called_index')
                                     <li><a href="{{route('calleds.index')}}">Indicações</a></li>
-                                    @endcan
                                 </ul>
+                                @endcan
                             </li>
                             <li class="dropdown">
                                 @can('equipment_rent_index')
