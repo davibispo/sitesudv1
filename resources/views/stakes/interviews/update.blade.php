@@ -52,6 +52,7 @@
                             <tr>
                                 <td>{{$userName}} {{$userLastname}}</td>
                                 <td>{{$userPhone}}</td>
+                                <td>{{$userWard}}</td>
                                 <td>{{$interviewType}}</td>
                                 <td>{{$interview->interviewer}}</td>
                                 <td>
