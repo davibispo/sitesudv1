@@ -72,8 +72,6 @@
                             <select name="city" id="cidade" class="form-control" style="display:none;" required></select>
                         </div>
                     </div>
-                    
-                    @can('user_update_stake')     
                     <div class="form-group">
                         {!! Form::label('stake', 'Estaca', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
@@ -88,7 +86,6 @@
                             <select name="ward" id="ward" class="form-control" style="display:none;" required></select>
                         </div>
                     </div>
-                    @endcan
                     
                     <div class="form-group">
                         {!! Form::label('email', 'E-mail', ['class'=>'col-md-4 control-label']) !!}
