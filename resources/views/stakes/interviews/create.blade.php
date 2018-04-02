@@ -34,8 +34,8 @@
                         <div class="col-md-6">
                             {!! Form::select('interviewer', [
                                 'Presidente' => 'Presidente da Estaca', 
-                                '1º Conselheiro' => '1º Conselheiro',
-                                '2º Conselheiro' => '2º Conselheiro',
+                                '1º Cons.' => '1º Conselheiro',
+                                '2º Cons.' => '2º Conselheiro',
                                 'Patriarca' => 'Patriarca',
                                 ], null, ['class' => 'form-control', 'placeholder' => '-- Escolha o entrevistador --']) !!}
                         </div>

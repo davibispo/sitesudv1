@@ -42,7 +42,8 @@
                                 <td>{{date('d/m/Y', strtotime($interview->created_at))}}</td>
                                 <td>
                                     @if(date('Y', strtotime($interview->data)) > '2017' )
-                                        {{date('d/m/Y', strtotime($interview->data))}}
+                                        {{date('d/m/Y', strtotime($interview->data))}} às 
+                                        {{date('H:i', strtotime($interview->data))}}
                                     @endif
                                 </td>
                             </tr>
@@ -67,7 +68,8 @@
                                 <td>{{date('d/m/Y', strtotime($interview->created_at))}}</td>
                                 <td>
                                     @if(date('Y', strtotime($interview->data)) > '2017' )
-                                        {{date('d/m/Y', strtotime($interview->data))}}
+                                        {{date('d/m/Y', strtotime($interview->data))}} às 
+                                        {{date('H:i', strtotime($interview->data))}}
                                     @endif
                                 </td>
                                 <td></td>

@@ -50,7 +50,7 @@
                                                     @default Default case... 
                                                 @endswitch
                                             </td>
-                                            <td>{{date('d/m/Y', strtotime($interview->created_at))}}</td>
+                                            <td>{{date('d/m/y', strtotime($interview->created_at))}}</td>
                                             <td>
                                                 @if(date('Y', strtotime($interview->data)) > '2017' )
                                                     <b>{{date('d/m/y', strtotime($interview->data))}}</b> às 
