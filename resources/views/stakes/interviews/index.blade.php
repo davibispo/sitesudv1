@@ -20,11 +20,9 @@
                         <thead>
                             <tr>
                                 <th>Membro</th>
-                                @can('interview_update')
                                 <th>Telefone</th> 
                                 <th>Unidade</th> 
                                 <th>Motivo da entrevista</th>
-                                @endcan
                                 <th>Entrevistador</th>
                                 <th>Status</th>
                                 <th>Solicitada em</th>
@@ -39,11 +37,9 @@
                                         
                                         <tr>
                                             <td>{{$user->name}} {{$user->lastname}}</td>
-                                            @can('interview_update')
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
                                             <td>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</td>
-                                            @endcan
                                             <td>{{$interview->interviewer}}</td>
                                             <td>
                                                 @switch($interview->status)
@@ -73,11 +69,9 @@
                                         @else   
                                         <tr>
                                             <td>{{$user->name}} {{$user->lastname}}</td>
-                                            @can('interview_update')
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
                                             <td>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</td>
-                                            @endcan
                                             <td>{{$interview->interviewer}}</td>
                                             <td>
                                                 @switch($interview->status)

@@ -8,7 +8,7 @@
                 <div class="panel-heading"><b>Controle de Entrevistas da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
                                 <th>Membro</th>
