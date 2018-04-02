@@ -104,7 +104,7 @@
                     </div>
                     @endcan
                 </div>
-
+                @can('adm')
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="well">
@@ -121,12 +121,12 @@
                         <div class="well">
                             <h4>Aulas Dominicais</h4>
                             @can('adm')
-                            <p><a href="#">Calendário</a></p> 
+                            <p><a href="{!! route('sunday-school.index') !!}">Calendário</a></p> 
                             @endcan
                         </div>
                     </div>
                 </div>
-               
+                @endcan
             </div>
             
         </div>

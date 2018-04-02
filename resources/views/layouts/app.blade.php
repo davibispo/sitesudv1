@@ -80,12 +80,10 @@
                                     @endcan
                                 </ul>
                             </li> 
-                            <li class="dropdown">
-                                @can('called_create')    
+                            <li class="dropdown">   
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Chamados
                                     <span class="caret"></span>
                                 </a>
-                                @endcan
                                 <ul class="dropdown-menu">
                                     @can('called_index')
                                     <li><a href="{{route('calleds.index')}}">Indicações</a></li>
