@@ -76,26 +76,26 @@
                         </tbody>
                     </table>
                         {!! Form::model($interview,['method'=>'PATCH', 'action'=>['InterviewController@update', $interview->id], 'class'=>'form-inline']) !!}
-                    <div class="form-group text-center">
+                    <div class="form-group text-left">
                         
-                            {!! Form::label('data', 'Marcar para:') !!}
-                            {!! Form::date('data', null, ['class' => 'form-control', 'required']) !!}
+                            <label for="data">Escolha o dia e hora da entrevista</label> <br>
+                            <input type="datetime-local" class="form-control" name="data">
                             {!! Form::hidden('status', '2') !!}
-                            {!! Form::submit('Confirmar', ['class'=>'btn btn-success btn-sm']) !!}
+                            {!! Form::submit('CONFIRMAR', ['class'=>'btn btn-success btn-sm']) !!}
                         {!! Form::close() !!}
                         
                         <div class="form-group">    
                         {!! Form::model($interview,['method'=>'PATCH', 'action'=>['InterviewController@update', $interview->id], 'class'=>'form-inline']) !!}
                             {!! Form::hidden('data', null, ['class' => 'form-control']) !!}
                             {!! Form::hidden('status', '4') !!}
-                            {!! Form::submit('Realizada', ['class'=>'btn btn-primary btn-sm']) !!}
+                            {!! Form::submit('Foi Realizada', ['class'=>'btn btn-primary btn-sm']) !!}
                         {!! Form::close() !!}
                         </div>
                         <div class="form-group">
                         {!! Form::model($interview,['method'=>'PATCH', 'action'=>['InterviewController@update', $interview->id], 'class'=>'form-inline']) !!}
                             {!! Form::hidden('data', null, ['class' => 'form-control']) !!}
                             {!! Form::hidden('status', '3') !!}
-                            {!! Form::submit('Cancelar', ['class'=>'btn btn-danger btn-sm']) !!}
+                            {!! Form::submit('Cancelada', ['class'=>'btn btn-danger btn-sm']) !!}
                         {!! Form::close() !!}
                         </div>
                         <div class="form-group">
