@@ -19,14 +19,14 @@
                     <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
-                                <th>Membro</th>
-                                <th>Telefone</th> 
-                                <th>Unidade</th> 
-                                <th>Motivo da entrevista</th>
-                                <th>Entrevistador</th>
-                                <th>Status</th>
-                                <th>Solicitada em</th>
-                                <th>Marcada para</th>
+                                <th style="width:20%">Membro</th>
+                                <th style="width:10%">Telefone</th> 
+                                <th style="width:10%">Unidade</th> 
+                                <th style="width:15%">Motivo da entrevista</th>
+                                <th style="width:10%">Entrevistador</th>
+                                <th style="width:10%">Status</th>
+                                <th style="width:10%">Solicitada em</th>
+                                <th style="width:15%">Marcada para</th>
                             </tr>
                         </thead>
                         <tbody>
