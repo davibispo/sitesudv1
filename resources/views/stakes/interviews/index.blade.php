@@ -36,11 +36,11 @@
                                         @if($interview->interview_type_id == 5)
                                         
                                         <tr>
-                                            <td>{{$user->name}} {{$user->lastname}}</td>
+                                            <th>{{$user->name}} {{$user->lastname}}</th>
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
-                                            <td>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</td>
-                                            <td>{{$interview->interviewer}}</td>
+                                            <th>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</th>
+                                            <th>{{$interview->interviewer}}</th>
                                             <td>
                                                 @switch($interview->status)
                                                     @case(1)<font color='orange'>{{'Solicitada'}}</font>@break
@@ -68,11 +68,11 @@
                                         
                                         @else   
                                         <tr>
-                                            <td>{{$user->name}} {{$user->lastname}}</td>
+                                            <th>{{$user->name}} {{$user->lastname}}</th>
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
-                                            <td>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</td>
-                                            <td>{{$interview->interviewer}}</td>
+                                            <th>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</th>
+                                            <th>{{$interview->interviewer}}</th>
                                             <td>
                                                 @switch($interview->status)
                                                     @case(1)<font color='orange'>{{'Solicitada'}}</font>@break
