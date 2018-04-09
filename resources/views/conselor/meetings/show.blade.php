@@ -119,7 +119,7 @@
                             <th colspan="3" style="text-align: center"><h4>Ata da Reunião</h4></th>
                         </tr>
                         <tr>
-                            <td colspan="3">{!! $agenda->ata !!}</td>
+                            <td colspan="3">{{$agenda->ata}}</td>
                         </tr>
                                 
                     </table>

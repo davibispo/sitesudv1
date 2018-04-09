@@ -17,9 +17,11 @@
                         <a href="{{route('conselor.index')}}" class="btn btn-default btn-xs">
                             <i class="fas fa-angle-left"></i> voltar
                         </a>
+                        @can('conselor_edit')
                         <a href="{{ route('conselor.meetings.create') }}" class="btn btn-primary btn-xs">
                             <i class="fas fa-plus"></i> Nova Agenda
                         </a>
+                        @endcan
                     </div>
                     <br>
                     <table class="table table-striped">
@@ -37,7 +39,7 @@
                             <td>
                                 @can('conselor_edit')
                                     <a href="{{route('conselor.meetings.edit', $agenda->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a> 
-                                    <a href="{{route('conselor.meetings.show', $agenda->id)}}" data-toggle = tooltip title=imprimir target="_blank"><i class="fas fa-print"></i></a> 
+                                    <a href="{{route('conselor.meetings.show', $agenda->id)}}" data-toggle = tooltip title=ver target="_blank"><i class="fas fa-eye"></i></a> 
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['ConselorController@meetingDestroy', $agenda->id],'data-toggle'=>'tooltip','title'=>'Excluir', 'style'=>'display:inline']) !!}
                                         {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}

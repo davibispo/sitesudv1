@@ -134,6 +134,7 @@ class ConselorController extends Controller
     }
     
     public function meetingStore(Request $request) {
+        
         $agenda = new ConselorMeeting();
         
         $agenda->data = $request->data;
@@ -212,6 +213,7 @@ class ConselorController extends Controller
     
     public function meetingEdit($id) {
         $agenda = ConselorMeeting::find($id);
+        //dd($agenda);
         return view('conselor.meetings.update', compact('agenda'));
     }
     
