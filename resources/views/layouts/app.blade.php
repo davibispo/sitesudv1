@@ -18,6 +18,10 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        
+        <!-- JQuery -->
+        <script src="js/jquery-3.2.1.min.js"></script>  
+        
     </head>
     <body>
         <div id="app">
@@ -203,6 +207,8 @@
             });
         </script>
         
+  
+        
         <!-- Contador de caracteres do mensagem -->
         <script>
             function mostrarResultado(box,num_max,campospan){
@@ -228,6 +234,6 @@
                 }	
             }
         </script>
-        
+         
     </body>
 </html>

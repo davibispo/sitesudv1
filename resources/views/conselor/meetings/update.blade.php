@@ -9,10 +9,10 @@
                 <div class="panel-heading text-center">
                         CONSELHO DE COORDENAÇÃO MACEIÓ
                         <br>
-                        <b>AGENDAS DE REUNIÕES</b>
+                        <b>ATUALIZAR AGENDA</b>
                     </div>
                 <div class="panel-body">
-                    {!! Form::open(['method'=>'POST','action'=>'ConselorController@meetingStore','class'=>'form-horizontal']) !!}
+                    {!! Form::model($agenda, ['method'=>'POST','action'=>['ConselorController@meetingUpdate', $agenda->id],'class'=>'form-horizontal']) !!}
                     <table class="table table-hover" style="font-size:12px">
                         
                         <tr>
@@ -154,12 +154,12 @@
                     <div class="form-group">
                         <div class="col-sm-12">
                             <label for="ata">Ata da Reunião</label>
-                            <textarea name="ata" rows="20" class="form-control"></textarea> 
+                            <textarea name="ata" rows="20" class="form-control">{!! $agenda->ata !!}</textarea> 
                         </div>
                     </div>
                                         
                     <div class="text-center">
-                    {!! Form::submit('Salvar Agenda', ['class'=>'btn btn-primary']) !!}
+                    {!! Form::submit('Atualizar Agenda', ['class'=>'btn btn-primary']) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>
@@ -175,3 +175,4 @@
 <script type="text/javascript">
     bkLib.onDomLoaded(function() { nicEditors.allTextAreas(); });
 </script>
+

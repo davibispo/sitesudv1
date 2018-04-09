@@ -65,8 +65,14 @@ Route::group(['middleware'=>'web'], function(){
     Route::delete('/conselor/calendars/{id}','ConselorController@calendarDestroy');
     Route::get('/conselor/files','ConselorController@fileIndex')->name('conselor.files.index');
     Route::get('/conselor/leaders','ConselorController@leaderIndex')->name('conselor.leaders.index');
-    Route::get('/conselor/meetings','ConselorController@meetingIndex')->name('conselor.meetings.index');
     Route::get('/conselor/stakes','ConselorController@stakeIndex')->name('conselor.stakes.index');
+    Route::get('/conselor/meetings','ConselorController@meetingIndex')->name('conselor.meetings.index');
+    Route::get('/conselor/meetings/create', 'ConselorController@meetingCreate')->name('conselor.meetings.create');
+    Route::post('/conselor/meetings/create', 'ConselorController@meetingStore');
+    Route::get('/conselor/meetings/{id}/edit','ConselorController@meetingEdit')->name('conselor.meetings.edit');
+    Route::post('/conselor/meetings/{id}/edit','ConselorController@meetingUpdate');
+    Route::get('/conselor/meetings/{id}/show','ConselorController@meetingShow')->name('conselor.meetings.show');
+
 
     //Mensagem da presidencia de estaca
     Route::resource('/stakes/messages', 'MessageController');
