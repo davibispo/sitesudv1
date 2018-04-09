@@ -38,6 +38,9 @@
                                 @can('conselor_edit')
                                     <a href="{{route('conselor.meetings.edit', $agenda->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a> 
                                     <a href="{{route('conselor.meetings.show', $agenda->id)}}" data-toggle = tooltip title=imprimir target="_blank"><i class="fas fa-print"></i></a> 
+                                    {!! Form::open(['method'=>'DELETE', 'action'=>['ConselorController@meetingDestroy', $agenda->id],'data-toggle'=>'tooltip','title'=>'Excluir', 'style'=>'display:inline']) !!}
+                                        {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
+                                    {!! Form::close() !!}
                                 @endcan
                             </td>
                         </tr>

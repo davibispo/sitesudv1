@@ -72,6 +72,7 @@ Route::group(['middleware'=>'web'], function(){
     Route::get('/conselor/meetings/{id}/edit','ConselorController@meetingEdit')->name('conselor.meetings.edit');
     Route::post('/conselor/meetings/{id}/edit','ConselorController@meetingUpdate');
     Route::get('/conselor/meetings/{id}/show','ConselorController@meetingShow')->name('conselor.meetings.show');
+    Route::delete('/conselor/meetings/{id}','ConselorController@meetingDestroy');
 
 
     //Mensagem da presidencia de estaca

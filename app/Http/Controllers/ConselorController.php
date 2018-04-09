@@ -300,4 +300,10 @@ class ConselorController extends Controller
         return view('conselor.meetings.show', compact('agenda'));
     }
     
+    public function meetingDestroy($id) {
+        ConselorMeeting::find($id)->delete();
+        
+        return redirect()->route('conselor.meetings.index')->with('alertDanger', 'Agenda excluída!');
+    }
+    
 }
