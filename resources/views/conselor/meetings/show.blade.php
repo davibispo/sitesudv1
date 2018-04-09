@@ -119,7 +119,7 @@
                             <th colspan="3" style="text-align: center"><h4>Ata da Reunião</h4></th>
                         </tr>
                         <tr>
-                            <td colspan="3">{{$agenda->ata}}</td>
+                            <td colspan="3"><p>{!! $agenda->ata !!}</p></td>
                         </tr>
                                 
                     </table>
@@ -130,3 +130,9 @@
 </div>
 
 @endsection
+
+@push('scripts')
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+<script type="text/javascript">
+    bkLib.onDomLoaded(function() { nicEditors.allTextAreas(); });
+</script>

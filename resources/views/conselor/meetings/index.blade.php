@@ -30,6 +30,7 @@
                             <th>Reunião</th>
                             <th>Presidida por</th>
                             <th></th>
+                            <th></th>
                         </tr>
                         @forelse($agendas as $agenda)
                         <tr>
@@ -37,12 +38,16 @@
                             <td>{{$agenda->reuniao}}</td>
                             <td>{{$agenda->presidindo}}</td>
                             <td>
+                                <a href="{{route('conselor.meetings.show', $agenda->id)}}" data-toggle = tooltip title=ver target="_blank"><i class="fas fa-eye"></i></a> 
                                 @can('conselor_edit')
                                     <a href="{{route('conselor.meetings.edit', $agenda->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a> 
-                                    <a href="{{route('conselor.meetings.show', $agenda->id)}}" data-toggle = tooltip title=ver target="_blank"><i class="fas fa-eye"></i></a> 
-                                    {!! Form::open(['method'=>'DELETE', 'action'=>['ConselorController@meetingDestroy', $agenda->id],'data-toggle'=>'tooltip','title'=>'Excluir', 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
-                                    {!! Form::close() !!}
+                                @endcan
+                            </td>
+                            <td>
+                                @can('conselor_edit')
+                                {!! Form::open(['method'=>'DELETE', 'action'=>['ConselorController@meetingDestroy', $agenda->id],'data-toggle'=>'tooltip','title'=>'Excluir', 'style'=>'display:inline']) !!}
+                                    {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
+                                {!! Form::close() !!}
                                 @endcan
                             </td>
                         </tr>
