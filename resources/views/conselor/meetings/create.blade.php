@@ -20,6 +20,8 @@
                             <td><b>Reunião</b> 
                                 {!! Form::select('reuniao',[
                                     'Conselho de Coordenação'=>'Conselho de Coordenação',
+                                    'Conselho de Coordenação c/ Especialistas'=>'Conselho de Coordenação c/ Especialistas',
+                                    'Devocional'=>'Devocional',
                                     'Outra' => 'Outra',
                                     ],
                                 null, ['class'=>'form-control', 'required']) !!}</td>
