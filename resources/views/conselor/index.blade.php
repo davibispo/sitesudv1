@@ -21,13 +21,14 @@
                         <a href="{{route('conselor.stakes.index')}}" class="btn btn-default btn-lg"><i class="fas fa-home"></i> Estacas/Distritos</a>
                         <a href="{{route('conselor.leaders.index')}}" class="btn btn-default btn-lg"><i class="fas fa-users"></i> Especialistas</a>
                     </div>
-                    @can('adm')
+                    
                     <div class="btn-group btn-group-justified">
                         <a href="{{route('conselor.meetings.index')}}" class="btn btn-default btn-lg"><i class="fas fa-edit"></i> Agendas</a>
+                        @can('adm')
                         <a href="#" class="btn btn-default btn-lg"><i class="fas fa-copy"></i> Arquivos</a>
                         <a href="#" class="btn btn-default btn-lg"></a>
+                        @endcan
                     </div>
-                    @endcan
 
                     <div><br></div>
 
