@@ -27,7 +27,7 @@
                             <th>Presidida e dirigida por</th>
                         </tr>
                         <tr>
-                            <td>{!! $agenda->data !!}</td>
+                            <td>{!! date('d/m/Y', strtotime($agenda->data)) !!}</td>
                             <td>{!! $agenda->reuniao !!}</td>
                             <td>{!! $agenda->presidindo !!}</td>
                         </tr>
