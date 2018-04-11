@@ -11,6 +11,7 @@
                 </div>
 
                 <div class="panel-body">
+                    <!--
                     <div class="text-center">
                         <img src="{!! asset('assets/img/elder-simplicio.jpeg') !!}" class="img-thumbnail" style="width:15%">
                         <div class="caption">
@@ -21,7 +22,7 @@
                             </p>
                         </div>
                     </div>
-
+                    -->
                     <div class="btn-group btn-group-justified" style="height:60px">
                         <a href="{{route('conselor.calendars.index')}}" class="btn btn-default btn-lg"><i class="fas fa-calendar-alt"></i> Calendário</a>
                         <a href="{{route('conselor.stakes.index')}}" class="btn btn-default btn-lg"><i class="fas fa-home"></i> Estacas/Distritos</a>
