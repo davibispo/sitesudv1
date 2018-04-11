@@ -25,7 +25,7 @@
                     <div class="btn-group btn-group-justified" style="height:60px">
                         <a href="{{route('conselor.calendars.index')}}" class="btn btn-default btn-lg"><i class="fas fa-calendar-alt"></i> Calendário</a>
                         <a href="{{route('conselor.stakes.index')}}" class="btn btn-default btn-lg"><i class="fas fa-home"></i> Estacas/Distritos</a>
-                        <a href="{{route('conselor.leaders.index')}}" class="btn btn-default btn-lg"><i class="fas fa-users"></i> Especialistas</a>
+                        <a href="{{route('conselor.leaders.index')}}" class="btn btn-default btn-lg"><i class="fas fa-users"></i> Líderes Regionais</a>
                     </div>
 
                     <div class="btn-group btn-group-justified" style="height:60px">

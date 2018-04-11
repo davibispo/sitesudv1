@@ -9,7 +9,7 @@
                 <div class="panel-heading text-center">
                     CONSELHO DE COORDENAÇÃO MACEIÓ
                     <br>
-                    <b>ESPECIALISTAS</b>
+                    <b>LÍDERES REGIONAIS</b>
                 </div>
 
                 <div class="panel-body">
