@@ -133,6 +133,36 @@
                                 </td>
                                 <td>Apoiado em </td>
                             </tr>
+                            <tr>
+                                <th>GERENTE DE AUTOSSUFICIÊNCIA</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>DÍNIO TEODORO DE GÓES</b></p>
+                                    <p>ESTACA MACEIÓ</p>
+                                    <p>(82) 99402-9969</p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>COORDENADOR DO SEMINÁRIO</th>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>JOSÉ RODRIGUES DA COSTA JÚNIOR</b></p>
+                                    <p></p>
+                                    <p>(82) 99980-6216 - costajuniorjr@ldschurch.org</p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>DIRETOR DO INSTITUTO</th>
+                                <td><img src="{!! asset('assets/img/pres-frazio.png') !!}" class="img-circle" width="80"></td>
+                                <td>
+                                    <p><b>FRÁZIO VALDEZ TENÓRIO CAVALCANTE</b></p>
+                                    <p>ESTACA MACEIÓ</p>
+                                    <p>(82) 99985-1507</p>
+                                </td>
+                                <td></td>
+                            </tr>
                             
                         </tbody>
                     </table>
