@@ -198,6 +198,12 @@ class SacramentalMeetingController extends Controller
         $user_id = auth()->user()->id;
         $hinos  = DB::table('hinos')->get();
         $sacramentalMeeting = SacramentalMeeting::find($id);
+        
+        //pega data por extenso em portugues
+        setlocale(LC_TIME, 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
+        //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
 
         return view('stakes.sacramental-meetings.show', compact('sacramentalMeeting','stake','ward','user_id','hinos'));
     }
