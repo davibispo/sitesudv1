@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading text-center"><b>Editar Agenda da Reunião Sacramental<br>{{strtoupper($ward)}}</b><br>Estaca {{$stake}}</div>
+                <div class="panel-heading text-center"><b>Editar Agenda da Reunião Sacramental<br>{{strtoupper($sacramentalMeeting->ward)}}</b><br>Estaca {{$stake}}</div>
 
                 <div class="panel-body">
                     {!! Form::model($sacramentalMeeting,['method'=>'PATCH','action'=>['SacramentalMeetingController@update', $sacramentalMeeting->id],'class'=>'form-horizontal']) !!}
