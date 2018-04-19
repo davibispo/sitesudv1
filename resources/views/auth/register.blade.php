@@ -65,7 +65,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('orgao_exp') ? ' has-error' : '' }}">
-                            <label for="orgao_exp" class="col-md-4 control-label">Órgão Expeditor e UF</label>
+                            <label for="orgao_exp" class="col-md-4 control-label">Órgão Expeditor/UF</label>
 
                             <div class="col-md-6">
                                 <input id="orgao_exp" type="text" class="form-control" name="orgao_exp" value="{{ old('orgao_exp') }}" required autofocus>
