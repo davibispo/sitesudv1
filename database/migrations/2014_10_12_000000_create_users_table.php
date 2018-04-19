@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 30);
             $table->string('lastname', 50);
             $table->char('genre', 1);
-            $table->bigInteger('rg')->unique();
+            $table->string('rg', 50)->unique();
             $table->string('orgao_exp', 10)->nullable();//orgao e uf
             $table->date('dt_nasc');
             $table->string('phone', 15);
