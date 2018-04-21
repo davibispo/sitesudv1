@@ -22,8 +22,8 @@
                         <tr>
                             <th>Unidade</th>
                             <th>Data</th>
-                            <th>Presidida</th>
-                            <th>Dirigida</th>
+                            <th>Presidida por</th>
+                            <th>Dirigida por</th>
                             <th>Frequência</th>
                             <th></th>
                             <th></th>
