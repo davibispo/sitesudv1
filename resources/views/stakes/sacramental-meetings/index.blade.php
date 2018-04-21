@@ -31,7 +31,7 @@
                         @foreach ($sacramentalMeetings as $sacramentalMeeting)
                             <tr>
                                 <td>{{$sacramentalMeeting->ward}}</td>
-                                <th>{{date('d/m/y',strtotime($sacramentalMeeting->date))}}</th>
+                                <td>{{date('d-m-y',strtotime($sacramentalMeeting->date))}}</td>
                                 <td>{{$sacramentalMeeting->presidida}}</td>
                                 <td>{{$sacramentalMeeting->dirigida}}</td>
                                 <td><b>{{$sacramentalMeeting->frequencia}}</b></td>
