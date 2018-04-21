@@ -23,7 +23,8 @@
                             <div class="well"> 
                             {!! Form::open(['method'=>'POST', 'action'=>'ConselorController@fileStore', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
                                 <input type="file" name="arquivo" class="form-control"><br>
-                                Nome do arquivo <input type="text" name="nome" class="form-control" required><br>
+                                Nome do arquivo 
+                                <input type="text" name="nome" class="form-control" required><br>
                                 {!! Form::submit('Enviar Arquivo', ['class'=>'btn btn-primary btn-xs']) !!}
                             {!! Form::close() !!}
                             </div>

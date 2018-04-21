@@ -25,8 +25,8 @@ class SacramentalMeetingController extends Controller
             $sacramentalMeetings = SacramentalMeeting::all()
                                         ->where('stake', $stake)
                                         ->where('ativo','1')
-                                        ->sortByDesc('created_at')
-                                        ->sortBy('ward');
+                                        ->sortBy('ward')
+                                        ->sortByDesc('created_at');
         }else{
             $sacramentalMeetings = SacramentalMeeting::all()
                                         ->where('ward', $ward)

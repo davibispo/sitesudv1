@@ -20,28 +20,28 @@
                     <br>    
                     <table class="table table-striped table-hover">
                         <tr>
+                            <th>Unidade</th>
                             <th>Data</th>
                             <th>Presidida</th>
                             <th>Dirigida</th>
                             <th>Frequência</th>
-                            <th>Unidade</th>
+                            <th></th>
                             <th></th>
                         </tr>
                         @foreach ($sacramentalMeetings as $sacramentalMeeting)
                             <tr>
+                                <td>{{$sacramentalMeeting->ward}}</td>
                                 <th>{{date('d/m/y',strtotime($sacramentalMeeting->date))}}</th>
                                 <td>{{$sacramentalMeeting->presidida}}</td>
                                 <td>{{$sacramentalMeeting->dirigida}}</td>
                                 <td><b>{{$sacramentalMeeting->frequencia}}</b></td>
-                                <td>{{$sacramentalMeeting->ward}}</td>
                                 <td>
                                     @can('sacramental_meeting_update')
-                                    <a href="{{route('sacramental-meetings.edit',$sacramentalMeeting->id)}}" class="btn btn-warning btn-xs"><i class="fas fa-edit"></i> editar</a>
-                                    <a href="{{route('sacramental-meetings.show',$sacramentalMeeting->id)}}" target="_blank" class="btn btn-success btn-xs"><i class="fas fa-print"></i> imprimir</a>
-                                    {!! Form::open(['method'=>'DELETE', 'action'=>['SacramentalMeetingController@destroy', $sacramentalMeeting->id], 'style'=>'display:inline']) !!}
-                                        {!! Form::submit('excluir', ['class'=>'btn btn-danger btn-xs']) !!}
-                                    {!! Form::close() !!}
+                                    <a href="{{route('sacramental-meetings.edit',$sacramentalMeeting->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a>
                                     @endcan
+                                </td>
+                                <td>
+                                    <a href="{{route('sacramental-meetings.show',$sacramentalMeeting->id)}}" target="_blank" data-toggle = tooltip title=Ver><i class="fas fa-eye"></i></a> 
                                 </td>
                             </tr>
                         @endforeach

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\ConselorCalendar;
 use App\Models\ConselorMeeting;
 use Illuminate\Support\Facades\DB;
+use App\Models\File;
 
 class ConselorController extends Controller {
 
@@ -80,7 +81,7 @@ class ConselorController extends Controller {
     //fim calendario
     //INICIO FILES
     public function fileIndex() {
-        $arquivos = \App\Models\File::all()->sortByDesc('id');
+        $arquivos = File::all()->sortByDesc('id');
         //$categories = \Illuminate\Support\Facades\Storage::getFacadeApplication();
         return view('conselor.files.index', compact('arquivos'));
     }
