@@ -64,6 +64,7 @@ Route::group(['middleware'=>'web'], function(){
     Route::post('/conselor/calendars/{id}/edit','ConselorController@calendarUpdate');
     Route::delete('/conselor/calendars/{id}','ConselorController@calendarDestroy');
     Route::get('/conselor/files','ConselorController@fileIndex')->name('conselor.files.index');
+    Route::post('/conselor/files/create','ConselorController@fileStore');
     Route::get('/conselor/leaders','ConselorController@leaderIndex')->name('conselor.leaders.index');
     Route::get('/conselor/stakes','ConselorController@stakeIndex')->name('conselor.stakes.index');
     Route::get('/conselor/meetings','ConselorController@meetingIndex')->name('conselor.meetings.index');

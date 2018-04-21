@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ConselorCalendar;
 use App\Models\ConselorMeeting;
+use Illuminate\Support\Facades\DB;
 
-class ConselorController extends Controller
-{
-    public function index(){
+class ConselorController extends Controller {
+
+    public function index() {
         return view('conselor.index');
     }
 
     //inicio calendario
-    public function calendarIndex(){
+    public function calendarIndex() {
 
         //pega data por extenso em portugues
         setlocale(LC_TIME, 'portuguese');
@@ -21,17 +22,17 @@ class ConselorController extends Controller
         //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
         //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
 
-        $eventos = ConselorCalendar::all()->where('ativo','1')->sortBy('date');
+        $eventos = ConselorCalendar::all()->where('ativo', '1')->sortBy('date');
 
         return view('conselor.calendars.index', compact('eventos'));
     }
 
-    public function calendarCreate(){
+    public function calendarCreate() {
         return view('conselor.calendars.create');
     }
 
-    public function calendarStore(Request $request){
-        
+    public function calendarStore(Request $request) {
+
         $calendar = new ConselorCalendar();
 
         $calendar->org = $request->org;
@@ -43,16 +44,16 @@ class ConselorController extends Controller
 
         $calendar->save();
 
-        return redirect()->route('conselor.calendars.index')->with('alertSuccess','Evento cadastrado com sucesso!');
+        return redirect()->route('conselor.calendars.index')->with('alertSuccess', 'Evento cadastrado com sucesso!');
     }
 
-    public function calendarEdit($id){
+    public function calendarEdit($id) {
         $calendar = ConselorCalendar::find($id);
         return view('conselor.calendars.update', compact('calendar'));
     }
 
-    public function calendarUpdate(Request $request, $id){
-        
+    public function calendarUpdate(Request $request, $id) {
+
         $calendar = ConselorCalendar::find($id);
 
         $calendar->org = $request->org;
@@ -64,10 +65,10 @@ class ConselorController extends Controller
 
         $calendar->update();
 
-        return redirect()->route('conselor.calendars.index')->with('alertSuccess','Evento atualizado com sucesso!');
+        return redirect()->route('conselor.calendars.index')->with('alertSuccess', 'Evento atualizado com sucesso!');
     }
 
-    public function calendarDestroy($id){
+    public function calendarDestroy($id) {
         $calendar = ConselorCalendar::find($id);
 
         $calendar->ativo = '0';
@@ -77,66 +78,93 @@ class ConselorController extends Controller
     }
 
     //fim calendario
-
-
-    public function fileIndex(){
-        return view('conselor.files.index');
+    //INICIO FILES
+    public function fileIndex() {
+        $arquivos = \App\Models\File::all()->sortByDesc('id');
+        //$categories = \Illuminate\Support\Facades\Storage::getFacadeApplication();
+        return view('conselor.files.index', compact('arquivos'));
     }
 
-    public function fileStore($request){
-        
-    // Define o valor default para a variável que contém o nome da imagem 
-    $nameFile = null;
- 
+    public function fileStore(Request $request) {
+
+        // Define o valor default para a variável que contém o nome da imagem 
+        $nameFile = null;
+
         // Verifica se informou o arquivo e se é válido
-        if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            
+        if ($request->hasFile('arquivo') && $request->file('arquivo')->isValid()) {
+
+            // Retorna mime type do arquivo (Exemplo image/png)
+            $request->arquivo->getMimeType();
+
+            // Retorna o nome original do arquivo
+            $request->arquivo->getClientOriginalName();
+
+            // Extensão do arquivo
+            $request->arquivo->getClientOriginalExtension();
+            $request->arquivo->extension();
+
+            // Tamanho do arquivo
+            $request->arquivo->getClientSize();
+
             // Define um aleatório para o arquivo baseado no timestamps atual
-            $name = uniqid(date('HisYmd'));
-    
+            //$name = uniqid(date('HisYmd'));
+            $name = $request->nome;
+
             // Recupera a extensão do arquivo
-            $extension = $request->image->extension();
-    
+            $extension = $request->arquivo->extension();
+
             // Define finalmente o nome
             $nameFile = "{$name}.{$extension}";
-    
+
             // Faz o upload:
-            $upload = $request->image->storeAs('categories', $nameFile);
+            $upload = $request->arquivo->storeAs('categories', $nameFile);
+
+            DB::table('files')->insert([
+                ['arquivo' => $request->arquivo,
+                    'nome' => $name,
+                    'descricao' => $nameFile,
+                    'destino' => $request->arquivo,
+                ]
+            ]);
+
             // Se tiver funcionado o arquivo foi armazenado em storage/app/public/categories/nomedinamicoarquivo.extensao
-    
             // Verifica se NÃO deu certo o upload (Redireciona de volta)
-            if ( !$upload )
+            if (!$upload) {
                 return redirect()
-                            ->back()
-                            ->with('error', 'Falha ao fazer upload')
-                            ->withInput();
- 
+                                ->back()
+                                ->with('error', 'Falha ao fazer upload')
+                                ->withInput();
+            } else {
+                return redirect()->route('conselor.files.index')->with('alertSuccess', 'Arquivo enviado com sucesso!');
+            }
         }
     }
 
-    public function leaderIndex(){
+    // FIM FILES
+
+    public function leaderIndex() {
         return view('conselor.leaders.index');
     }
 
     //
-    public function stakeIndex(){
+    public function stakeIndex() {
         return view('conselor.stakes.index');
     }
-    
-    // Agendas de Reuniões do Conselho de Coordenação
-    public function meetingIndex(){
+
+    // INÍCIO AGENDAS
+    public function meetingIndex() {
         $agendas = ConselorMeeting::all();
         return view('conselor.meetings.index', compact('agendas'));
     }
-    
+
     public function meetingCreate() {
         return view('conselor.meetings.create');
     }
-    
+
     public function meetingStore(Request $request) {
-        
+
         $agenda = new ConselorMeeting();
-        
+
         $agenda->data = $request->data;
         $agenda->reuniao = $request->reuniao;
         $agenda->presidindo = $request->presidindo;
@@ -205,22 +233,22 @@ class ConselorController extends Controller
         $agenda->participacao20 = $request->participacao20;
 
         $agenda->ata = $request->ata;
-        
+
         $agenda->save();
-        
+
         return redirect()->route('conselor.meetings.index')->with('alertSuccess', 'Agenda salva com sucesso!');
     }
-    
+
     public function meetingEdit($id) {
         $agenda = ConselorMeeting::find($id);
         //dd($agenda);
         return view('conselor.meetings.update', compact('agenda'));
     }
-    
+
     public function meetingUpdate(Request $request, $id) {
-        
+
         $agenda = ConselorMeeting::find($id);
-        
+
         $agenda->data = $request->data;
         $agenda->reuniao = $request->reuniao;
         $agenda->presidindo = $request->presidindo;
@@ -289,23 +317,24 @@ class ConselorController extends Controller
         $agenda->participacao20 = $request->participacao20;
 
         $agenda->ata = $request->ata;
-        
+
         $agenda->update();
-        
-        return redirect()->route('conselor.meetings.index')->with('alertSuccess','Agenda atualizada com sucesso!');
+
+        return redirect()->route('conselor.meetings.index')->with('alertSuccess', 'Agenda atualizada com sucesso!');
     }
-    
+
     public function meetingShow($id) {
-        
+
         $agenda = ConselorMeeting::find($id);
-        
+
         return view('conselor.meetings.show', compact('agenda'));
     }
-    
+
     public function meetingDestroy($id) {
         ConselorMeeting::find($id)->delete();
-        
+
         return redirect()->route('conselor.meetings.index')->with('alertDanger', 'Agenda excluída!');
     }
-    
+
+    // FIM AGENDA
 }
