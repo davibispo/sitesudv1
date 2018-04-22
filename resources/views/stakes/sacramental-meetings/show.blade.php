@@ -73,7 +73,7 @@
                     <td>
                         @if($sacramentalMeeting->data_anun_3 == null)
                         @else
-                        {{$sacramentalMeeting->data_anun_3}}
+                        {{strftime('%d/%b', strtotime($sacramentalMeeting->data_anun_3))}}
                         @endif
                     </td>
                     <td>{{$sacramentalMeeting->hora_anun_3}}</td>
@@ -84,7 +84,7 @@
                     <td>
                         @if($sacramentalMeeting->data_anun_4 == null)
                         @else
-                        {{$sacramentalMeeting->data_anun_4}}
+                        {{strftime('%d/%b', strtotime($sacramentalMeeting->data_anun_4))}}
                         @endif
                     </td>
                     <td>{{$sacramentalMeeting->hora_anun_4}}</td>
@@ -95,7 +95,7 @@
                     <td>
                         @if($sacramentalMeeting->data_anun_5 == null)
                         @else
-                        {{$sacramentalMeeting->data_anun_5}}
+                        {{strftime('%d/%b', strtotime($sacramentalMeeting->data_anun_5))}}
                         @endif
                     </td>
                     <td>{{$sacramentalMeeting->hora_anun_5}}</td>

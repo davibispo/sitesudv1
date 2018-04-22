@@ -165,11 +165,11 @@ class SacramentalMeetingController extends Controller
         $sacramentalMeeting->apoio_nome6 = $request->apoio_nome6;
 
         $sacramentalMeeting->apoio_cham1 = $request->apoio_cham1;
-        $sacramentalMeeting->apoio_cham2 = $request->termo;
-        $sacramentalMeeting->apoio_cham3 = $request->termo;
-        $sacramentalMeeting->apoio_cham4 = $request->termo;
-        $sacramentalMeeting->apoio_cham5 = $request->termo;
-        $sacramentalMeeting->apoio_cham6 = $request->termo;
+        $sacramentalMeeting->apoio_cham2 = $request->apoio_cham2;
+        $sacramentalMeeting->apoio_cham3 = $request->apoio_cham3;
+        $sacramentalMeeting->apoio_cham4 = $request->apoio_cham4;
+        $sacramentalMeeting->apoio_cham5 = $request->apoio_cham5;
+        $sacramentalMeeting->apoio_cham6 = $request->apoio_cham6;
 
         $sacramentalMeeting->sacerdote1 = $request->sacerdote1;
         $sacramentalMeeting->sacerdote2 = $request->sacerdote2;
