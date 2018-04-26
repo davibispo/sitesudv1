@@ -257,7 +257,7 @@
     $(document).ready(function () {
         //verificar
         $.ajax({
-            url: 'https://gist.githubusercontent.com/davibispo/280e4c58786d298dd21038a21ec55fdc/raw/781c607117b92fbf6c34bf6e76dcb1c508e939b4/estacas-alas.json',
+            url: 'https://gist.githubusercontent.com/davibispo/280e4c58786d298dd21038a21ec55fdc/raw/971c170f4e75ebe0f20934daa79c6abc3a38043d/estacas-alas.json',
             type: 'GET',
             dataType: 'json',
             cache: true,

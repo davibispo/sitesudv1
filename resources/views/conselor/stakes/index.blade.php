@@ -53,11 +53,11 @@
                                     R. Valdomiro Nunes De A. Barros, 116 - Jacintinho <br>
                                     57041-000 Maceió - AL
                                 </td>
-                                <td><img src="{!! asset('assets/img/pres-rogerio.png') !!}" class="img-circle" width="80"></td>
+                                <td><img src="{!! asset('assets/img/modelo.png') !!}" class="img-circle" width="80"></td>
                                 <td>
-                                    <b>PRES. ROGÉRIO DOS SANTOS</b><br>
-                                    82 99314-0191 <br>
-                                    rogecarmo70@gmail.com
+                                    <b>PRES. DÍNIO GÓES</b><br>
+                                    82 99402-9969 <br>
+                                    
                                 </td>
                             </tr>
                             <tr>

@@ -145,15 +145,10 @@ class UserController extends Controller {
         $user->phone = $request->phone;
         $user->uf = $request->uf;
         $user->city = $request->city;
-
-        if(auth()->user()->id == 1){
-            $user->stake = $request->stake;
-            $user->ward = $request->ward;
-        }else{
-            $user->stake = auth()->user()->stake;
-            $user->ward = auth()->user()->ward;
-        }
         $user->email = $request->email;
+        $user->stake = $request->stake;
+        $user->ward = $request->ward;
+        
 
         $user->update();
 
