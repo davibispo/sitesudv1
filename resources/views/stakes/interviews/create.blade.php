@@ -14,6 +14,7 @@
                         deve ter passado por entrevista com o bispado antes.</li>
                         <li><b>Primeira recomendação</b> e Entrevista para Missão serão realizadas pelo <b>Presidente</b> da Estaca.</li>
                         <li>Antes de agendar a <b>Bênção Patriarcal</b>, o membro deve ter passado por <b>entrevista com o bispo</b> da unidade.</li>
+                        <li>O local da <b>Bênção Patriarcal</b> será na capela <b>Benedito Bentes</b>.</li>
                     </ul>
                     </div>
                     {!! Form::open(['method'=>'POST', 'action'=>'InterviewController@store', 'class'=>'form-horizontal']) !!}
