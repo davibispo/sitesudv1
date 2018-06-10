@@ -50,7 +50,7 @@
                                                 @endswitch
                                             </td>
                                             <td>
-                                                @can('calleds_update')
+                                                @can('called_update')
                                                 <a href="{!!route('calleds.edit', $called->id)!!}" data-toggle="tooltip" title="Ações">
                                                     <i class="fas fa-sign-in-alt fa-lg"></i>
                                                 </a>

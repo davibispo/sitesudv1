@@ -8,6 +8,7 @@ use App\User;
 use App\Models\Hino;
 use Illuminate\Support\Facades\DB;
 
+
 class SacramentalMeetingController extends Controller
 {
 
@@ -34,8 +35,8 @@ class SacramentalMeetingController extends Controller
                                         ->where('ativo','1')
                                         ->sortByDesc('created_at');
         }
-
-        return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));
+        
+        return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings','chart'));
     }
 
     public function create()
