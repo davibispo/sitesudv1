@@ -24,7 +24,7 @@
                             {!! Form::open(['method'=>'POST', 'action'=>'ConselorController@fileStore', 'enctype'=>'multipart/form-data', 'class'=>'form-horizontal']) !!}
                                 <input type="file" name="arquivo" class="form-control"><br>
                                 Nome do arquivo 
-                                <input type="text" name="nome" class="form-control" required><br>
+                                <input type="text" name="descricao" class="form-control" required><br>
                                 {!! Form::submit('Enviar Arquivo', ['class'=>'btn btn-primary btn-xs']) !!}
                             {!! Form::close() !!}
                             </div>
@@ -42,7 +42,7 @@
                                 {!! $arquivo->nome !!}
                             </td>
                             <td>
-                                <a href="{{ URL::to('/storage/categories/' . $arquivo->descricao)  }}" target="_blank"><i class="fas fa-download"></i></a> 
+                                <a href="{{$arquivo->destino}}" target="_blank"><i class="fas fa-download"></i></a> 
                             </td>
                         </tr>
                        

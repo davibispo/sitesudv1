@@ -20,9 +20,10 @@ class SacramentalMeetingController extends Controller
 
         $perfilPresidencia = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->value('role_id');
         $perfilSecretarios = DB::table('role_user')->where('user_id', $user)->where('role_id', 11)->value('role_id');
+        $perfilSumoConselho = DB::table('role_user')->where('user_id', $user)->where('role_id', 15)->value('role_id');
 
         // mostra as agendas de acordo com o perfil do usuário logado.
-        if($perfilPresidencia == 5 || $perfilSecretarios == 11){
+        if($perfilPresidencia == 5 || $perfilSecretarios == 11 || $perfilSumoConselho == 15){
             $sacramentalMeetings = SacramentalMeeting::all()
                                         ->where('stake', $stake)
                                         ->where('ativo','1')

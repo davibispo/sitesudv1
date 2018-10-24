@@ -24,9 +24,10 @@ class InterviewController extends Controller
         $perfilPatriarca = DB::table('role_user')->where('user_id', $user)->where('role_id', 6)->value('role_id');
         $perfilPresidencia = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->value('role_id');
         $perfilPresidente = DB::table('role_user')->where('user_id', $user)->where('role_id', 8)->value('role_id');
+        $perfilSecretario = DB::table('role_user')->where('user_id', $user)->where('role_id', 11)->value('role_id');
         //dd($perfilPresidencia);
         // mostra as solicitações de acordo com o perfil do usuário logado.
-        if($perfilPresidencia == 5){
+        if($perfilPresidencia == 5 || $perfilSecretario == 11){
             $interviews = Interview::all()
                             ->where('ativo','1')
                             ->where('stake', $stake)
