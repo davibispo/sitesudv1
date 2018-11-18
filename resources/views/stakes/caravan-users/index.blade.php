@@ -32,7 +32,7 @@
                                         @endphp
 
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$caravan->id}}">
-                                            <i class="fas fa-bus"></i> Caravana de <b>{{strftime("%d de %b de %Y", strtotime($caravan->data))}}</b> ------- Vagas: <b>{{$vagas}}</b>
+                                            <i class="fas fa-bus"></i> Caravana de <b>{{strftime("%d de %B de %Y", strtotime($caravan->data))}}</b> ------- Vagas: <b>{{$vagas}}</b>
                                         </a>
                                     </h4>
                                 </div>
