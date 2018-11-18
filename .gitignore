@@ -1,6 +1,5 @@
 /node_modules
 /public/hot
-/storage/*.key
 /vendor
 /.idea
 /.vagrant
@@ -10,3 +9,4 @@ npm-debug.log
 yarn-error.log
 /resources/assets/arquivos
 /nbproject/private/
+.env
