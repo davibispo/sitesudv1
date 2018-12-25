@@ -22,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if($interview->interview_type_id == 5)
+                            @if($interview->interview_type_id == 6)
                             @can('interview_update_patriarca')
                             <tr>
                                 <td>{{$userName}} {{$userLastname}}</td>

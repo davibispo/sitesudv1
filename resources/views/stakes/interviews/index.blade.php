@@ -33,7 +33,7 @@
                             @forelse($interviews as $interview)
                                 @foreach($users as $user)
                                     @if($user->id == $interview->user_id)
-                                        @if($interview->interview_type_id == 5)
+                                        @if($interview->interview_type_id == 6)
                                         
                                         <tr>
                                             <th>{{$user->name}} {{$user->lastname}}</th>
