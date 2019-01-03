@@ -17,7 +17,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6e;
+                color: steelblue;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -53,7 +53,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: steelblue;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -65,7 +65,7 @@
             }
 
             .links > a:hover {
-                background-color: #636b6e;
+                background-color: steelblue;
                 color: white;
             }
 
@@ -98,7 +98,7 @@
                 @endif
                 <div class="text-center">
                     <br>
-                    <p>Copyright &#174 {{date('Y')}} | Todos os direitos reservados</p>
+                    <p>Copyright &#174 2018-{{date('Y')}} | Todos os direitos reservados</p>
                     <p>by Davi Bispo | Contato: (82) 99969-3407 | contato@sitesud.com.br</p>
                     <p><i>Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias</i></p>
                 </div>
