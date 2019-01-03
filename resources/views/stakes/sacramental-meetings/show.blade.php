@@ -68,7 +68,6 @@
                     <td>{{$sacramentalMeeting->hora_anun_2}}</td>
                     <td>{{$sacramentalMeeting->local_anun_2}}</td>
                 </tr>
-                <!--
                 <tr>
                     <td>{{$sacramentalMeeting->anun_3}}</td>
                     <td>
@@ -102,7 +101,6 @@
                     <td>{{$sacramentalMeeting->hora_anun_5}}</td>
                     <td>{{$sacramentalMeeting->local_anun_5}}</td>
                 </tr>
-            -->
             </table>
 
             <!--Hino 1, Regente, pianista, oração-->
@@ -222,7 +220,6 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <!--
                 <tr>
                     <td>{{$sacramentalMeeting->desob_nome5}}</td>
                     <td>{{$sacramentalMeeting->desob_cham5}}</td>
@@ -235,7 +232,6 @@
                     <td></td>
                     <td></td>
                 </tr>
-            -->
             </table>
 
             <!--Apoios-->
@@ -271,7 +267,6 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <!--
                 <tr>
                     <td>{{$sacramentalMeeting->apoio_nome5}}</td>
                     <td>{{$sacramentalMeeting->apoio_cham5}}</td>
@@ -284,7 +279,6 @@
                     <td></td>
                     <td></td>
                 </tr>
-            -->
             </table>
 
             <!-- Sacramento -->
