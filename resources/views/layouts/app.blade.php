@@ -193,7 +193,7 @@
 
             <div class="text-center">
                 <p></p>
-                <p>Copyright &#174 2018-{{date('Y')}} | by Davi Bispo - (82) 99969-3407 | contato@sitesud.com.br</p>
+                <p>Copyright &#174 2018-{{date('Y')}} | by Davi Bispo - (82) 99969-3407 | davi-bispo@hotmail.com</p>
                 <p><i>(Este não é um site oficial de A Igreja de Jesus Cristo dos Santos dos Últimos Dias)</i></p>
             </div>
         </div>
