@@ -29,7 +29,7 @@
                             @forelse($calendars as $calendar)
                                 @if(date('Y', strtotime($calendar->data)) == date('Y'))
                                 <tr>
-                                    <td><b>{{strftime('%d/%b', strtotime($calendar->data))}}</d></tb>
+                                    <td><b>{{ date('d/m', strtotime($calendar->data))}}</b></td>
                                     <td>{{$calendar->horario}}</td>
                                     <td>{{$calendar->evento}}</td>
                                     <td>{{$calendar->local}}</td>
