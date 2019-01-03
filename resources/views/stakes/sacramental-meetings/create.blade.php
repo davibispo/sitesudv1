@@ -58,6 +58,7 @@
                             <td>{!! Form::text('hora_anun_2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('local_anun_2',null, ['class'=>'form-control']) !!}</td>
                         </tr>
+                        <!--
                         <tr>
                             <td>{!! Form::text('anun_3',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::date('data_anun_3',null, ['class'=>'form-control']) !!}</td>
@@ -76,6 +77,7 @@
                             <td>{!! Form::text('hora_anun_5',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('local_anun_5',null, ['class'=>'form-control']) !!}</td>
                         </tr>
+                        -->
                         </tbody>
                     </table>
                 </tbody>
@@ -254,6 +256,7 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <!--
                         <tr>
                             <td>{!! Form::text('desob_nome5',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('desob_cham5',null, ['class'=>'form-control']) !!}</td>
@@ -266,6 +269,7 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        -->
                         </tbody>
 
                         <!--Apoios-->
@@ -298,6 +302,7 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        <!--
                         <tr>
                             <td>{!! Form::text('apoio_nome5',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('apoio_cham5',null, ['class'=>'form-control']) !!}</td>
@@ -310,6 +315,7 @@
                             <td></td>
                             <td></td>
                         </tr>
+                        -->
                         </tbody>
                     </table>
                     <!-- Sacramento -->
