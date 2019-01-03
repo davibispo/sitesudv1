@@ -49,9 +49,6 @@
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Caravanas</h4>
-                            @can('caravan_index')
-                            <p><a href="{{route('caravans.index')}}">Criar/editar</a></p>
-                            @endcan
                             @can('caravan_user_index')
                             <p><a href="{{route('caravan-users.index')}}">Reservas</a></p> 
                             @endcan
@@ -71,9 +68,6 @@
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Equipamentos</h4>
-                            @can('equipment_index')
-                            <p><a href="{{route('equipments.index')}}">Cadastrar</a></p> 
-                            @endcan
                             @can('equipment_rent_index')
                             <p><a href="{{route('equipment-rents.index')}}">Empréstimos</a></p> 
                             @endcan
@@ -96,12 +90,14 @@
                     </div>
                     @endcan
                     @can('self-reliance_index')
+                    <!--
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Autossuficiência</h4>
                             <p><a href="{{route('self-reliances.index')}}">Grupos</a></p> 
                         </div>
                     </div>
+                    -->
                     @endcan
                 </div>
                
