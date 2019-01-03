@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Calendário da Estaca {{$stake}} - {{ 2019 }}</b></div>
+                <div class="panel-heading"><b>Calendário da Estaca {{$stake}} - {{ date('Y') }}</b></div>
 
                 <div class="panel-body">
                     <div>
@@ -37,7 +37,7 @@
                             @forelse($calendars as $calendar)
                                 @if(date('Y', strtotime($calendar->data)) == 2019)
                                 <tr>
-                                    <td><b>{{strftime('%d/%b', strtotime($calendar->data))}}</d></tb>
+                                    <td><b>{{ date('d/m', strtotime($calendar->data))}}</b></td>
                                     <td>{{$calendar->horario}}</td>
                                     <td>{{$calendar->evento}}</td>
                                     <td>{{$calendar->local}}</td>
