@@ -82,7 +82,7 @@
                     </div>
                     <div class="form-group">
                         <div class="text-center">
-                            {!! Form::submit('Reservar Vaga', ['class'=>'btn btn-success']) !!}
+                            {!! Form::submit('Reservar Sua Vaga', ['class'=>'btn btn-success']) !!}
                         </div>
                     </div>
                     
@@ -105,7 +105,7 @@
                             </td>
                             <td>
                                 <div class="text-right">
-                                    <a href="{{route('caravan-users.create-caravan-user-kid', $caravan->id)}}" class="btn btn-info">Cadastrar Criança</a>
+                                    <a href="{{route('caravan-users.create-caravan-user-kid', $caravan->id)}}" class="btn btn-success">Reservar Vaga para Outra Pessoa</a>
                                 </div>
                             </td>
                         </tr>

@@ -5,12 +5,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Reservar Vaga em Caravana da Estaca {{$stake}}</b></div>
+                <div class="panel-heading"><b>Reservar Vaga para Outra Pessoa</b> em Caravana da Estaca {{$stake}}</div>
                 <div class="panel-body">
                     <div>
                         <a href="{{route('caravan-users.index')}}" class="btn btn-default btn-xs text-left"><i class="fas fa-angle-left"></i> voltar</a>
-                        <h4 class="text-center">Caravana de <b>{{date('d-m-Y', strtotime($caravan->data))}}</b></h4>
-                        <p class="text-center"><i class="fas fa-bus fa-lg"></i> Cadastro de Criança com ou sem Poltrona.</p>
+                        <h4 class="text-center"><i class="fas fa-bus fa-lg"></i> Caravana de <b>{{date('d-m-Y', strtotime($caravan->data))}}</b></h4>
+                    </div>
+                    <div class="alert alert-danger">
+                        <p class="text-center">ATENÇÃO! Ao cadastrar os dados de outra pessoa você estará se responsabilizando pela veracidade.</p>
+                    </div>
+                    <div class="alert alert-danger">
+                        <p>ATENÇÃO! VOCÊ SÓ PODE RESERVAR VAGA DE OUTRA PESSOA QUE PERTENÇA A SUA ALA.</p>
                     </div>
 
                     {!! Form::open(['method'=>'POST', 'action'=>['CaravanUserController@store', $caravan->id], 'class'=>'form-horizontal']) !!}
@@ -20,14 +25,14 @@
                     
                     <div class="well">
                         <div class="form-group">
-                            {!! Form::label('kid', 'Nome da criança', ['class'=>'col-md-4 control-label']) !!}
+                            {!! Form::label('kid', 'Nome completo', ['class'=>'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::text('kid', null, ['class' => 'form-control', 'required']) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('kid_doc', 'RG ou Reg. Nasc.', ['class'=>'col-md-4 control-label']) !!}
+                            {!! Form::label('kid_doc', 'RG', ['class'=>'col-md-4 control-label']) !!}
                             <div class="col-md-6">
                                 {!! Form::text('kid_doc', null, ['class' => 'form-control', 'required']) !!}
                             </div>
@@ -36,19 +41,7 @@
                         <div class="form-group">
                             {!! Form::label('kid_age', 'Idade', ['class'=>'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::select('kid_age',[
-                                    '1'=>'1',
-                                    '2'=>'2',
-                                    '3'=>'3',
-                                    '4'=>'4',
-                                    '5'=>'5',
-                                    '6'=>'6',
-                                    '7'=>'7',
-                                    '8'=>'8',
-                                    '9'=>'9',
-                                    '10'=>'10',
-                                    '11'=>'11'
-                                ], null, ['class' => 'form-control','placeholder'=>' -- Escolha a idade -- ', 'required']) !!}
+                                <input type="number" class="form-control" name="kid_age" min="0" max="110" required>
                             </div>
                         </div>
                     </div>
@@ -115,16 +108,16 @@
                     <div class="form-group">
                         <div class="text-center">
                             {!! Form::radio('poltrona', '0', ['required']) !!}
-                            <b>NÃO</b> reservar poltrona.
+                            <b>NÃO</b> reservar poltrona (<i>Caso criança pequena</i>).
                         </div>
                     </div>
                     
                     <div>
-                        <p class="text-center">Após clicar no botão abaixo, verifique o nome consta na lista.</p>
+                        <p class="text-center">Após clicar no botão abaixo, verifique se o nome consta na lista.</p>
                     </div>
                     <div class="form-group">
                         <div class="text-center">
-                            {!! Form::submit('Reservar Vaga', ['class'=>'btn btn-success']) !!}
+                            {!! Form::submit('Finalizar Reserva de Vaga para Outra Pessoa', ['class'=>'btn btn-success']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}

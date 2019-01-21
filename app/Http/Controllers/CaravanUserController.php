@@ -69,13 +69,15 @@ class CaravanUserController extends Controller {
         $caravanUser->kid = $request->kid;
 
         if ((isset($caravanUser->kid)) && $caravanUser->poltrona > 0) {
-            $caravanUser->status = '3'; //crianca com poltrona
+            $caravanUser->status = '3'; //crianca ou outra pessoa com poltrona
             $caravanUser->kid_doc = $request->kid_doc;
             $caravanUser->kid_age = $request->kid_age;
+            $caravanUser->cadastrador = auth()->user()->name;
         } elseif ((isset($caravanUser->kid)) && $caravanUser->poltrona == 0) {
             $caravanUser->status = '4'; //criança sem poltrona
             $caravanUser->kid_doc = $request->kid_doc;
             $caravanUser->kid_age = $request->kid_age;
+            $caravanUser->cadastrador = auth()->user()->name;
         } else {
             $caravanUser->status = $request->status;
         }
