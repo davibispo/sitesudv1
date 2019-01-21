@@ -53,7 +53,7 @@
                                                 @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'English Connect 1 e 2'))
                                                     @php $count++ @endphp
                                                         <li>
-                                                            <b>{!! $user->name !!} {!! $user->lastname !!}</b> - 
+                                                            <b>{!! $user->name !!} {!! $user->lastname !!} ({!! $user->ward !!})</b> - 
                                                             @switch($groupMember->status)
                                                                 @case('1')
                                                                     <font color='orange'>{!! "Solicitado" !!}</font>
