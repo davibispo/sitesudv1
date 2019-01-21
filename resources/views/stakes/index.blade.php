@@ -90,14 +90,14 @@
                     </div>
                     @endcan
                     @can('self-reliance_index')
-                    <!--
+                    
                     <div class="col-sm-3">
                         <div class="well">
-                            <h4>Autossuficiência</h4>
-                            <p><a href="{{route('self-reliances.index')}}">Grupos</a></p> 
+                            <h4>Curso Inglês</h4>
+                            <p><a href="{{route('self-reliances.index')}}">Inscrições</a></p> 
                         </div>
                     </div>
-                    -->
+                    
                     @endcan
                 </div>
                

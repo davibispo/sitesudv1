@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-            <div class="panel-heading text-center"><b>Grupos de Autossuficiência de {{strtoupper($ward)}}</b></div>
+            <div class="panel-heading text-center"><b>CURSO ENGLISH CONNECT</b></div>
 
                 <div class="panel-body">
                     
@@ -15,8 +15,29 @@
                         <table class="table table-striped table-hover">
                             <tbody>
                                 <tr>
+                                    <td><input type="radio" name="grupo" value="English Connect 1 e 2" required></td>
+                                    <td><img src="{!! asset('assets/img/self/english1e2.png') !!}" ></td>
+                                    <td>    • Liderado por um Instrutor: Um membro local
+                                            ou dupla missionária, aproximadamente 30
+                                            minutos de preparação semanal <br>
+                                            • 25 semanas <br>
+                                            • Aulas semanais de 90 minutos <br>
+                                            • 60 minutos de prática de Inglês <br>
+                                            • 30 minutos para Meu Alicerce (1x em Português e 1x em Inglês) ou uma lição dos missionários <br>
+                                            • Prática diária para ganhos reais de
+                                            aprendizado (10 horas/semana) <br>
+                                            • Acesso a internet e aplicativos é requisito <br>
+                                            • Determinação de participação no nível 1 ou 2 <br>
+                                            com base em entrevista oral conduzida pelo
+                                            instrutor <br>
+                                            • Solicitação dos manuais em <a href="http://store.lds.org" target="_blank">store.lds.org</a> ou
+                                            download em <a href="http://englishconnect.lds.org" target="_blank">englishconnect.lds.org</a> 
+                                    </td>
+                                </tr>
+                                <!--
+                                <tr>
                                     <td><input type="radio" name="grupo" value="Educação para um Emprego Melhor" required></td>
-                                    <td><img src="{!! asset('assets/img/self/educacao.png') !!}" ></td>
+                                    <td><img src="{!! asset('assets/img/self/english1e2.png') !!}" ></td>
                                     <td>Para aqueles que precisam de educação ou treinamento adicional para conseguir um emprego. 
                                         Os membros do grupo vão pesquisar, criar e apresentar planos educacionais e de carreira. 
                                         Eles também despenderão tempo todas as semanas praticando as habilidades que vão ajudá-los 
@@ -51,7 +72,7 @@
                                         de bons negócios. 
                                     </td>
                                 </tr>
-                                
+                            -->
                             </tbody>
                         </table>
                     </div>
@@ -62,7 +83,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-                            {!! Form::submit('Enviar Solicitação', ['class'=>'btn btn-primary']) !!}
+                            {!! Form::submit('Enviar Solicitação', ['class'=>'btn btn-success']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}

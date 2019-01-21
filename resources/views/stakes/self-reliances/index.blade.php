@@ -5,33 +5,43 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-            <div class="panel-heading"><b>Grupos de Autossuficiência de {{strtoupper($ward)}}</b></div>
+            <!--<div class="panel-heading"><b>Grupos de Autossuficiência de {{strtoupper($ward)}}</b></div>-->
+            <div class="panel-heading">Inscrições para Cursos <b>ENGLISH CONNECT</b></div>
 
                 <div class="panel-body">
                     <div class="text-center">
-                        <a href="{!!route('self-reliances.create')!!}" class="btn btn-primary">
-                            Escolher Grupo
-                        </a> 
+                        <a href="{!!route('self-reliances.create')!!}" class="btn btn-success">
+                            Ver Cursos
+                        </a>
+                        <!-- 
                         <a href="http://autossuficiencia.org.br/manuais/" target="_blank" class="btn btn-default">
                             <i class="fas fa-download"></i>
                             Baixar Manuais
                         </a>
+                    -->
                     </div>
                     <br>
                     <div class="well well-sm text-center">
                         <p>
-                            Ao se cadastrar em um dos grupos, seu líder de autossuficiência poderá atualizar seu status de '<font color='orange'>Solicitado</font>' 
-                            para '<font color='green'>Matriculado</font>'.
+                            <b>EnglishConnect</b> é uma família de produtos para aprendizado
+                            da língua Inglesa criado pela Igreja para ajudar os membros
+                            da Igreja a aumentar sua proficiência na língua em um
+                            ambiente centralizado no evangelho.
+                        </p>
+                        <p>
+                            Ao se cadastrar em um dos cursos, o líder de autossuficiência da Estaca poderá atualizar seu status de '<font color='orange'><b>Solicitado</b></font>' 
+                            para '<font color='green'><b>Matriculado</b></font>'. <br>
                             Procure seu líder para mais informações.
                         </p>
                     </div>
                     <table class="table table-bordered" style="font-size:12px;">
                         <thead>
                             <tr>
-                                <th class="text-center" style="background-color:blue; color:white;">Educação para um Emprego Melhor</th>
+                                <!--<th class="text-center" style="background-color:blue; color:white;">Educação para um Emprego Melhor</th>
                                 <th class="text-center" style="background-color:green; color:white;">Encontrar um Emprego Melhor</th>
                                 <th class="text-center" style="background-color:blueviolet; color:white;">Finanças Pessoais</th>
-                                <th class="text-center" style="background-color:red; color:white;">Iniciar e Melhorar Meu Negócio</th>
+                                <th class="text-center" style="background-color:red; color:white;">Iniciar e Melhorar Meu Negócio</th>-->
+                                <th class="text-center" style="background-color:red; color:white;">English Connect 1 e 2</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +50,7 @@
                                     <ol type="1">
                                         @forelse ($groupMembers as $groupMember)
                                             @foreach ($users as $user)
-                                                @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'Educação para um Emprego Melhor'))
+                                                @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'English Connect 1 e 2'))
                                                     @php $count++ @endphp
                                                         <li>
                                                             <b>{!! $user->name !!} {!! $user->lastname !!}</b> - 
@@ -74,6 +84,7 @@
                                         @endforelse
                                     </ol>
                                 </td>
+                                <!--
                                 <td>
                                     <ol type="1">
                                         @forelse ($groupMembers as $groupMember)
@@ -187,7 +198,7 @@
                                             </div>
                                         @endforelse
                                     </ol>
-                                </td>
+                                </td>-->
                                 
                                 
                             </tr>
