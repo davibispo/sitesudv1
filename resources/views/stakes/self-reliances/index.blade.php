@@ -28,11 +28,13 @@
                             da Igreja a aumentar sua proficiência na língua em um
                             ambiente centralizado no evangelho.
                         </p>
+                        <!--
                         <p>
                             Ao se cadastrar em um dos cursos, o líder de autossuficiência da Estaca poderá atualizar seu status de '<font color='orange'><b>Solicitado</b></font>' 
                             para '<font color='green'><b>Matriculado</b></font>'. <br>
                             Procure seu líder para mais informações.
                         </p>
+                    -->
                     </div>
                     <table class="table table-bordered" style="font-size:12px;">
                         <thead>
@@ -53,7 +55,8 @@
                                                 @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'English Connect 1 e 2'))
                                                     @php $count++ @endphp
                                                         <li>
-                                                            <b>{!! $user->name !!} {!! $user->lastname !!} ({!! $user->ward !!})</b> - 
+                                                            <b>{!! $user->name !!} {!! $user->lastname !!} ({!! $user->ward !!})</b>
+                                                            <!-- - 
                                                             @switch($groupMember->status)
                                                                 @case('1')
                                                                     <font color='orange'>{!! "Solicitado" !!}</font>
@@ -74,6 +77,7 @@
                                                                 <i class="fas fa-sign-in-alt fa-lg"></i>
                                                             </a>
                                                             @endcan
+                                                        -->
                                                         </li>
                                                 @endif
                                             @endforeach

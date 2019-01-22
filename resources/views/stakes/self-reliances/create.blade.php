@@ -17,7 +17,10 @@
                                 <tr>
                                     <td><input type="radio" name="grupo" value="English Connect 1 e 2" required></td>
                                     <td><img src="{!! asset('assets/img/self/english1e2.png') !!}" ></td>
-                                    <td>    • Liderado por um Instrutor: Um membro local
+                                </tr>
+                                <tr>
+                                    <td colspan="2">    
+                                            • Liderado por um Instrutor: Um membro local
                                             ou dupla missionária, aproximadamente 30
                                             minutos de preparação semanal <br>
                                             • 25 semanas <br>
