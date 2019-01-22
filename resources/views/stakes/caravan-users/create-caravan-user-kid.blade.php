@@ -117,7 +117,7 @@
                     </div>
                     <div class="form-group">
                         <div class="text-center">
-                            {!! Form::submit('Finalizar Reserva de Vaga para Outra Pessoa', ['class'=>'btn btn-success']) !!}
+                            {!! Form::submit('Finalizar Reserva de Vaga para Outra Pessoa', ['class'=>'btn btn-info']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}
