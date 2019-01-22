@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-            <div class="panel-heading text-center"><b>CURSO ENGLISH CONNECT</b></div>
+            <div class="panel-heading text-center"><b>Inscrição para CURSO ENGLISH CONNECT</b></div>
 
                 <div class="panel-body">
                     
@@ -86,7 +86,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-6 col-md-offset-4">
-                            {!! Form::submit('Enviar Solicitação', ['class'=>'btn btn-success']) !!}
+                            {!! Form::submit('Realizar Inscrição', ['class'=>'btn btn-success']) !!}
                         </div>
                     </div>
                     {!! Form::close() !!}
