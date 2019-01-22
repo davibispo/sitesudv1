@@ -10,9 +10,11 @@
 
                 <div class="panel-body">
                     <div class="text-center">
+                        <!--
                         <a href="{!!route('self-reliances.create')!!}" class="btn btn-success">
                             Ver Cursos
                         </a>
+                    -->
                         <!-- 
                         <a href="http://autossuficiencia.org.br/manuais/" target="_blank" class="btn btn-default">
                             <i class="fas fa-download"></i>
