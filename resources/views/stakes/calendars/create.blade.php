@@ -15,6 +15,7 @@
                         <div class="col-md-6">
                             {!! Form::select('organizacao', 
                                 [
+                                'Ramo' => 'Ramo',
                                 'Ala' => 'Ala',
                                 'Estaca' => 'Estaca', 
                                 'Moças' => 'Moças', 
