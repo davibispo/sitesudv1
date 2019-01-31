@@ -58,30 +58,27 @@
                                         
                                         <!--Lista Principal-->
                                         <div class="well">    
-                                        <p><b>Lista Principal</b> (A coluna <i>Ord.</i> refere-se a ordem em que os cadastros foram realizados)</p>
+                                        <p>Lista Principal</p>
                                         <table class="table table-striped table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Ord.</th>
-                                                    <th>Membros</th> 
                                                     <th>Poltrona</th> 
+                                                    <th>Membros</th> 
                                                     <th>Unidade</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @forelse($caravanUsers as $caravanUser)
                                                     @foreach ($users as $user)
-                                                    @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && ($caravanUser->status != $statusReserva))    
-                                                    <tr>
-                                                        @if(isset($caravanUser->kid) && ($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id))
-                                                        <td>@if ($caravanUser->poltrona != 0) {{ $i++ }} @endif</td>
-                                                        <td>{{$caravanUser->kid}}</i></td>
-                                                        @else
-                                                        <td>@if ($caravanUser->poltrona != 0) {{ $i++ }} @endif</td>
-                                                        <td>{{$user->name}} {{$user->lastname}}</td>
-                                                        @endif
-                                                        <td><b>{{$caravanUser->poltrona}}</b></td>
-                                                        <td>{{$user->ward}}</td>
+                                                        @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && ($caravanUser->status != $statusReserva))    
+                                                        <tr>
+                                                            <td>{{$caravanUser->poltrona}}</td>
+                                                            @if(isset($caravanUser->kid) && ($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id))
+                                                                <td>{{$caravanUser->kid}}</i></td>
+                                                            @else
+                                                                <td>{{$user->name}} {{$user->lastname}}</td>
+                                                            @endif
+                                                            <td>{{$user->ward}}</td>
                                                         </tr>
                                                         @endif
                                                     @endforeach
@@ -101,13 +98,13 @@
                                         <!--Fim da lista principal-->
                                         <!-- Lista Reserva -->
                                         <div class="well">   
-                                        <p><b>Lista Reserva</b> (A coluna <i>Ord.</i> refere-se a ordem em que os cadastros foram realizados)</p>
+                                        <p>Lista Reserva</p>
                                         <table class="table table-striped table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Ord.</th> 
                                                     <th>Membros</th> 
-                                                    <th>Unidade</th>
+                                                    <th>Unidade</th> 
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -116,13 +113,12 @@
                                                         @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status == $statusReserva)
                                                         <tr>
                                                             @if(isset($caravanUser->kid))
-                                                            <td>{{ $j++ }}</td>
                                                             <td>{{$caravanUser->kid}}</i></td>
                                                             @else
-                                                            <td>{{ $j++ }}</td>
                                                             <td>{{$user->name}} {{$user->lastname}}</td>
                                                             @endif
                                                             <td>{{$user->ward}}</td>
+                                                            <td></td>
                                                         </tr>
                                                         @endif
                                                     @endforeach
