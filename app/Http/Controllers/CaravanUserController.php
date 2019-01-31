@@ -13,7 +13,7 @@ class CaravanUserController extends Controller {
     public function index() {
         $stake = auth()->user()->stake;
         $caravans = Caravan::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
-        $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('poltrona');
+        $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('id');
         $users = User::all()->where('stake', $stake);
 
         //pega data por extenso em portugues
@@ -21,7 +21,9 @@ class CaravanUserController extends Controller {
         date_default_timezone_set('America/Sao_Paulo');
         //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
         //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
-        
+        $i = 1;
+        $j = 1;
+
         /*
          * status   
          * 1 = lista principal,
@@ -34,7 +36,7 @@ class CaravanUserController extends Controller {
         $criancaComPoltrona = 3;
         $criancaSemPoltrona = 4;
 
-        return view('stakes.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona'));
+        return view('stakes.caravan-users.index', compact('j','i','stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona'));
     }
 
     public function createCaravanUser($caravanId) {

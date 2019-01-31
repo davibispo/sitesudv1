@@ -74,7 +74,7 @@
                                     <th>Pol.</th> 
                                     <th>Membros</th> 
                                     <th>RG</th> 
-                                    <th>Id</th> 
+                                    <th>Idade</th> 
                                     <th>Telefone</th> 
                                     <th>Unidade</th> 
                                 </tr>
@@ -84,7 +84,7 @@
                                 @foreach ($users as $user)
                                 @if(($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id) && $caravanUser->status != $statusReserva)
                                 <tr>
-                                    <td>{{$caravanUser->poltrona}}</td>
+                                    <td><b>{{$caravanUser->poltrona}}</b></td>
                                     @if(isset($caravanUser->kid) && $caravanUser->user_id == $user->id && $caravanUser->status != $statusReserva)
                                         <td>{{$caravanUser->kid}}</td>
                                         <td>{{$caravanUser->kid_doc}}</td>
@@ -111,6 +111,7 @@
                                             {{$idade}}
                                         </td>
                                     @endif
+                                    
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->ward}}</td>
 
@@ -130,7 +131,7 @@
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Pol.</th>
+                                    <th></th>
                                     <th>Membros</th> 
                                     <th>RG</th> 
                                     <th>Id</th> 
@@ -143,7 +144,7 @@
                                 @foreach ($users as $user)
                                 @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status == $statusReserva)
                                 <tr>
-
+                                    <td></td>
                                     @if(isset($caravanUser->kid))
                                         <td>{{$caravanUser->kid}}</i></td>
                                         <td>{{$caravanUser->kid_doc}}</td>
