@@ -91,7 +91,7 @@
                         Acesse sua estaca    
                     </a>
                     @else
-                    <a href="{{ route('login') }}">Fazer Login</a>
+                    <a href="{{ route('login') }}">Login</a>
                     <a href="{{ route('register') }}">Registrar</a>
                     @endauth
                 </div>
