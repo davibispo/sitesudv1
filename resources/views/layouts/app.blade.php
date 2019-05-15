@@ -118,18 +118,11 @@
                                     @endcan
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                @can('agendas')
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Agendas
-                                    <span class="caret"></span>
-                                </a>
-                                @endcan
-                                <ul class="dropdown-menu">
-                                    @can('sacramental_meeting_index')
-                                    <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>
-                                    @endcan
-                                </ul>
-                            </li>
+                            
+                            @can('sacramental_meeting_index')
+                            <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>
+                            @endcan
+                               
                             <li class="dropdown">
                                 @can('contact_create')
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suporte
