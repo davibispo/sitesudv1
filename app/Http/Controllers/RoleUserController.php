@@ -19,17 +19,13 @@ class RoleUserController extends Controller
     {
         $stake = auth()->user()->stake;
         $userId = auth()->user()->id;
-        
-        if($userId == 1){
-            $users = User::all();
-        }else{
-            $users = User::all()->where('stake', $stake);
-        }
 
-        $roleUsers = DB::table('role_user')->get()->sortBy('user_id');
-        $roles = Role::all()->where('name','<>','adm')->where('name','<>','membro');
-        
-        return view('adm.role-users.index', compact('roleUsers','roles','users'));
+        $roleUsers = DB::table('role_user')->select('id','role_id', 'user_id')->where('role_id','<>','2')->where('ativo', '1')->get();
+        //dd($roleUsers);
+        $roles = Role::all();
+        $users = User::all();
+
+        return view('adm.role-users.index', compact('roleUsers', 'roles', 'users'));
     }
 
     /**
@@ -117,6 +113,6 @@ class RoleUserController extends Controller
     {
         DB::table('role_user')->select('id')->where('id',$id)->delete();
 
-        return redirect()->back()->with('alertSuccess', 'Excluído!');
+        return redirect()->back()->with('alertDanger', 'Excluído!');
     }
 }

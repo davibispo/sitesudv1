@@ -23,7 +23,8 @@
                                 <option value="{{$role->id}}">{{$role->description}}  ({{$role->name}})</option>
                             @endforeach
                         </select>
-                        {!! Form::submit('Adicionar', ['class'=>'btn btn-primary btn-sm']) !!}
+                        <br>
+                        {!! Form::submit('Adicionar Perfil ao Usuário', ['class'=>'btn btn-primary btn-sm']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

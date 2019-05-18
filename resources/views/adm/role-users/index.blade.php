@@ -11,7 +11,7 @@
                 <div class="panel-body">
 
                     <div>
-                        <a href="{{route('role-users.create')}}" class="btn btn-info">
+                        <a href="{{route('role-users.create')}}" class="btn btn-link">
                             <i class="fa fa-plus" aria-hidden="true"></i>
                             Cadastrar Perfil a Usuário
                         </a>
@@ -23,33 +23,29 @@
                                 <tr>
                                     <th>Perfil</th>
                                     <th>Usuário</th>
-                                    <th>Descrição do Perfil</th>
-                                    <th></th>
+                                    <th>Remover</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse($roleUsers as $roleUser)
-                                @foreach($roles as $role)
-                                    @foreach($users as $user)
-                                        @if ($roleUser->role_id == $role->id && $roleUser->user_id == $user->id)
-                                        <tr>
-                                            <td>{{$role->name}}</td>
-                                            <td>{{$user->name}} {{$user->lastname}}</td>
-                                            <td>{{$role->description}}</td>
-                                            <td>
-                                                {!! Form::open(['method'=>'DELETE', 'action'=>['RoleUserController@destroy', $roleUser->id], 'style'=>'display:inline']) !!}
-                                                    {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs','data-toggle'=>'tooltip', 'title'=>'Remover perfil de usuário']) !!}
-                                                {!! Form::close() !!}
-                                            </td>
-                                        </tr>
-                                        @endif
-                                    @endforeach
+                                @foreach ($users as $u) 
+                                    @foreach ($roles as $r)
+                                        @foreach ($roleUsers as $ru)
+                                            @if ($ru->user_id == $u->id)
+                                                @if ($ru->role_id == $r->id) 
+                                                <tr>
+                                                    <td>{{ $r->name }}</td>
+                                                    <td>{{ $u->name }}</td>  
+                                                    <td>
+                                                        {!! Form::open(['method'=>'DELETE', 'action'=>['RoleUserController@destroy', $ru->id], 'style'=>'display:inline']) !!}
+                                                        {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
+                                                        {!! Form::close() !!}
+                                                    </td>                                     
+                                                </tr>
+                                                @endif
+                                            @endif
+                                        @endforeach
+                                    @endforeach                            
                                 @endforeach
-                                @empty
-                            <div class=" well alert-warning">
-                                <p>Não tem usuários cadastrados em perfis!</p>
-                            </div>
-                            @endforelse
                             </tbody>
                         </table>
                     </div>
