@@ -34,6 +34,7 @@ class SacramentalMeetingController extends Controller
                                         ->where('ward', $ward)
                                         ->where('stake', $stake)
                                         ->where('ativo','1')
+                                        ->sortBy('ward')
                                         ->sortByDesc('created_at');
         }
         
