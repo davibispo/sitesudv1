@@ -20,7 +20,7 @@ class RoleUserController extends Controller
         $stake = auth()->user()->stake;
         $userId = auth()->user()->id;
 
-        $roleUsers = DB::table('role_user')->select('id','role_id', 'user_id')->where('role_id','<>','2')->where('ativo', '1')->get();
+        $roleUsers = DB::table('role_user')->select('id','role_id', 'user_id')->where('role_id','<>','2')->where('ativo', '1')->orderBy('user_id')->get();
         //dd($roleUsers);
         $roles = Role::all();
         $users = User::all();
