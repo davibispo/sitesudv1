@@ -29,7 +29,6 @@
                 </div>
 
                 <div class="row">
-                    <a href="http://estaca.meuacesso.site">NOVO SITE DA ESTACA</a>
                     <div class="col-sm-3">
                         <div class="well">
                             <h4>Calendário</h4>
