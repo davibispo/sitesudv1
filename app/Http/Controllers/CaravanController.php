@@ -9,8 +9,10 @@ class CaravanController extends Controller
 {
     public function index()
     {
+        $ano = date('Y') - 1;
+        //dd($ano);
         $stake = auth()->user()->stake;
-        $caravans = Caravan::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
+        $caravans = Caravan::all()->where('stake', $stake)->where('data','>', $ano)->where('ativo','<>', 2)->sortBy('data');
         return view('stakes.caravans.index', compact('stake','caravans'));
     }
 
@@ -53,7 +55,17 @@ class CaravanController extends Controller
     {
         $stake = auth()->user()->stake;
         $caravan = Caravan::find($id);
-        //dd($caravan);
+
+        if($caravan->ativo == 0){
+            $caravan->ativo = 1; //ativar cadastro
+            $caravan->update();
+            return redirect()->back();
+        }else{
+            $caravan->ativo = 0; //desativar cadastro
+            $caravan->update();
+            return redirect()->back();
+        }
+
         return view('stakes.caravans.update', compact('caravan','stake'));
     }
 
@@ -83,7 +95,7 @@ class CaravanController extends Controller
     {
         $caravan = Caravan::find($id);
 
-        $caravan->ativo = '0';
+        $caravan->ativo = '2'; //não mostra na pagina.
         $caravan->update();
 
         return redirect()->route('caravans.index')->with('alertDanger', 'Excluída!');

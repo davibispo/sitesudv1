@@ -21,6 +21,7 @@
                                 <th>Data</th>
                                 <th>Líder da caravana</th> 
                                 <th>Telefone</th> 
+                                <th>Ativar</th> 
                             </tr>
                         </thead>
                         <tbody>
@@ -30,8 +31,17 @@
                                 <td>{{$caravan->leader}}</td>
                                 <td>{{$caravan->phone}}</td>
                                 <td>
+                                    @if ($caravan->ativo == 1)
+
+                                        <a href="{{ route('caravans.edit', $caravan->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                    @else
+
+                                        <a href="{{ route('caravans.edit', $caravan->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                    @endif
+                                </td>
+                                <td>
                                     <a href="{{route('caravans.show', $caravan->id)}}" class="btn btn-info btn-xs">Detalhes</a>
-                                    <a href="{{route('caravans.edit', $caravan->id)}}" class="btn btn-warning btn-xs">Editar</a>
+                                    <!--<a href="{{route('caravans.edit', $caravan->id)}}" class="btn btn-warning btn-xs">Editar</a>-->
                                     {!! Form::open(['method'=>'DELETE', 'action'=>['CaravanController@destroy', $caravan->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('Excluir', ['class'=>'btn btn-danger btn-xs']) !!}
                                     {!! Form::close() !!}
