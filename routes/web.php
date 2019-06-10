@@ -24,6 +24,7 @@ Route::group(['middleware'=>'web'], function(){
     //interview
     Route::resource('/stakes/interviews', 'InterviewController');
     //caravan
+    Route::get('/stakes/caravans/ativar/{id}', 'CaravanController@ativar')->name('caravans.ativar');
     Route::resource('/stakes/caravans', 'CaravanController');
     //caravanUser
     Route::resource('/stakes/caravan-users', 'CaravanUserController');

@@ -56,16 +56,6 @@ class CaravanController extends Controller
         $stake = auth()->user()->stake;
         $caravan = Caravan::find($id);
 
-        if($caravan->ativo == 0){
-            $caravan->ativo = 1; //ativar cadastro
-            $caravan->update();
-            return redirect()->back();
-        }else{
-            $caravan->ativo = 0; //desativar cadastro
-            $caravan->update();
-            return redirect()->back();
-        }
-
         return view('stakes.caravans.update', compact('caravan','stake'));
     }
 
@@ -99,5 +89,21 @@ class CaravanController extends Controller
         $caravan->update();
 
         return redirect()->route('caravans.index')->with('alertDanger', 'Excluída!');
+    }
+
+    public function ativar($id)
+    {
+        $stake = auth()->user()->stake;
+        $caravan = Caravan::find($id);
+
+        if($caravan->ativo == 0){
+            $caravan->ativo = 1; //ativar cadastro
+            $caravan->update();
+            return redirect()->back();
+        }else{
+            $caravan->ativo = 0; //desativar cadastro
+            $caravan->update();
+            return redirect()->back();
+        }
     }
 }
