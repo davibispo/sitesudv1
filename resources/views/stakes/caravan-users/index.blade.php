@@ -32,7 +32,11 @@
                                         @endphp
 
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$caravan->id}}">
-                                            <i class="fas fa-bus"></i> Caravana de <b>{{ date("d/m/Y", strtotime($caravan->data))}}</b> ------- Vagas: <b>{{$vagas}}</b>
+                                            <i class="fas fa-bus"></i> Caravana de <b>{{ date("d/m/Y", strtotime($caravan->data))}}</b>
+                                            @if ($caravan->status == 1)
+                                                <b style="color:red">(Semana)</b>
+                                            @endif
+                                            ------- Vagas: <b>{{$vagas}}</b>
                                         </a>
                                     </h4>
                                 </div>

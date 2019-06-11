@@ -21,6 +21,15 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        {!! Form::label('status', 'Tipo', ['class'=>'col-md-4 control-label']) !!}
+                        <div class="col-md-6">
+                        Dia:    {!! Form::radio('status', '0', ['class' => 'form-control']) !!}
+                        </div>
+                        <div class="col-md-6">
+                        Semana:    {!! Form::radio('status', '1', ['class' => 'form-control']) !!}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         {!! Form::label('leader', 'Líder da caravana', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('leader', null, ['class' => 'form-control']) !!}

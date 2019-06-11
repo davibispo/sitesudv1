@@ -21,6 +21,7 @@
                                 <th>Data</th>
                                 <th>Líder da caravana</th> 
                                 <th>Telefone</th> 
+                                <th>Tipo</th> 
                                 <th>Ativar</th> 
                             </tr>
                         </thead>
@@ -30,6 +31,13 @@
                                 <td><b>{{date('d/m/Y', strtotime($caravan->data))}}</b></td>
                                 <td>{{$caravan->leader}}</td>
                                 <td>{{$caravan->phone}}</td>
+                                <td>
+                                    @if ($caravan->status == 0)
+                                        Dia
+                                    @else
+                                        Semana
+                                    @endif 
+                                </td>
                                 <td>
                                     @if ($caravan->ativo == 1)
 
