@@ -49,7 +49,7 @@
                                         $qtdPoltronas = 50;
                                         $listaPrincipal = 0;
                                         foreach ($caravanUsers as $caravanUser){
-                                            if($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0){
+                                            if($caravanUser->caravan_id == $caravan->id && ($caravanUser->poltrona > 0 && $caravanUser->poltrona != 99)){
                                                 $listaPrincipal++;
                                             }
                                         }
@@ -102,7 +102,7 @@
                             <tbody>
                                 @forelse($caravanUsers as $caravanUser)
                                 @foreach ($users as $user)
-                                @if(($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id) && $caravanUser->status != $statusReserva)
+                                @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status != $statusReserva && $caravanUser->status != 5)
                                 <tr>
                                     <td>
                                         {!! Form::model($caravanUser,['method'=>'PATCH','action'=>['CaravanUserController@update',$caravanUser->id]]) !!}
@@ -119,7 +119,7 @@
                                         {!! Form::close() !!}
                                     </td>
                                     <td>{{$caravanUser->poltrona}}</td>
-                                    @if(isset($caravanUser->kid) && $caravanUser->user_id == $user->id && $caravanUser->status != $statusReserva)
+                                    @if(isset($caravanUser->kid) && $caravanUser->user_id == $user->id && ($caravanUser->status != $statusReserva || $caravanUser->status == 5))
                                         <td>{{$caravanUser->kid}}</td>
                                         <td>{{$caravanUser->kid_doc}}</td>
                                         <td>{{$caravanUser->kid_age}}</td>
@@ -182,7 +182,7 @@
                             <tbody>
                                 @forelse($caravanUsers as $caravanUser)
                                 @foreach ($users as $user)
-                                @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status == $statusReserva)
+                                @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && ($caravanUser->status == $statusReserva || $caravanUser->status == 5))
                                 <tr>
                                     <td>
                                         {!! Form::model($caravanUser,['method'=>'PATCH','action'=>['CaravanUserController@update',$caravanUser->id]]) !!}

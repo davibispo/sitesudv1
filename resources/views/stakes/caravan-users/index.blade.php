@@ -24,7 +24,7 @@
                                             $qtdPoltronas = 50;
                                             $listaPrincipal = 0;
                                             foreach ($caravanUsers as $caravanUser){
-                                                if($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0){
+                                                if($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0 && $caravanUser->poltrona != 99){
                                                     $listaPrincipal++;
                                                 }
                                             }
@@ -74,10 +74,10 @@
                                             <tbody>
                                                 @forelse($caravanUsers as $caravanUser)
                                                     @foreach ($users as $user)
-                                                        @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && ($caravanUser->status != $statusReserva))    
+                                                        @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status != $statusReserva && $caravanUser->status != 5)    
                                                         <tr>
                                                             <td>{{$caravanUser->poltrona}}</td>
-                                                            @if(isset($caravanUser->kid) && ($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id))
+                                                            @if(isset($caravanUser->kid) && ($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id) && ($caravanUser->status != 5))
                                                                 <td>{{$caravanUser->kid}}</i></td>
                                                             @else
                                                                 <td>{{$user->name}} {{$user->lastname}}</td>
@@ -114,7 +114,7 @@
                                             <tbody>
                                                 @forelse($caravanUsers as $caravanUser)
                                                     @foreach ($users as $user)
-                                                        @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status == $statusReserva)
+                                                        @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && ($caravanUser->status == $statusReserva || $caravanUser->status == 5))
                                                         <tr>
                                                             @if(isset($caravanUser->kid))
                                                             <td>{{$caravanUser->kid}}</i></td>

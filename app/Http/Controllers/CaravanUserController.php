@@ -14,7 +14,7 @@ class CaravanUserController extends Controller {
         $stake = auth()->user()->stake;
         $caravans = Caravan::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
         $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('poltrona');
-        $users = User::all()->where('stake', $stake);
+        $users = User::all()->where('stake', $stake)->where('ativo', 1);
 
         //pega data por extenso em portugues
         setlocale(LC_TIME, 'portuguese');
@@ -26,15 +26,17 @@ class CaravanUserController extends Controller {
          * status   
          * 1 = lista principal,
          * 2 = lista reserva,
-         * 3 = criança com poltrona
+         * 3 = criança ou outra pessoa com poltrona
          * 4 = criança sem poltrona
+         * 5 = outra pessoa colocada na lista reserva
          */
         $statusPrincipal = 1;
         $statusReserva = 2;
         $criancaComPoltrona = 3;
         $criancaSemPoltrona = 4;
+        $outraPessoaNaListaReserva = 5;
 
-        return view('stakes.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona'));
+        return view('stakes.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona','outraPessoaNaListaReserva'));
     }
 
     public function createCaravanUser($caravanId) {
@@ -68,16 +70,24 @@ class CaravanUserController extends Controller {
         $caravanUser->poltrona = $request->poltrona;
         $caravanUser->kid = $request->kid;
 
-        if ((isset($caravanUser->kid)) && $caravanUser->poltrona > 0) {
+        if ((isset($caravanUser->kid)) && $caravanUser->poltrona > 0 && $caravanUser->poltrona != 99) {
             $caravanUser->status = '3'; //crianca ou outra pessoa com poltrona
             $caravanUser->kid_doc = $request->kid_doc;
             $caravanUser->kid_age = $request->kid_age;
             $caravanUser->cadastrador = auth()->user()->name;
+
         } elseif ((isset($caravanUser->kid)) && $caravanUser->poltrona == 0) {
             $caravanUser->status = '4'; //criança sem poltrona
             $caravanUser->kid_doc = $request->kid_doc;
             $caravanUser->kid_age = $request->kid_age;
             $caravanUser->cadastrador = auth()->user()->name;
+
+        } elseif ((isset($caravanUser->kid)) && $caravanUser->poltrona == 99) {
+            $caravanUser->status = '5'; // Outra pessoa colocada na lista reserva
+            $caravanUser->kid_doc = $request->kid_doc;
+            $caravanUser->kid_age = $request->kid_age;
+            $caravanUser->cadastrador = auth()->user()->name;
+
         } else {
             $caravanUser->status = $request->status;
         }
@@ -113,15 +123,16 @@ class CaravanUserController extends Controller {
         $statusReserva = 2;
         $criancaComPoltrona = 3;
         $criancaSemPoltrona = 4;
+        $outraPessoaNaListaReserva = 5;
 
         // contagem de quantos membros se cadastraram na lista principal e na lista reserva
         $listaPrincipal = 0;
         $listaReserva = 0;
 
         foreach ($caravanUsers as $caravanUser) {
-            if ($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0) {
+            if ($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0 && $caravanUser->poltrona != 99) {
                 $listaPrincipal++;
-            } elseif ($caravanUser->caravan_id == $caravan->id && $caravanUser->status == '2') {
+            } elseif ($caravanUser->caravan_id == $caravan->id && ($caravanUser->status == 2 || $caravanUser->status == 5)) {
                 $listaReserva++;
             }
         }
@@ -165,9 +176,9 @@ class CaravanUserController extends Controller {
         $listaReserva = 0;
 
         foreach ($caravanUsers as $caravanUser) {
-            if ($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0) {
+            if ($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0 && $caravanUser->poltrona != 99) {
                 $listaPrincipal++;
-            } elseif ($caravanUser->caravan_id == $caravan->id && $caravanUser->status == '2') {
+            } elseif ($caravanUser->caravan_id == $caravan->id && ($caravanUser->status == 2 || $caravanUser->status == 5)) {
                 $listaReserva++;
             }
         }
