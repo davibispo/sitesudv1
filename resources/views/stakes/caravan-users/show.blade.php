@@ -192,7 +192,7 @@
                                             {!! Form::hidden('kid_age', $caravanUser->kid_age) !!}
                                             {!! Form::hidden('kid_doc', $caravanUser->kid_doc) !!}
                                             {!! Form::hidden('status', '1') !!}
-                                            <div class="col-sm-5">
+                                            <div class="col-sm-6">
                                             {!! Form::number('poltrona', null, ['min'=>'1','max'=>'50','class'=>'form-control']) !!}
                                             </div>
                                             {!! Form::submit('Modificar',['class'=>'btn btn-warning btn-xs']) !!}
