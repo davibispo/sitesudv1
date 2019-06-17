@@ -107,14 +107,15 @@
 
                     <div class="form-group">
                         <div class="text-center">
-                            <input type="radio" name="poltrona" value="0" required>
-                            <b>NÃO</b> reservar poltrona (<i><b>Caso de criança pequena</b></i>).
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="text-center">
                             <input type="radio" name="poltrona" value="99" required>
                             Colocar nome na <b>Lista Reserva</b>.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="text-center">
+                            <input type="radio" name="poltrona" value="0" required>
+                            <b>Criança</b> Sem poltrona.
                         </div>
                     </div>
                     

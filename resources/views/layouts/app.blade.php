@@ -89,7 +89,7 @@
                                     <li><a href="{{route('caravan-users.index')}}">Reservas</a></li>
                                     @endcan
                                     @can('caravan_index')
-                                    <li><a href="{{route('caravans.index')}}">Criar/editar</a></li>
+                                    <li><a href="{{route('caravans.index')}}">Administrar</a></li>
                                     @endcan
                                 </ul>
                             </li> 

@@ -49,7 +49,7 @@
                                             <tr>
                                                 <td class="text-left">
                                                     <a href="{{route('caravan-users.create-caravan-user', $caravan->id)}}" class="btn btn-success btn-sm">
-                                                        <i class="fas fa-bus fa-lg" aria-hidden="true"></i> Reservar Vaga
+                                                        <i class="fas fa-bus fa-lg" aria-hidden="true"></i> VAGAS
                                                     </a>
                                                 </td>
                                                 <td class="text-right">
