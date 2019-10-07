@@ -18,6 +18,8 @@
                     </div>
                     <br>
                     <div class="perfil">
+                        <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                        
                         <table class="table table-striped" style="font-size:12px">
                             <thead>
                                 <tr>
@@ -26,7 +28,7 @@
                                     <th>Remover</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="myTable">
                                 @foreach ($users as $u) 
                                     @foreach ($roles as $r)
                                         @foreach ($roleUsers as $ru)
@@ -34,7 +36,7 @@
                                                 @if ($ru->role_id == $r->id) 
                                                 <tr>
                                                     <td>{{ $r->name }}</td>
-                                                    <td>{{ $u->name }}</td>  
+                                                    <td>{{ $u->name }} {{ $u->lastname }}</td>  
                                                     <td>
                                                         {!! Form::open(['method'=>'DELETE', 'action'=>['RoleUserController@destroy', $ru->id], 'style'=>'display:inline']) !!}
                                                         {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}

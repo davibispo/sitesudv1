@@ -30,6 +30,12 @@
                 enable_page_level_ads: true
             });
         </script>
+
+        <!-- Bootstrap -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
         
     </head>
     <body>
@@ -190,6 +196,18 @@
             @endif
             <!--fim do alerta-->
             
+            <!-- Campo para busca na tabela -->
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTable tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
+
             @yield('content')
 
             <div class="text-center">

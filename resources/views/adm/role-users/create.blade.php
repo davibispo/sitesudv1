@@ -11,12 +11,20 @@
                 <div class="panel-body">
 
                     {!! Form::open(['method'=>'POST', 'action'=>'RoleUserController@store']) !!}
-                        <select name='user_id' class="form-control" required>
-                            <option value=""> -- Escolha um usuário -- </option>
-                            @foreach ($users as $user)
-                                <option value="{{$user->id}}">{{$user->name}} {{$user->lastname}} - Estaca {{$user->stake}} - Ala/Ramo {{$user->ward}}</option>
-                            @endforeach
-                        </select>
+                        <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                        <div  style="overflow:auto; height: 110px;">
+                            <table style="font-size:12px">
+                                @foreach ($users as $u)
+                                <tbody id="myTable">
+                                    <tr>
+                                        <td> {{$u->name}} {{$u->lastname}} </td>
+                                        <td> Estaca: {{$u->stake}} - Ala: {{ $u->ward }} </td>
+                                        <td> {!! Form::radio('user_id', $u->id) !!} </td>
+                                    </tr>    
+                                </tbody>
+                                @endforeach
+                            </table>
+                        </div>
                         <select name='role_id' class="form-control" required>
                             <option value=""> -- Escolha um perfil -- </option>
                             @foreach ($roles as $role)
