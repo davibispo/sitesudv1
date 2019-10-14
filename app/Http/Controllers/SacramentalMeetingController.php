@@ -38,7 +38,7 @@ class SacramentalMeetingController extends Controller
                                         ->sortByDesc('created_at');
         }
         
-        return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings','chart'));
+        return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));
     }
 
     public function create()

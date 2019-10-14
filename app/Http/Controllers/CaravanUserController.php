@@ -36,7 +36,7 @@ class CaravanUserController extends Controller {
         $criancaSemPoltrona = 4;
         $outraPessoaNaListaReserva = 5;
 
-        return view('stakes.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'count', 'statusPrincipal', 'statusReserva', 'vagas', 'criancaComPoltrona', 'criancaSemPoltrona','outraPessoaNaListaReserva'));
+        return view('stakes.caravan-users.index', compact('stake', 'caravanUsers', 'caravans', 'users', 'statusPrincipal', 'statusReserva', 'criancaComPoltrona', 'criancaSemPoltrona','outraPessoaNaListaReserva'));
     }
 
     public function createCaravanUser($caravanId) {

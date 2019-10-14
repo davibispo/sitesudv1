@@ -82,5 +82,8 @@ Route::group(['middleware'=>'web'], function(){
 
     //Self Reliance
     Route::resource('/stakes/self-reliances', 'SelfRelianceController');
+    
+    //Leaders
+    Route::resource('/stakes/leaders', 'LeaderController');
 
 });
