@@ -22,15 +22,6 @@
         <!-- JQuery -->
         <script src="js/jquery-3.3.1.min.js"></script>  
         
-        <!-- Anúncios do Google Adsense -->
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-9352891206341061",
-                enable_page_level_ads: true
-            });
-        </script>
-
         <!-- Bootstrap -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -99,16 +90,10 @@
                                     @endcan
                                 </ul>
                             </li> 
-                            <li class="dropdown"> 
-                                @can('called_index')  
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Chamados
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="{{route('calleds.index')}}">Indicações</a></li>
-                                </ul>
-                                @endcan
-                            </li>
+                            @can('called_index')  
+                                <li><a href="{{route('calleds.index')}}">Indicações</a></li>
+                            @endcan
+                            
                             <li class="dropdown">
                                 @can('equipment_rent_index')
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipamentos
