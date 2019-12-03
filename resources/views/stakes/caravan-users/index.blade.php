@@ -69,7 +69,7 @@
                                                     <th>Poltrona</th> 
                                                     <th>Membro</th> 
                                                     <th>Unidade</th> 
-                                                    <th>S</th> 
+                                                    <th></th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -117,7 +117,7 @@
                                                 <tr>
                                                     <th>Membros</th> 
                                                     <th>Unidade</th> 
-                                                    <th>S</th>
+                                                    <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
