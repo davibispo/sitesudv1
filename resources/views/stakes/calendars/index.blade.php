@@ -20,15 +20,14 @@
                         </a>
                     </div>
                     <br>
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover" style="font-size:10px">
                         <thead>
                             <tr>
-                                <th>Data</th>
-                                <th>Hora</th>
-                                <th>Evento</th>
-                                <th>Local</th>
-                                <th>Organização</th>
-                                <th>Público alvo</th>
+                                <th style="width:5%">Data</th>
+                                <th style="width:15%">Hora</th>
+                                <th style="width:30%">Evento</th>
+                                <th style="width:20%">Local</th>
+                                <th style="width:30%">Público alvo</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -41,7 +40,6 @@
                                     <td>{{$calendar->horario}}</td>
                                     <td>{{$calendar->evento}}</td>
                                     <td>{{$calendar->local}}</td>
-                                    <td>{{$calendar->organizacao}}</td>
                                     <td>{{$calendar->publico}}</td>
                                     @can('calendar_create')
                                     <td>

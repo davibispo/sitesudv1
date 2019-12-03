@@ -27,6 +27,7 @@ Route::group(['middleware'=>'web'], function(){
     Route::get('/stakes/caravans/ativar/{id}', 'CaravanController@ativar')->name('caravans.ativar');
     Route::resource('/stakes/caravans', 'CaravanController');
     //caravanUser
+    Route::get('/stakes/caravan-users/pagto/{id}', 'CaravanUserController@pagto')->name('caravan-users.pagto');
     Route::resource('/stakes/caravan-users', 'CaravanUserController');
     Route::get('/stakes/caravan-users/{caravanId}/create-caravan-user', 'CaravanUserController@createCaravanUser')->name('caravan-users.create-caravan-user');
     Route::get('/stakes/caravan-users/{caravanId}/create-caravan-user-kid', 'CaravanUserController@createCaravanUserKid')->name('caravan-users.create-caravan-user-kid');

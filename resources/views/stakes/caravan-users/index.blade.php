@@ -67,8 +67,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>Poltrona</th> 
-                                                    <th>Membros</th> 
+                                                    <th>Membro</th> 
                                                     <th>Unidade</th> 
+                                                    <th>S</th> 
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -83,6 +84,13 @@
                                                                 <td>{{$user->name}} {{$user->lastname}}</td>
                                                             @endif
                                                             <td>{{$user->ward}}</td>
+                                                            <td>
+                                                                @if ($caravanUser->pagto == 1)
+                                                                    <i class="fas fa-circle" style="color:green"></i>
+                                                                    @else 
+                                                                    <i class="fas fa-circle" style="color:yellow"></i>
+                                                                @endif  
+                                                            </td>
                                                         </tr>
                                                         @endif
                                                     @endforeach
@@ -92,6 +100,7 @@
                                             </div>
                                             @endforelse
                                             <tr>
+                                                <td></td>
                                                 <td></td>
                                                 <td></td>
                                                 <td></td>
@@ -108,7 +117,7 @@
                                                 <tr>
                                                     <th>Membros</th> 
                                                     <th>Unidade</th> 
-                                                    <th></th>
+                                                    <th>S</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -122,7 +131,13 @@
                                                             <td>{{$user->name}} {{$user->lastname}}</td>
                                                             @endif
                                                             <td>{{$user->ward}}</td>
-                                                            <td></td>
+                                                            <td>
+                                                                @if ($caravanUser->pagto == 1)
+                                                                    <i class="fas fa-circle" style="color:green"></i>
+                                                                    @else 
+                                                                    <i class="fas fa-circle" style="color:red"></i>
+                                                                @endif  
+                                                            </td>
                                                         </tr>
                                                         @endif
                                                     @endforeach

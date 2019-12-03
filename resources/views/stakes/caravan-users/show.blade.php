@@ -92,6 +92,7 @@
                                     <th></th>
                                     <th>Poltrona</th> 
                                     <th>Membros</th> 
+                                    <th>Pagto</th> 
                                     <th>RG</th> 
                                     <th>Idade</th> 
                                     <th>Telefone</th> 
@@ -121,10 +122,24 @@
                                     <td>{{$caravanUser->poltrona}}</td>
                                     @if(isset($caravanUser->kid) && $caravanUser->user_id == $user->id && ($caravanUser->status != $statusReserva || $caravanUser->status == 5))
                                         <td>{{$caravanUser->kid}}</td>
+                                        <td>
+                                            @if ($caravanUser->pagto == 1)
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                            @else
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                            @endif
+                                        </td>
                                         <td>{{$caravanUser->kid_doc}}</td>
                                         <td>{{$caravanUser->kid_age}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
+                                        <td>
+                                            @if ($caravanUser->pagto == 1)
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                            @else
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                            @endif
+                                        </td>
                                         <td>{{$user->rg}} {{$user->orgao_exp}}</td>
                                         <td>
                                             @php
@@ -172,6 +187,7 @@
                                 <tr>
                                     <th>Poltrona</th>
                                     <th>Membros</th> 
+                                    <th>Pagto</th> 
                                     <th>RG</th> 
                                     <th>Idade</th> 
                                     <th>Telefone</th> 
@@ -203,6 +219,13 @@
                                         <td>{{$caravanUser->kid_doc}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
+                                        <td>
+                                            @if ($caravanUser->pagto == 1)
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                            @else
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                            @endif
+                                        </td>
                                         <td>{{$user->rg}} {{$user->orgao_exp}}</td>
                                     @endif
                                     <td>

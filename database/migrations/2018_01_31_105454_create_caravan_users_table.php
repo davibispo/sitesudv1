@@ -28,6 +28,7 @@ class CreateCaravanUsersTable extends Migration
 
             $table->integer('poltrona');
             $table->char('status', 1);
+            $table->char('pagto', 1)->default(0);
 
             $table->char('ativo',1)->nullable()->default('1');
 

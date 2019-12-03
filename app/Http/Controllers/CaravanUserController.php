@@ -219,6 +219,7 @@ class CaravanUserController extends Controller {
         } else {
             return redirect()->back()->with('alertDanger', 'Houve algum erro!');
         }
+
     }
 
     public function destroy($id) {
@@ -229,4 +230,21 @@ class CaravanUserController extends Controller {
 
         return redirect()->back()->with('alertDanger', 'Excluído!');
     }
+
+    public function pagto($id)
+    {
+        $stake = auth()->user()->stake;
+        $caravanUser = CaravanUser::find($id);
+
+        if($caravanUser->pagto == 0){
+            $caravanUser->pagto = 1; //confirmar cadastro
+            $caravanUser->update();
+            return redirect()->back();
+        }else{
+            $caravanUser->pagto = 0; // cadastro não confirmado
+            $caravanUser->update();
+            return redirect()->back();
+        }
+    }
+   
 }

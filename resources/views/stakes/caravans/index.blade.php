@@ -42,10 +42,8 @@
                                 </td>
                                 <td>
                                     @if ($caravan->ativo == 1)
-
                                         <a href="{{ route('caravans.ativar', $caravan->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
                                     @else
-
                                         <a href="{{ route('caravans.ativar', $caravan->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
                                     @endif
                                 </td>
