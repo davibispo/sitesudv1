@@ -32,28 +32,28 @@
                     @can('calendar_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('calendars.index')}}">Calendário</a>
+                            <a class="btn btn-success btn-block" href="{{route('calendars.index')}}">Calendário</a>
                         </div>
                     </div>
                     @endcan
                     @can('interview_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('interviews.index')}}">Entrevistas</a>
+                            <a class="btn btn-success btn-block" href="{{route('interviews.index')}}">Entrevistas</a>
                         </div>
                     </div>
                     @endcan
                     @can('caravan_user_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('caravan-users.index')}}">Caravanas</a>
+                            <a class="btn btn-success btn-block" href="{{route('caravan-users.index')}}">Caravanas</a>
                         </div>
                     </div>
                     @endcan
                     @can('called_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('calleds.index')}}">Indicações</a>
+                            <a class="btn btn-success btn-block" href="{{route('calleds.index')}}">Indicações</a>
                         </div>
                     </div>
                     @endcan
@@ -63,28 +63,28 @@
                     @can('equipment_rent_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('equipment-rents.index')}}">Equipamentos</a>
+                            <a class="btn btn-success btn-block" href="{{route('equipment-rents.index')}}">Equipamentos</a>
                         </div>
                     </div>
                     @endcan
                     @can('meeting_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('sacramental-meetings.index')}}">Sacramental</a>
+                            <a class="btn btn-success btn-block" href="{{route('sacramental-meetings.index')}}">Sacramental</a>
                         </div>
                     </div>
                     @endcan
                     @can('conselor_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{route('conselor.index')}}">Conselho Maceió</a>
+                            <a class="btn btn-success btn-block" href="{{route('conselor.index')}}">Conselho Maceió</a>
                         </div>
                     </div>
                     @endcan
                     @can('calendar_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
-                            <a class="btn btn-primary btn-block" href="{{ route('leaders.index') }}">Líderes</a>
+                            <a class="btn btn-success btn-block" href="{{ route('leaders.index') }}">Líderes</a>
                         </div>
                     </div>
                     @endcan

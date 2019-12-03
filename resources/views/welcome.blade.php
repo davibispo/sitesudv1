@@ -17,7 +17,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: steelblue;
+                color: rgb(45, 133, 67);;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -53,7 +53,7 @@
             }
 
             .links > a {
-                color: steelblue;
+                color: rgb(45, 133, 67);;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -65,7 +65,7 @@
             }
 
             .links > a:hover {
-                background-color: steelblue;
+                background-color: rgb(45, 133, 67);;
                 color: white;
             }
 
