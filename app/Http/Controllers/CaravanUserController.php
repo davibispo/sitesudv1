@@ -81,6 +81,9 @@ class CaravanUserController extends Controller {
             $caravanUser->kid_doc = $request->kid_doc;
             $caravanUser->kid_age = $request->kid_age;
             $caravanUser->cadastrador = auth()->user()->name;
+            if($request->kid_age > 5){
+                return redirect()->back()->with('alertDanger', 'Desculpe! Idade para criança ir no colo é até 5 anos!');    
+            }
 
         } elseif ((isset($caravanUser->kid)) && $caravanUser->poltrona == 99) {
             $caravanUser->status = '5'; // Outra pessoa colocada na lista reserva
