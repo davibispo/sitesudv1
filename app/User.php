@@ -6,6 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Role;
 use App\Models\Permission;
+use App\Notifications\ResetPassword;
 
 class User extends Authenticatable {
 
@@ -66,6 +67,12 @@ class User extends Authenticatable {
         }
         //traz o nome do perfil
         return $this->roles->contains('name', $roles);
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        // Não esquece: use App\Notifications\ResetPassword;
+        $this->notify(new ResetPassword($token));
     }
 
 }

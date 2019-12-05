@@ -152,6 +152,52 @@ class CaravanUserController extends Controller {
         return view('stakes.caravan-users.show', compact('caravan', 'stake', 'caravanUsers', 'users', 'listaPrincipal', 'listaReserva', 'totalCadastrados', 'caravanPrice', 'statusPrincipal', 'statusReserva', 'criancaComPoltrona', 'criancaSemPoltrona'));
     }
 
+    public function showUser($id) {
+        $stake = auth()->user()->stake;
+        $caravan = Caravan::find($id);
+        $caravanUsers = CaravanUser::all()->where('ativo','1')->sortBy('poltrona');
+        $users = User::all()->where('stake', $stake);
+
+        /*
+         * status   
+         * 1 = lista principal,
+         * 2 = lista reserva,
+         * 3 = criança com poltrona
+         * 4 = criança sem poltrona
+         */
+        $statusPrincipal = 1;
+        $statusReserva = 2;
+        $criancaComPoltrona = 3;
+        $criancaSemPoltrona = 4;
+        $outraPessoaNaListaReserva = 5;
+
+        // contagem de quantos membros se cadastraram na lista principal e na lista reserva
+        $listaPrincipal = 0;
+        $listaReserva = 0;
+
+        foreach ($caravanUsers as $caravanUser) {
+            if ($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0 && $caravanUser->poltrona != 99) {
+                $listaPrincipal++;
+            } elseif ($caravanUser->caravan_id == $caravan->id && ($caravanUser->status == 2 || $caravanUser->status == 5)) {
+                $listaReserva++;
+            }
+        }
+
+        // calculo do valor da caravana por membro
+        $bus = $caravan->bus; //valor do aluguel do onibus
+        $accommodation = $caravan->accommodation; // valor do alojamento
+        if ($listaPrincipal != 0) {
+            $caravanPrice = ($bus / $listaPrincipal) + $accommodation; // valor da caravana por membro
+        } else {
+            $caravanPrice = 0;
+        }
+
+        //total geral principal + reserva
+        $totalCadastrados = $listaPrincipal + $listaReserva;
+
+        return view('stakes.caravan-users.show-user', compact('caravan', 'stake', 'caravanUsers', 'users', 'listaPrincipal', 'listaReserva', 'totalCadastrados', 'caravanPrice', 'statusPrincipal', 'statusReserva', 'criancaComPoltrona', 'criancaSemPoltrona'));
+    }
+
     //metodo para impressao dos detalhes da caravana
     public function showPrint($id) {
         $stake = auth()->user()->stake;

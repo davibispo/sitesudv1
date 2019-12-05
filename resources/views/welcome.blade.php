@@ -65,7 +65,7 @@
             }
 
             .links > a:hover {
-                background-color: rgb(45, 133, 67);;
+                background-color: rgb(45, 133, 67);
                 color: white;
             }
 

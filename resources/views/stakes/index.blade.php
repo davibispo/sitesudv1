@@ -57,9 +57,7 @@
                         </div>
                     </div>
                     @endcan
-                </div>
                 
-                <div class="row">
                     @can('equipment_rent_index')
                     <div class="col-sm-3">
                         <div style="padding:3%">
