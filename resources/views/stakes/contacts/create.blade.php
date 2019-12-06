@@ -7,6 +7,12 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Suporte do Sistema SiteSUD</b></div>
                 
+                <div class="container">
+                    @can('contact_index')
+                    <a href="{{route('contacts.index')}}" class="btn btn-sm btn-success">Ver Respostas</a>
+                    @endcan
+                </div>
+
                 <div class="panel-body">
                     {!! Form::open(['method'=>'POST', 'action'=>'ContactController@store', 'class'=>'form-horizontal']) !!}
                         

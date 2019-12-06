@@ -89,24 +89,14 @@
                             @endcan     
                             
                             @can('sacramental_meeting_index')
-                            <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>
+                                <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>
                             @endcan
                                
-                            <li class="dropdown">
-                                @can('contact_create')
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Suporte
-                                    <span class="caret"></span>
-                                </a>
-                                @endcan
-                                <ul class="dropdown-menu">
-                                    @can('contact_create')
-                                    <li><a href="{{route('contacts.create')}}">Enviar Mensagem</a></li>
-                                    @endcan
-                                    @can('contact_index')
-                                    <li><a href="{{route('contacts.index')}}">Ver Respostas</a></li>
-                                    @endcan
-                                </ul>
-                            </li>
+                            @can('contact_create')
+                                <li><a href="{{route('contacts.create')}}">Suporte</a></li>
+                            @endcan
+                            
+                                
                             
                         </ul>
 
