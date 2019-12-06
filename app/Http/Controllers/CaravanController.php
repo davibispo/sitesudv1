@@ -24,6 +24,7 @@ class CaravanController extends Controller
 
     public function store(Request $request)
     {
+        //dd($request);
         $this->validate($request, [
             'data' => 'required|date',
             'bus' => 'required',
@@ -36,8 +37,8 @@ class CaravanController extends Controller
         $caravan->data = $request->data;
         $caravan->leader = strtoupper($request->leader);
         $caravan->phone = $request->phone;
-        $caravan->bus = $request->bus;
-        $caravan->accommodation = $request->accommodation;
+        $caravan->bus = str_replace(',','.', $request->bus);
+        $caravan->accommodation = str_replace(',','.', $request->accommodation);
         $caravan->obs = $request->obs;
         $caravan->status = $request->status;
         
@@ -71,10 +72,10 @@ class CaravanController extends Controller
         ]);
         
         $caravan->data = $request->data;
-        $caravan->leader = $request->leader;
+        $caravan->leader = strtoupper($request->leader);
         $caravan->phone = $request->phone;
-        $caravan->bus = $request->bus;
-        $caravan->accommodation = $request->accommodation;
+        $caravan->bus = str_replace(',','.', $request->bus);
+        $caravan->accommodation = str_replace(',','.', $request->accommodation);
         $caravan->obs = $request->obs;
         $caravan->status = $request->status;
         

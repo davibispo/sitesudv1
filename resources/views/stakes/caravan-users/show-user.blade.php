@@ -29,7 +29,7 @@
                                 <div class="text-right">
                                     @can('caravan_user_update')
                                     <a href="{{route('caravan-users.show', $caravan->id)}}" class="btn btn-default btn-xs">
-                                        <i class="fas fa-info-circle fa-lg" style="color:rgb(45, 133, 67)"></i> Detalhes
+                                        <i class="fas fa-cog fa-lg" style="color:rgb(45, 133, 67)"></i> Gerenciar
                                     </a>
                                     @endcan
                                 </div>

@@ -18,6 +18,10 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <!-- Para Mascaras Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         
         <!-- JQuery -->
         <script src="js/jquery-3.3.1.min.js"></script>  
@@ -26,6 +30,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
         
     </head>
@@ -137,6 +142,8 @@
                     </div>
                 </div>
             </nav>
+
+            
             <!--alertas-->
             @if (session('alertSuccess'))
                 <div class="alert alert-success text-center">
@@ -208,5 +215,18 @@
             }
         </script>
          
+        <!-- Mascaras  -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#phone").mask('(00) 0 0000-0000', {reverse: false});
+                $('#bus').mask('0000,00' , { reverse : true});
+                $("#accommodation").mask('0000,00' , { reverse : true});
+            });
+        </script>
+        <!-- fim de mascaras-->
+
+
+
     </body>
 </html>

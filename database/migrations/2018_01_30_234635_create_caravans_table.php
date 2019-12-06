@@ -18,9 +18,9 @@ class CreateCaravansTable extends Migration
             $table->string('stake', 30);
             $table->date('data');
             $table->string('leader', 30)->nullable();
-            $table->string('phone', 15)->nullable();
-            $table->double('bus', 6, 2)->nullable()->default(0); //valor do onibus
-            $table->double('accommodation', 6, 2)->nullable()->default(0); //valor do alojamento
+            $table->string('phone', 30)->nullable();
+            $table->decimal('bus', 5, 2)->nullable()->default(0); //valor do onibus
+            $table->decimal('accommodation', 5, 2)->nullable()->default(0); //valor do alojamento
             $table->text('obs')->nullable();
             $table->char('ativo',1)->nullable()->default('1');
             

@@ -38,13 +38,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('bus', 'Aluguel do Ônibus (valor total)', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('bus', 'Valor do ônibus', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('bus', null, ['class' => 'form-control', 'required']) !!}
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('accommodation', 'Alojamento (valor de 1 pernoite)', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('accommodation', 'Valor do alojamento (individual)', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('accommodation', null, ['class' => 'form-control', 'required']) !!}
                         </div>
