@@ -10,9 +10,12 @@
 
                 <div class="panel-body">
                     <div>
-                        <a href="{{route('equipment-rents.create')}}" class="btn btn-primary btn-sm">
-                            Solicitar Equipamento
-                        </a>
+                        <a href="{{route('equipment-rents.create')}}" class="btn btn-primary btn-sm">Solicitar Equipamento</a>
+                        @can('equipment_index')
+                            <a href="{{route('equipments.index')}}" class="btn btn-sm btn-success">
+                                <i class="fas fa-list"></i> Lista de Equipamentos
+                            </a>
+                        @endcan
                     </div>
                     <br>
                     <table class="table table-striped table-hover" style="font-size: 12px">

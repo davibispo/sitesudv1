@@ -75,40 +75,18 @@
                             @can('interview_index')
                             <li><a href="{{route('interviews.index')}}">Entrevistas</a></li>
                             @endcan
-                            <li class="dropdown">
-                                @can('caravan_user_index')
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Caravanas
-                                    <span class="caret"></span>
-                                </a>
-                                @endcan
-                                <ul class="dropdown-menu">
-                                    @can('caravan_user_index')
-                                    <li><a href="{{route('caravan-users.index')}}">Reservas</a></li>
-                                    @endcan
-                                    @can('caravan_index')
-                                    <li><a href="{{route('caravans.index')}}">Administrar</a></li>
-                                    @endcan
-                                </ul>
-                            </li> 
+                            
+                            @can('caravan_user_index')
+                                <li><a href="{{route('caravan-users.index')}}">Caravanas</a></li>
+                            @endcan
+                                
                             @can('called_index')  
                                 <li><a href="{{route('calleds.index')}}">Indicações</a></li>
                             @endcan
                             
-                            <li class="dropdown">
-                                @can('equipment_rent_index')
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Equipamentos
-                                    <span class="caret"></span>
-                                </a>
-                                @endcan
-                                <ul class="dropdown-menu">
-                                    @can('equipment_rent_index')
-                                    <li><a href="{{route('equipment-rents.index')}}">Empréstimos</a></li>
-                                    @endcan
-                                    @can('equipment_index')
-                                    <li><a href="{{route('equipments.index')}}">Lista de Equipamentos</a></li>
-                                    @endcan
-                                </ul>
-                            </li>
+                            @can('equipment_rent_index')
+                                <li><a href="{{route('equipment-rents.index')}}">Equipamentos</a></li>
+                            @endcan     
                             
                             @can('sacramental_meeting_index')
                             <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>

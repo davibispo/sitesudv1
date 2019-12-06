@@ -11,7 +11,7 @@
                 <div class="panel-body">
                     <div>
                         <a href="{{route('equipments.create')}}" class="btn btn-primary btn-sm">
-                            Cadastrar Equipamento
+                            Cadastrar Novo Equipamento
                         </a>
                     </div>
                     <br>

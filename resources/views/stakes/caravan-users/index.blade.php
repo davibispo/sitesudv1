@@ -10,6 +10,9 @@
                 <div class="panel-body">
                     <div class="text-center">
                         <h4>Escolha uma caravana e faça sua reserva!</h4>
+                        @can('caravan_index')
+                            <a href="{{route('caravans.index')}}" class="btn btn-xs btn-success"><i class="fas fa-cog"></i> Administrar</a>
+                        @endcan
                     </div>
                     <br>
                     <div class="well">
