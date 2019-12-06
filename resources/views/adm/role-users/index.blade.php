@@ -25,6 +25,7 @@
                                 <tr>
                                     <th>Perfil</th>
                                     <th>Usuário</th>
+                                    <th>Unidade</th>
                                     <th>Remover</th>
                                 </tr>
                             </thead>
@@ -37,6 +38,7 @@
                                                 <tr>
                                                     <td>{{ $r->name }}</td>
                                                     <td>{{ $u->name }} {{ $u->lastname }}</td>  
+                                                    <td>{{ $u->ward }} - {{ $u->stake }}</td>  
                                                     <td>
                                                         {!! Form::open(['method'=>'DELETE', 'action'=>['RoleUserController@destroy', $ru->id], 'style'=>'display:inline']) !!}
                                                         {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs']) !!}
