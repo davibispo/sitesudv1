@@ -22,6 +22,9 @@
                             <b>Líder da caravana: </b>{{$caravan->leader}}
                         </div>
                         <div class="form-group">
+                            <b>Quantidade de Vagas: </b>{{$caravan->qtdPoltronas}}
+                        </div>
+                        <div class="form-group">
                             <b>Telefone do líder: </b>{{$caravan->phone}}
                         </div>
                         <div class="form-group">

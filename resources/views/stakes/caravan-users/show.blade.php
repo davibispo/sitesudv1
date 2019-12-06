@@ -46,7 +46,7 @@
                                 <td class="text-right" colspan="2">Vagas restantes: 
                                     @php
                                         //calculo das vagas restantes
-                                        $qtdPoltronas = 50;
+                                        $qtdPoltronas = $caravan->qtdPoltronas;
                                         $listaPrincipal = 0;
                                         foreach ($caravanUsers as $caravanUser){
                                             if($caravanUser->caravan_id == $caravan->id && ($caravanUser->poltrona > 0 && $caravanUser->poltrona != 99)){

@@ -41,6 +41,7 @@ class CaravanController extends Controller
         $caravan->accommodation = str_replace(',','.', $request->accommodation);
         $caravan->obs = $request->obs;
         $caravan->status = $request->status;
+        $caravan->qtdPoltronas = $request->qtdPoltronas;
         
         $caravan->save();
         
@@ -78,6 +79,7 @@ class CaravanController extends Controller
         $caravan->accommodation = str_replace(',','.', $request->accommodation);
         $caravan->obs = $request->obs;
         $caravan->status = $request->status;
+        $caravan->qtdPoltronas = $request->qtdPoltronas;
         
         $caravan->update();
         

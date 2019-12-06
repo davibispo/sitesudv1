@@ -21,7 +21,7 @@
                                 </div>
                             </td>
                             <td class="text-center">
-                                <a href="{{route('caravan-users.create-caravan-user', $caravan->id)}}" class="btn btn-success btn-sm">
+                                <a href="{{route('caravan-users.create-caravan-user', $caravan->id)}}" class="btn btn-primary btn-sm">
                                     <i class="fas fa-bus fa-lg" aria-hidden="true"></i> VAGAS
                                 </a>
                             </td>

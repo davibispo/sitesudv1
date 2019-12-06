@@ -1,0 +1,5 @@
+Após deploy mudar o seguinte no banco:
+
+- tabela caravan: 
+	acrescentar campo qtdPoltronas com 50 pre definido;
+	modificar campo bus e acomodation para decimal com 10,2.

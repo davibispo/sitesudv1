@@ -22,7 +22,7 @@
                         <table class="table table-bordered">
                             <tbody>           
                                 <tr>
-                                    @for($i=3;$i<=50;$i++)
+                                    @for($i=3;$i<=$caravan->qtdPoltronas;$i++)
                                     @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
                                     <td style="background-color: green; color:white; width: 50px;">
                                         {{$i}} <input type="radio" name="poltrona" value="{{$i}}" required>
@@ -35,7 +35,7 @@
                                     <td rowspan="2">WC</td>
                                 </tr>
                                 <tr>
-                                    @for($i=4;$i<51;$i++)
+                                    @for($i=4;$i<=$caravan->qtdPoltronas;$i++)
                                     @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
                                     <td style="background-color: green; color:white; width: 50px;">
                                         {{$i}} <input type="radio" name="poltrona" value="{{$i}}" required>
@@ -50,7 +50,7 @@
                                     <td colspan="13"></td>
                                 </tr>
                                 <tr>
-                                    @for($i=2;$i<51;$i++)
+                                    @for($i=2;$i<=$caravan->qtdPoltronas;$i++)
                                     @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
                                     <td style="background-color: green; color:white; width: 50px;">
                                         {{$i}} <input type="radio" name="poltrona" value="{{$i}}" required>
@@ -62,7 +62,7 @@
                                     @endfor
                                 </tr>
                                 <tr>
-                                    @for($i=1;$i<51;$i++)
+                                    @for($i=1;$i<=$caravan->qtdPoltronas;$i++)
                                     @if (DB::table('caravan_users')->where('ativo','1')->where('poltrona', $i)->where('caravan_id', $caravan->id)->value('poltrona') != $i)
                                     <td style="background-color: green; color:white; width: 50px;">
                                         {{$i}} <input type="radio" name="poltrona" value="{{$i}}" required>

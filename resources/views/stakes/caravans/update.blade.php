@@ -32,6 +32,47 @@
                         </div>
                     </div>
                     <div class="form-group">
+                            {!! Form::label('qtdPoltronas', 'Quantidade Vagas', ['class'=>'col-md-4 control-label']) !!}
+                            <div class="col-md-6">
+                                {!! Form::select('qtdPoltronas', 
+                                    [
+                                        '50' => '50', 
+                                        '49' => '49', 
+                                        '48' => '48', 
+                                        '47' => '47', 
+                                        '46' => '46', 
+                                        '45' => '45', 
+                                        '44' => '44', 
+                                        '43' => '43', 
+                                        '42' => '42', 
+                                        '41' => '41', 
+                                        '40' => '40', 
+                                        '39' => '39', 
+                                        '38' => '38', 
+                                        '37' => '37', 
+                                        '36' => '36', 
+                                        '35' => '35', 
+                                        '34' => '34', 
+                                        '33' => '33', 
+                                        '32' => '32', 
+                                        '31' => '31', 
+                                        '30' => '30', 
+                                        '29' => '29', 
+                                        '28' => '28', 
+                                        '27' => '27', 
+                                        '26' => '26', 
+                                        '25' => '25', 
+                                        '24' => '24', 
+                                        '23' => '23', 
+                                        '22' => '22', 
+                                        '21' => '21', 
+                                        '20' => '20',    
+                                    ], 
+                                    null, ['class' => 'form-control', 'required']) 
+                                !!}     
+                            </div>
+                        </div>
+                    <div class="form-group">
                         {!! Form::label('phone', 'Telefone do líder', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('phone', null, ['class' => 'form-control']) !!}
