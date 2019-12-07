@@ -25,7 +25,13 @@
                             @if($interview->interview_type_id == 6)
                             @can('interview_update_patriarca')
                             <tr>
-                                <td>{{$userName}} {{$userLastname}}</td>
+                                <td>
+                                    @if (isset($interview->nome))
+                                        {{ $interview->nome }}
+                                        @else
+                                        {{$user->name}} {{$user->lastname}}
+                                    @endif
+                                </td>
                                 <td>{{$userPhone}}</td>
                                 <td>{{$userWard}}</td>
                                 <td>{{$interviewType}}</td>
@@ -51,7 +57,13 @@
                             @else
                             @can('interview_update_presidencia')
                             <tr>
-                                <td>{{$userName}} {{$userLastname}}</td>
+                                <td>
+                                    @if (isset($interview->nome))
+                                        {{ $interview->nome }}
+                                        @else
+                                        {{$user->name}} {{$user->lastname}}
+                                    @endif
+                                </td>
                                 <td>{{$userPhone}}</td>
                                 <td>{{$userWard}}</td>
                                 <td>{{$interviewType}}</td>

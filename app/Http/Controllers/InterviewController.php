@@ -66,6 +66,7 @@ class InterviewController extends Controller
         
         $interview->user_id = auth()->user()->id;
         $interview->interview_type_id = $request->interview_type_id;
+        $interview->nome = $request->nome;
         $interview->stake = auth()->user()->stake;
         $interview->interviewer = $request->interviewer;
         $interview->status = '1';
@@ -87,6 +88,7 @@ class InterviewController extends Controller
         $interview = Interview::find($id);
         $userName = User::where('id',$interview->user_id)->value('name');
         $userLastname = User::where('id',$interview->user_id)->value('lastname');
+        $nomeMembro = Interview::where('id',$interview->user_id)->value('nome');
         $userPhone = User::where('id',$interview->user_id)->value('phone');
         $userWard = User::where('id',$interview->user_id)->value('ward');
         $interviewType = InterviewType::where('id', $interview->interview_type_id)->value('description');

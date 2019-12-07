@@ -14,24 +14,20 @@
                     <table class="table">
                         <tr>
                             <td>
-                                <div class="text-left">
-                                    <a href="{{route('caravan-users.index')}}" class="btn btn-default btn-xs">
-                                        <i class="fas fa-angle-left"></i> voltar
-                                    </a>
-                                </div>
-                            </td>
-                            <td class="text-center">
-                                <a href="{{route('caravan-users.create-caravan-user', $caravan->id)}}" class="btn btn-primary btn-sm">
-                                    <i class="fas fa-bus fa-lg" aria-hidden="true"></i> VAGAS
+                                <a href="{{route('caravan-users.index')}}" class="btn btn-default btn-xs" style="float:left">
+                                    <i class="fas fa-angle-left"></i> voltar
                                 </a>
-                            </td>
-                            <td>
-                                <div class="text-right">
-                                    @can('caravan_user_update')
-                                    <a href="{{route('caravan-users.show', $caravan->id)}}" class="btn btn-default btn-xs">
-                                        <i class="fas fa-cog fa-lg" style="color:rgb(45, 133, 67)"></i> Gerenciar
+                                
+                                @can('caravan_user_update')
+                                <a href="{{route('caravan-users.show', $caravan->id)}}" class="btn btn-default btn-xs" style="float:right">
+                                    <i class="fas fa-cog fa-lg" style="color:rgb(45, 133, 67)"></i> Gerenciar
+                                </a>
+                                @endcan
+                                        
+                                <div class="text-center">
+                                    <a href="{{route('caravan-users.create-caravan-user', $caravan->id)}}" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-bus fa-lg" aria-hidden="true"></i> VAGAS
                                     </a>
-                                    @endcan
                                 </div>
                             </td>
                         </tr>    
@@ -42,7 +38,6 @@
                         <b>Obs:</b> {{$caravan->obs}}      
                     </div>
 
-                    @can('caravan_user_update')
                     <div class="well">
                         <p class="text-left">Lista Principal</p>
                         <table class="table table-striped table-hover">
@@ -136,7 +131,7 @@
                             </tbody>
                         </table>
                     </div>
-                    @endcan
+                    
                 </div>
             </div>
         </div> 

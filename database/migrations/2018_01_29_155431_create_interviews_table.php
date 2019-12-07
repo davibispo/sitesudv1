@@ -17,6 +17,7 @@ class CreateInterviewsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('nome', 80)->nullable();
             $table->integer('interview_type_id');
             $table->string('stake', 50);
             $table->string('interviewer', 40)->nullable();

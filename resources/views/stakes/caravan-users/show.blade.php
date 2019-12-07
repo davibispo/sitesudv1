@@ -86,7 +86,7 @@
                     @can('caravan_user_update')
                     <div class="well">
                         <p class="text-left">Lista Principal</p>
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover" style="font-size:12px">
                             <thead>
                                 <tr>
                                     <th></th>
@@ -95,8 +95,9 @@
                                     <th>Pagto</th> 
                                     <th>RG</th> 
                                     <th>Idade</th> 
-                                    <th>Telefone</th> 
+                                    <th>Contato</th> 
                                     <th>Unidade</th> 
+                                    <th>Cadastro</th> 
                                     <th></th>
                                 </tr>
                             </thead>
@@ -162,6 +163,7 @@
                                     @endif
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->ward}}</td>
+                                    <td>{{ date('d/m H:i', strtotime($caravanUser->created_at))}}</td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['CaravanUserController@destroy', $caravanUser->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('X',['class'=>'btn btn-danger btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
@@ -182,7 +184,7 @@
                     <!-- Lista Reserva -->
                     <div class="well">
                         <p class="text-left">Lista Reserva</p>
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped table-hover" style="font-size:12px">
                             <thead>
                                 <tr>
                                     <th>Poltrona</th>
@@ -192,6 +194,7 @@
                                     <th>Idade</th> 
                                     <th>Telefone</th> 
                                     <th>Unidade</th> 
+                                    <th>Cadastro</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -248,6 +251,7 @@
                                     </td>
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->ward}}</td>
+                                    <td>{{ date('d/m H:i', strtotime($caravanUser->created_at))}}</td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['CaravanUserController@destroy', $caravanUser->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('X',['class'=>'btn btn-danger btn-xs','data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}

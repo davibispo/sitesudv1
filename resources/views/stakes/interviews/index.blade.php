@@ -11,8 +11,7 @@
                 <div class="panel-body">
                     <div>
                         <a href="{{route('interviews.create')}}" class="btn btn-primary btn-sm">
-                            <i class="fas fa-plus"></i> 
-                            Solicitar
+                            <i class=""></i> Solicitar uma entrevista
                         </a>
                     </div>
                     <br>
@@ -20,7 +19,7 @@
                         <thead>
                             <tr>
                                 <th style="width:20%">Membro</th>
-                                <th style="width:10%">Telefone</th> 
+                                <th style="width:10%">Contato</th> 
                                 <th style="width:10%">Unidade</th> 
                                 <th style="width:15%">Motivo da entrevista</th>
                                 <th style="width:10%">Entrevistador</th>
@@ -36,7 +35,13 @@
                                         @if($interview->interview_type_id == 6)
                                         
                                         <tr>
-                                            <th>{{$user->name}} {{$user->lastname}}</th>
+                                            <th>
+                                                @if (isset($interview->nome))
+                                                    {{ $interview->nome }}
+                                                    @else
+                                                    {{$user->name}} {{$user->lastname}}
+                                                @endif
+                                            </th>
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
                                             <th>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</th>
@@ -68,7 +73,13 @@
                                         
                                         @else   
                                         <tr>
-                                            <th>{{$user->name}} {{$user->lastname}}</th>
+                                            <th>
+                                                @if (isset($interview->nome))
+                                                    {{ $interview->nome }}
+                                                    @else
+                                                    {{$user->name}} {{$user->lastname}}
+                                                @endif
+                                            </th>
                                             <td>{{$user->phone}}</td>
                                             <td>{{$user->ward}}</td>
                                             <th>{{DB::table('interview_types')->where('ativo','1')->where('id',$interview->interview_type_id)->value('description')}}</th>
