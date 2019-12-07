@@ -33,17 +33,18 @@
                     </table>
                     
                     <div class="well well-xs">
-                        <table class="table table-striped">
+                        <table class="table table-bordered" style="font-size:12px; background-color:white">
                             <tr class="text-center">
-                                <td colspan="4"><b>Líder da caravana:</b> {{$caravan->leader}} - <b>Telefone:</b> {{$caravan->phone}}</td>
+                                <td colspan="3"><b>Líder da caravana:</b> {{$caravan->leader}} - <b>Telefone:</b> {{$caravan->phone}}</td>
                             </tr>
                             <tr>
-                                <td colspan="2">Membros na Lista Principal: <b>{{$listaPrincipal}}</td>
-                                <td class="text-right" colspan="2">Valor total da caravana por membro:<b> R$ {{number_format($caravanPrice, 2, ',', ' ')}}</b></td>
+                                <td>Membros na Lista Principal: <b>{{$listaPrincipal}}</td>
+                                <td>Total de membros cadastrados: <b>{{$totalCadastrados}}</b></td>
+                                <td>Valor da caravana por membro:<b> R$ {{number_format($caravanPrice, 2, ',', ' ')}}</b></td>
                             </tr>
                             <tr>
-                                <td colspan="2">Membros na Lista Reserva: <b>{{$listaReserva}}</b></td>
-                                <td class="text-right" colspan="2">Vagas restantes: 
+                                <td>Membros na Lista Reserva: <b>{{$listaReserva}}</b></td>
+                                <td>Vagas restantes: 
                                     @php
                                         //calculo das vagas restantes
                                         $qtdPoltronas = $caravan->qtdPoltronas;
@@ -57,27 +58,16 @@
                                     @endphp
                                     <b>{{$vagas}}</b>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Total de membros cadastrados: <b>{{$totalCadastrados}}</b></td>
-                                <td class="text-right" colspan="2">
-                                    
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center" colspan="4">
-                                    <i>
-                                        Valor do aluguel do ônibus: 
-                                        R$ {{number_format($caravan->bus, 2, ',', ' ')}} 
-                                        | 
-                                        Valor da pernoite: R$ {{number_format($caravan->accommodation, 2, ',', ' ')}}
-                                    </i>
+                                <td>
+                                    Valor do aluguel do ônibus: 
+                                    <b>R$ {{number_format($caravan->bus, 2, ',', ' ')}}</b> 
+                                    | 
+                                    Valor da pernoite: <b>R$ {{number_format($caravan->accommodation, 2, ',', ' ')}}</b>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text-center" colspan="4">
-                                    <i><b>Observações:</b><br>{{$caravan->obs}}</i>
+                                <td colspan="3" class="text-center">
+                                    <i><b>Observações</b><br>{{$caravan->obs}}</i>
                                 </td>
                             </tr>
                         </table>
@@ -114,10 +104,8 @@
                                             {!! Form::hidden('kid_age', $caravanUser->kid_age) !!}
                                             {!! Form::hidden('kid_doc', $caravanUser->kid_doc) !!}
                                             {!! Form::hidden('status', '1') !!}
-                                            
                                             {!! Form::number('poltrona', null, ['min'=>'1','max'=>'50','class'=>'form-control']) !!}
-                                            {!! Form::submit('Modificar',['class'=>'btn btn-warning btn-xs']) !!}
-                                            
+                                            {!! Form::submit('Modificar',['class'=>'btn btn-warning btn-xs']) !!} 
                                         {!! Form::close() !!}
                                     </td>
                                     <td>{{$caravanUser->poltrona}}</td>
@@ -163,7 +151,7 @@
                                     @endif
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->ward}}</td>
-                                    <td>{{ date('d/m H:i', strtotime($caravanUser->created_at))}}</td>
+                                    <td>{{ date('d/m-H:i', strtotime($caravanUser->created_at))}}</td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['CaravanUserController@destroy', $caravanUser->id], 'style'=>'display:inline']) !!}
                                         {!! Form::submit('X',['class'=>'btn btn-danger btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
