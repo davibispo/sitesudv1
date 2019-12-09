@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://sitesud.com.br'),
+    'url' => env('APP_URL', 'http://sitesud.meuacesso.site'),
 
     /*
     |--------------------------------------------------------------------------
