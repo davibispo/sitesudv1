@@ -3,7 +3,7 @@ APP_ENV=local
 APP_KEY=base64:EyjLWs7Nsy6meTTC8FIuDrnfebYCdl4NhP7kHc80sVA=
 APP_DEBUG=true
 APP_LOG_LEVEL=debug
-APP_URL=http://sitesud.meucasso.site/public
+APP_URL=http://sitesud.meuacesso.site/public
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
