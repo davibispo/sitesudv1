@@ -18,7 +18,7 @@ class CreateSacramentalMeetingsTable extends Migration
             $table->integer('user_id');
             $table->string('stake', 50);
             $table->string('ward', 80);
-            $table->integer('frequencia')->nullable();
+            $table->integer('frequencia')->default(0);
             $table->date('date');
             $table->string('presidida', 60);
             $table->string('dirigida', 60);

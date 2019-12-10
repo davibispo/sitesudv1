@@ -379,8 +379,8 @@ class SacramentalMeetingController extends Controller
         $stake  = auth()->user()->stake;
         $ward   = auth()->user()->ward;
 
-        //dd($ward);
-
+        $ano = date('Y');
+        //dd($ano);
         $sacramentalMeetings = SacramentalMeeting::all()
                                         ->where('ward', $ward)
                                         ->where('stake', $stake)
