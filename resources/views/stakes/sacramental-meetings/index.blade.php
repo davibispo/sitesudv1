@@ -15,6 +15,10 @@
                             <i class="fas fa-plus"></i> 
                             Nova Agenda
                         </a>
+                        <a href="{{route('sacramental-meetings.chart')}}" class="btn btn-success btn-sm">
+                            <i class="fas fa-chart-line"></i> 
+                            Gráfico
+                        </a>
                     </div>
                     @endcan
                     <br>    

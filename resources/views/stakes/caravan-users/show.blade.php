@@ -104,7 +104,7 @@
                                             {!! Form::hidden('kid_age', $caravanUser->kid_age) !!}
                                             {!! Form::hidden('kid_doc', $caravanUser->kid_doc) !!}
                                             {!! Form::hidden('status', '1') !!}
-                                            {!! Form::number('poltrona', null, ['min'=>'1','max'=>'50','class'=>'form-control']) !!}
+                                            {!! Form::number('poltrona', null, ['min'=>'1','max'=>$qtdPoltronas,'class'=>'form-control']) !!}
                                             {!! Form::submit('Modificar',['class'=>'btn btn-warning btn-xs']) !!} 
                                         {!! Form::close() !!}
                                     </td>
@@ -200,7 +200,7 @@
                                             {!! Form::hidden('kid_doc', $caravanUser->kid_doc) !!}
                                             {!! Form::hidden('status', '1') !!}
                                             <div class="col-sm-6">
-                                            {!! Form::number('poltrona', null, ['min'=>'1','max'=>'50','class'=>'form-control']) !!}
+                                            {!! Form::number('poltrona', null, ['min'=>'1','max'=>$qtdPoltronas,'class'=>'form-control']) !!}
                                             </div>
                                             {!! Form::submit('Modificar',['class'=>'btn btn-warning btn-xs']) !!}
                                         {!! Form::close() !!}

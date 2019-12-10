@@ -373,4 +373,23 @@ class SacramentalMeetingController extends Controller
 
         return redirect()->back()->with('alert1', 'Agenda excluída!')->with('alertDanger', 'Excluída!');
     }
+
+    public function chart(){
+
+        $stake  = auth()->user()->stake;
+        $ward   = auth()->user()->ward;
+
+        //dd($ward);
+
+        $sacramentalMeetings = SacramentalMeeting::all()
+                                        ->where('ward', $ward)
+                                        ->where('stake', $stake)
+                                        ->where('ativo','1')
+                                        ->sortByDesc('created_at');
+
+        $numSacramental = DB::table('sacramental_meetings')->select('id')->where('ward', $ward)->count('id');
+        //dd($numSacramental);
+        return view('stakes.sacramental-meetings.chart', compact('stake', 'ward', 'sacramentalMeetings','numSacramental'));
+
+    }
 }

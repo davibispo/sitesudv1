@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\SacramentalMeeting;
+
 Route::group(['middleware'=>'web'], function(){
         
     Route::get('/', function () {
@@ -53,6 +55,7 @@ Route::group(['middleware'=>'web'], function(){
     Route::resource('/stakes/meetings', 'MeetingController');
     
     //Agenda da Reunião Sacramental
+    Route::get('/stakes/sacramental-meetings/chart', 'SacramentalMeetingController@chart')->name('sacramental-meetings.chart');
     Route::resource('/stakes/sacramental-meetings', 'SacramentalMeetingController');
     
     //Contato
