@@ -79,13 +79,7 @@
                         </div>
                     </div>
                     @endcan
-                    @can('calendar_index')
-                    <div class="col-sm-3">
-                        <div style="padding:3%">
-                            <a class="btn btn-success btn-block" href="{{ route('leaders.index') }}">Líderes</a>
-                        </div>
-                    </div>
-                    @endcan
+                    
                     
                 </div>
                
