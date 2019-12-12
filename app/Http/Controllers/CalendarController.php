@@ -9,7 +9,7 @@ class CalendarController extends Controller {
 
     public function index() {
         $stake = auth()->user()->stake;
-
+        $dataAtual = date('d-m-Y');
         $calendars = Calendar::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
 
         //pega data por extenso em portugues
@@ -18,7 +18,7 @@ class CalendarController extends Controller {
         //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
         //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
 
-        return view('stakes.calendars.index', compact('calendars', 'stake'));
+        return view('stakes.calendars.index', compact('calendars','stake','dataAtual'));
     }
 
     public function create() {
