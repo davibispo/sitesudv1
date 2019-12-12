@@ -28,6 +28,13 @@
                     </div>
                 </div>
 
+                <div class="alert alert-success">
+                    <p style="text-align:center">
+                        <strong>Próximo evento: </strong> {{ $proximoEvento }} 
+                        <a href=" {{route('calendars.index')}} " data-toggle="tooltip" title="Ver mais!"><i class="fas fa-search"></i></a>
+                    </p>
+                </div>
+
                 <div class="row">
                     @can('calendar_index')
                     <div class="col-sm-3">
