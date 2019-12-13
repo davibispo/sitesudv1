@@ -30,8 +30,12 @@
 
                 <div class="alert alert-success">
                     <p style="text-align:center">
-                        <strong>Próximo evento: </strong> {{ $proximoEvento }} 
-                        <a href=" {{route('calendars.index')}} " data-toggle="tooltip" title="Ver mais!"><i class="fas fa-search"></i></a>
+                        @if (isset($proximoEvento))
+                            <strong>Próximo evento: </strong> {{ $proximoEvento }} 
+                            <a href=" {{route('calendars.index')}} " data-toggle="tooltip" title="Ver mais!"><i class="fas fa-search"></i></a>
+                            @else 
+                            Não há eventos cadastrados no calendário ainda!
+                        @endif
                     </p>
                 </div>
 
