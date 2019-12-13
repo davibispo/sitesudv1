@@ -22,6 +22,7 @@ class CreateInterviewsTable extends Migration
             $table->string('stake', 50);
             $table->string('interviewer', 40)->nullable();
             $table->date('data')->nullable();
+            $table->string('local')->nullable();
             $table->char('status', 1)->default('1');
             $table->char('ativo',1)->nullable()->default('1');
             $table->timestamps();

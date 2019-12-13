@@ -18,14 +18,16 @@
                     <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
-                                <th style="width:20%">Membro</th>
+                                <th style="width:15%">Membro</th>
                                 <th style="width:10%">Contato</th> 
                                 <th style="width:10%">Unidade</th> 
                                 <th style="width:15%">Motivo da entrevista</th>
-                                <th style="width:10%">Entrevistador</th>
+                                <th style="width:8%">Entrevistador</th>
                                 <th style="width:10%">Status</th>
-                                <th style="width:10%">Solicitada em</th>
+                                <th style="width:5%">Solicitada</th>
                                 <th style="width:15%">Marcada para</th>
+                                <th style="width:15%">Local</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,6 +63,9 @@
                                                     <b>{{date('d/m/y', strtotime($interview->data))}}</b> às 
                                                     <b>{{date('H:i', strtotime($interview->data))}}</b>
                                                 @endif
+                                            </td>
+                                            <td>
+                                                {{ $interview->local }}
                                             </td>
                                             <td>
                                                 @can('interview_update_patriarca')
@@ -99,6 +104,9 @@
                                                     <b>{{date('d/m/y', strtotime($interview->data))}}</b> às 
                                                     <b>{{date('H:i', strtotime($interview->data))}}</b>
                                                 @endif
+                                            </td>
+                                            <td>
+                                                {{ $interview->local }}
                                             </td>
                                             <td>
                                                 @can('interview_update_presidencia')

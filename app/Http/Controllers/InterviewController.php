@@ -84,6 +84,7 @@ class InterviewController extends Controller
 
     public function edit($id)
     {
+        
         $stake = auth()->user()->stake;
         $interview = Interview::find($id);
         $userName = User::where('id',$interview->user_id)->value('name');
@@ -98,10 +99,12 @@ class InterviewController extends Controller
 
     public function update(Request $request, $id)
     {
+        //dd($request);
         $interview = Interview::find($id);
 
         $interview->status = $request->status;
         $interview->data = $request->data;
+        $interview->local = $request->local;
         $interview->update();
         
         switch($interview->status){
