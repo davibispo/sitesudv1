@@ -49,7 +49,7 @@
                                 var options = {
                                     title: 'Frequências da Sacramental ' + {{$y}},
                                     //width: 800,
-                                    //height: 500,
+                                    height: 350,
                                     hAxis: {
                                         format: 'MM',
                                         gridlines: {count:12}

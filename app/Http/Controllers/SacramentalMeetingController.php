@@ -61,7 +61,7 @@ class SacramentalMeetingController extends Controller
         $sacramentalMeeting->stake = auth()->user()->stake;
         $sacramentalMeeting->ward = auth()->user()->ward;
 
-        $sacramentalMeeting->frequencia = $request->frequencia;
+        $sacramentalMeeting->frequencia = 0;
         $sacramentalMeeting->date = $request->date;
         $sacramentalMeeting->presidida = $request->presidida;
         $sacramentalMeeting->dirigida = $request->dirigida;
