@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller {
 
@@ -41,7 +41,7 @@ class UserController extends Controller {
             'genre' => 'required',
             'rg' => 'required|unique:users',
             'dt_nasc' => 'required|date',
-            'phone' => 'required|string|max:15',
+            'phone' => 'required|string',
             'uf' => 'required|string',
             'city' => 'required|string',
             'stake' => 'required|string',
@@ -121,7 +121,7 @@ class UserController extends Controller {
      */
     public function update(Request $request, $id) {
         $user = User::find($id);
-        ///dd($request);
+        //dd($request);
 
         $this->validate($request, [
             'name' => 'required|string|max:30',
@@ -130,7 +130,7 @@ class UserController extends Controller {
             'rg' => 'required',
             'orgao_exp' => 'required|string|max:10',
             'dt_nasc' => 'required|date',
-            'phone' => 'required|string|max:15',
+            'phone' => 'required|string',
             'uf' => 'required|string',
             'city' => 'required|string',
             'email' => 'required|string|email|max:100',
