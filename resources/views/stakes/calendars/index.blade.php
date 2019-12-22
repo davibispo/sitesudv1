@@ -16,7 +16,7 @@
                         </a>
                         @endcan
                         <a href="{{route('calendars.print.imprimir')}}" target="_blank" class="btn btn-default btn-sm">
-                            <i class="fas fa-print"></i> Imprimir Completo
+                            <i class="fas fa-search"></i> Ver Completo
                         </a>
                     </div>
                     <br>
@@ -35,7 +35,7 @@
                         <tbody>
                             
                             @forelse($calendars as $calendar)
-                                @if( (date('Y', strtotime($calendar->data)) == date('Y')) && (strtotime($calendar->data) >= strtotime($dataAtual)) )
+                                @if (date('Y',strtotime($calendar->data)) == date('Y') && (strtotime($calendar->data) >= strtotime($dataAtual)) )
                                 <tr>
                                     <td><b>{{ date('d/m', strtotime($calendar->data))}}</b></td>
                                     <td>{{$calendar->horario}}</td>
