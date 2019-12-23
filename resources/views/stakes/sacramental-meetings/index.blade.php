@@ -22,6 +22,8 @@
                     </div>
                     @endcan
                     <br>    
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <br>
                     <table class="table table-striped table-hover">
                         <tr>
                             <th>Unidade</th>
@@ -32,6 +34,7 @@
                             <th></th>
                             <th></th>
                         </tr>
+                        <tbody id="myTable">
                         @foreach ($sacramentalMeetings as $sacramentalMeeting)
                             <tr>
                                 <td>{{$sacramentalMeeting->ward}}</td>
@@ -49,6 +52,7 @@
                                 </td>
                             </tr>
                         @endforeach
+                        </tbody>
                     </table>
                     
                 </div>

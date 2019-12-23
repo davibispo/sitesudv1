@@ -8,6 +8,16 @@
                 <div class="panel-heading"><b>Caravanas da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    
+                    <div class="alert alert-success">
+                        <p class="text-center">
+                            <b>"Deus prometeu que as bênçãos do casamento, da família e da vida eterna estarão disponíveis para todos os 
+                            Seus filhos que aceitarem e seguirem Seu plano de felicidade fielmente"</b>
+                            <br>A Família e o Templo
+                            <br><a href="https://www.lds.org.br/a-familia-e-o-templo" target="_blank">https://www.lds.org.br/a-familia-e-o-templo</a>
+                            <br>"Faça do templo a sua maior meta!" - Thomas S. Monson
+                        </p>
+                    </div>
                     <div class="text-center">
                         <h4>Escolha uma caravana e faça sua reserva!</h4>
                         @can('caravan_index')
@@ -16,7 +26,6 @@
                     </div>
                     <br>
                     <div class="well">
-
                         <div class="row">
                             @foreach($caravans as $caravan)
 
