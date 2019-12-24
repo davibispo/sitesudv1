@@ -96,6 +96,10 @@
                             @can('sacramental_meeting_index')
                                 <li><a href="{{route('sacramental-meetings.index')}}">Sacramental</a></li>
                             @endcan
+                            
+                            @can('caravan_user_index')
+                                <li><a href="{{route('downloads.index')}}">Arquivos</a></li>
+                            @endcan
                                
                             @can('contact_create')
                                 <li><a href="{{route('contacts.create')}}">Suporte</a></li>
