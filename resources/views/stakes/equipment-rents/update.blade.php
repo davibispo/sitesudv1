@@ -66,8 +66,8 @@
                             <div class="form-group">
                             {!! Form::model($equipmentRent,['method'=>'PATCH', 'action'=>['EquipmentRentController@update', $equipmentRent->id], 'class'=>'form-inline']) !!}
                                 {!! Form::hidden('status', '4') !!}
-                                {!! Form::label('reason_refuses', 'Negar solicitação: ', ['class'=>'control-label']) !!}
-                                {!! Form::text('reason_refuses', null, ['class'=>'form-control', 'placeholder'=>'Motivo da recusa..']) !!}
+                                {!! Form::label('reason_refuses', 'Negar solicitação: ', ['class'=>'control-label']) !!} <br>
+                                <textarea name="reason_refuses" cols="100" rows="" class="form-control" placeholder="Se desejar, informe o motivo da rejeição."></textarea><br>
                                 {!! Form::submit('Negar', ['class'=>'btn btn-danger btn-sm']) !!}
                             {!! Form::close() !!}
                             </div>

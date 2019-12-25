@@ -9,7 +9,7 @@ class EquipmentController extends Controller {
 
     public function index() {
         $stake = auth()->user()->stake;
-        $equipments = Equipment::all()->where('stake', $stake)->where('ativo','1');
+        $equipments = Equipment::all()->where('stake', $stake);
         return view('stakes.equipments.index', compact('stake', 'equipments'));
     }
 
@@ -67,10 +67,25 @@ class EquipmentController extends Controller {
     public function destroy($id) {
         $equipment = Equipment::find($id);
 
-        $equipment->ativo = '0';
-        $equipment->update();
+        $equipment->delete();
 
         return redirect()->route('equipments.index')->with('alertDanger', 'Excluído!');
+    }
+
+    public function ativar($id)
+    {
+        $stake = auth()->user()->stake;
+        $equipment = Equipment::find($id);
+
+        if($equipment->ativo == 0){
+            $equipment->ativo = 1; //ativar
+            $equipment->update();
+            return redirect()->back();
+        }else{
+            $equipment->ativo = 0; //desativar
+            $equipment->update();
+            return redirect()->back();
+        }
     }
 
 }

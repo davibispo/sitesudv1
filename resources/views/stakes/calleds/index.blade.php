@@ -15,7 +15,7 @@
                         </a>
                     </div>
                     <br>
-                    <table class="table table-striped table-hover" style="font-size:12px">
+                    <table class="table table-striped" style="font-size:12px">
                         <thead>
                             <tr>
                                 <th>Chamado</th> 
@@ -39,8 +39,8 @@
                                             <td style="width:10%">{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
                                         </tr>
                                         <tr>   
-                                            <td colspan="3"><b>Obs:</b> {!!$called->obs!!}</td>
-                                            <td colspan="2"><b>Status:</b>
+                                            <td colspan="3" style="border-top:none;"><b>Obs:</b> {!!$called->obs!!}</td>
+                                            <td colspan="2" style="border-top:none;"><b>Status:</b>
                                                 @switch($called->status)
                                                     @case('1') <font color='orange'>{!!'Analisando indicação'!!}</font> @break
                                                     @case('2') <font color='green'>{!!'Foi aprovado e será apoiado(a)'!!}</font> @break
@@ -48,11 +48,10 @@
                                                     @case('4') <font color='red'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
                                                     @default    
                                                 @endswitch
-                                            </td>
-                                            <td>
+                                             
                                                 @can('called_update')
                                                 <a href="{!!route('calleds.edit', $called->id)!!}" data-toggle="tooltip" title="Ações">
-                                                    <i class="fas fa-sign-in-alt fa-lg"></i>
+                                                    - - - <i class="fas fa-sign-in-alt fa-lg"></i> Mudar status
                                                 </a>
                                                 @endcan
                                             </td>

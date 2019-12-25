@@ -19,10 +19,10 @@ class CreateEquipmentTable extends Migration
             $table->string('name');
             $table->string('marca',50)->nullable();
             $table->string('modelo',100)->nullable();
-            $table->string('num_serie',200)->nullable();
+            $table->string('num_serie',50)->nullable();
             $table->string('description',300)->nullable();
-            $table->integer('qtd')->nullable()->default(1);
-            $table->char('ativo',1)->nullable()->default('1');
+            $table->integer('qtd')->default(1);
+            $table->char('ativo',1)->default('1');
             $table->timestamps();
         });
     }

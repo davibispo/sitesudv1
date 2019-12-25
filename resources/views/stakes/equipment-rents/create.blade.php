@@ -8,6 +8,11 @@
                 <div class="panel-heading"><b>Solicitar Equipamento da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    <div class="text-left">
+                        <a href="{{route('equipment-rents.index')}}" class="btn btn-default btn-xs">
+                            <i class="fas fa-angle-left"></i> voltar
+                        </a>
+                    </div>
                     {!! Form::open(['method'=>'POST', 'action'=>'EquipmentRentController@store', 'class'=>'form-horizontal']) !!}
                         {!! Form::hidden('status', '1') !!}
                         <div class="form-group">
@@ -16,7 +21,7 @@
                                 <select name="equipment_id" class="form-control">
                                     <option value=""> -- Escolha o equipamento -- </option>
                                     @foreach($equipments as $equipment)
-                                    <option value="{{$equipment->id}}">{{$equipment->name}} - {{$equipment->description}}</option>
+                                    <option value="{{$equipment->id}}">{{$equipment->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -36,7 +41,7 @@
                         <div class="form-group">
                             {!! Form::label('reason_get', 'Motivo da utilização', ['class'=>'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('reason_get', null, ['class'=>'form-control', 'required']) !!}
+                                {!! Form::text('reason_get', null, ['class'=>'form-control','maxlength'=>'40','required']) !!}
                             </div>
                         </div>
 

@@ -44,6 +44,7 @@ Route::group(['middleware'=>'web'], function(){
     
     //Cadastro de equipamentos
     Route::resource('/stakes/equipments', 'EquipmentController');
+    Route::get('/stakes/equipments/ativar/{id}', 'EquipmentController@ativar')->name('equipments.ativar');
     
     //Aluguel de equipamentos
     Route::resource('/stakes/equipment-rents', 'EquipmentRentController');

@@ -8,12 +8,18 @@
                 <div class="panel-heading"><b>Editar dados de Equipamento da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    <div class="text-left">
+                        <a href="{{route('equipments.index')}}" class="btn btn-default btn-xs">
+                            <i class="fas fa-angle-left"></i> voltar
+                        </a>
+                    </div>
+
                     {!! Form::model($equipment,['method'=>'PATCH', 'action'=>['EquipmentController@update', $equipment->id], 'class'=>'form-horizontal']) !!}
                     {!! Form::hidden('stake', $stake)!!}
                     <div class="form-group">
-                        {!! Form::label('name', 'Nome do equipamento', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('name', 'Equipamento', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('name', null, ['class'=>'form-control', 'required']) !!}
+                            {!! Form::text('name', null, ['class'=>'form-control','maxlength'=>'60', 'required']) !!}
                         </div>
                     </div>
                     <div class="form-group">
@@ -34,16 +40,10 @@
                             {!! Form::text('num_serie', null, ['class'=>'form-control']) !!}
                         </div>
                     </div>
+                    
                     <div class="form-group">
-                        {!! Form::label('description', 'Descrição', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::text('description', null, ['class'=>'form-control']) !!}
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('qtd', 'Quantidade', ['class'=>'col-md-4 control-label']) !!}
-                        <div class="col-md-6">
-                            {!! Form::text('qtd', null, ['class'=>'form-control']) !!}
+                            {!! Form::hidden('qtd', 1, ['class'=>'form-control']) !!}
                         </div>
                     </div>
 
