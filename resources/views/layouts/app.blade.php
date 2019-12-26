@@ -171,12 +171,13 @@
                     });
                 });
             </script>
+            <!-- fim do Campo para busca na tabela -->
 
             @yield('content')
 
+            <!-- anuncio1 
             <div class="text-center">
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- anuncio1 -->
                 <ins class="adsbygoogle"
                     style="display:block"
                     data-ad-client="ca-pub-9352891206341061"
@@ -186,7 +187,7 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-            </div>
+            </div>-->
 
             <div class="text-center">
                 <p></p>
@@ -237,7 +238,7 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
         <script>
             $(document).ready(function () {
-                $("#phone").mask('(00) 0 0000-0000', {reverse: false});
+                $("#phone").mask('(00) 00000-0000', {reverse: false});
                 $('#bus').mask('0000,00' , { reverse : true});
                 $("#accommodation").mask('0000,00' , { reverse : true});
             });

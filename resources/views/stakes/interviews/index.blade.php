@@ -15,11 +15,14 @@
                         </a>
                     </div>
                     <br>
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <div style="overflow:auto; height: 500px;">
+                    <br>
                     <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
                                 <th style="width:15%">Membro</th>
-                                <th style="width:10%">Contato</th> 
+                                <th style="width:12%">Contato</th> 
                                 <th style="width:10%">Unidade</th> 
                                 <th style="width:15%">Motivo da entrevista</th>
                                 <th style="width:8%">Entrevistador</th>
@@ -30,7 +33,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable">
                             @forelse($interviews as $interview)
                                 @foreach($users as $user)
                                     @if($user->id == $interview->user_id)

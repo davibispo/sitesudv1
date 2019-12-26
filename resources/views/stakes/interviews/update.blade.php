@@ -135,7 +135,7 @@
                         
                             <label for="data">Confirme o dia, hora e local da entrevista</label> <br>
                             <input type="datetime-local" class="form-control" name="data">
-                            <input type="text" name="local" class="form-control" placeholder="Local da Entrevista" >
+                            <input type="text" name="local" class="form-control" maxlength="35" placeholder="Local da Entrevista" >
                             {!! Form::hidden('status', '2') !!}
                             {!! Form::submit('CONFIRMAR', ['class'=>'btn btn-success btn-sm']) !!}
                         {!! Form::close() !!}
