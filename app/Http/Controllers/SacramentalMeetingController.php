@@ -28,14 +28,14 @@ class SacramentalMeetingController extends Controller
                                         ->where('stake', $stake)
                                         ->where('ativo','1')
                                         ->sortBy('ward')
-                                        ->sortByDesc('created_at');
+                                        ->sortByDesc('date');
         }else{
             $sacramentalMeetings = SacramentalMeeting::all()
                                         ->where('ward', $ward)
                                         ->where('stake', $stake)
                                         ->where('ativo','1')
                                         ->sortBy('ward')
-                                        ->sortByDesc('created_at');
+                                        ->sortByDesc('date');
         }
         
         return view('stakes.sacramental-meetings.index', compact('stake','ward','sacramentalMeetings'));

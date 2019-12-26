@@ -8,8 +8,13 @@
                 <div class="panel-heading"><b>Controle de Entrevistas da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    <div class="text-left">
+                        <a href="{{route('interviews.index')}}" class="btn btn-default btn-xs">
+                            <i class="fas fa-angle-left"></i> voltar
+                        </a>
+                    </div>
+                    <br>
                     <table class="table table-striped table-hover" style="font-size:12px">
-                        
                         <tbody>
                             @if($interview->interview_type_id == 6)
                             @can('interview_update_patriarca')
@@ -57,12 +62,7 @@
                             </tr>
                             <tr>
                                 <th>Marcado para</th>
-                                <td>
-                                    @if(date('Y', strtotime($interview->data)) > '2017' )
-                                        {{date('d/m/Y', strtotime($interview->data))}} às 
-                                        {{date('H:i', strtotime($interview->data))}}
-                                    @endif
-                                </td>
+                                <td>{{date('d/m/Y', strtotime($interview->data))}} às {{date('H:i', strtotime($interview->data))}}</td>
                             </tr>
                             <tr>
                                 <th>Local</th>
@@ -115,12 +115,7 @@
                             </tr>
                             <tr>
                                 <th>Marcada para</th>
-                                <td>
-                                    @if(date('Y', strtotime($interview->data)) > '2017' )
-                                        {{date('d/m/Y', strtotime($interview->data))}} às 
-                                        {{date('H:i', strtotime($interview->data))}}
-                                    @endif
-                                </td>
+                                <td> {{date('d/m/Y', strtotime($interview->data))}} às {{date('H:i', strtotime($interview->data))}} </td>
                             </tr>
                             <tr>
                                 <th>Local</th>

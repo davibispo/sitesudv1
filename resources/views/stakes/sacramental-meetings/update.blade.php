@@ -9,6 +9,12 @@
                 <div class="panel-heading text-center"><b>Editar Agenda da Reunião Sacramental<br>{{strtoupper($sacramentalMeeting->ward)}}</b><br>Estaca {{$stake}}</div>
 
                 <div class="panel-body">
+                    <div class="text-left">
+                        <a href="{{route('sacramental-meetings.index')}}" class="btn btn-default btn-xs">
+                            <i class="fas fa-angle-left"></i> voltar
+                        </a>
+                    </div>
+                    <br>
                     {!! Form::model($sacramentalMeeting,['method'=>'PATCH','action'=>['SacramentalMeetingController@update', $sacramentalMeeting->id],'class'=>'form-horizontal']) !!}
                         {!! Form::hidden('user_id',$user_id) !!}
                         {!! Form::hidden('stake',$stake) !!}
@@ -17,44 +23,34 @@
                         <tbody class="well well-xs"> 
                         <tr>
                             <td><b>Data</b> {!! Form::date('date',null, ['class'=>'form-control', 'required']) !!}</td>
-                            <td><b>Presidida</b> {!! Form::text('presidida',null, ['class'=>'form-control', 'required']) !!}</td>
-                            <td><b>Dirigida</b> {!! Form::text('dirigida',null, ['class'=>'form-control', 'required']) !!}</td>
+                            <td><b>Presidida</b> {!! Form::text('presidida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
+                            <td><b>Dirigida</b> {!! Form::text('dirigida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
                             <td><b>Frequência</b> {!! Form::text('frequencia',null, ['class'=>'form-control']) !!}</td>
                         </tr>
 
                         <!--Reconhecimentos-->
                         <tr>
-                            <td>
-                                <a data-toggle="collapse" href="#collapseReconhecimento">
-                                    <i class="fas fa-plus fa-xs"></i>
-                                </a> 
-                                <b>Reconhecer</b> 
-                                {!! Form::text('rec_nome1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Reconhecer</b>{!! Form::text('rec_nome1',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                             <td><b>Chamado</b> {!! Form::text('rec_cham1',null, ['class'=>'form-control']) !!}</td>
-                            <td><b>Reconhecer</b> {!! Form::text('rec_nome2',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Reconhecer</b> {!! Form::text('rec_nome2',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                             <td><b>Chamado</b> {!! Form::text('rec_cham2',null, ['class'=>'form-control']) !!}</td>
                         </tr>
-                        <tr id="collapseReconhecimento" class="panel-collapse collapse">
-                            <td>{!! Form::text('rec_nome3',null, ['class'=>'form-control']) !!}</td>
+                        <tr>
+                            <td>{!! Form::text('rec_nome3',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                             <td>{!! Form::text('rec_cham3',null, ['class'=>'form-control']) !!}</td>
-                            <td>{!! Form::text('rec_nome4',null, ['class'=>'form-control']) !!}</td>
+                            <td>{!! Form::text('rec_nome4',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                             <td>{!! Form::text('rec_cham4',null, ['class'=>'form-control']) !!}</td>
                         </tr>
 
                         
                         <!--Anuncios-->
                         <tr>
-                            <td>
-                                <a data-toggle="collapse" href="#collapseAnuncios">
-                                    <i class="fas fa-plus fa-xs"></i>
-                                </a> 
-                                <b>Anúncios</b> 
-                                {!! Form::text('anun_1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Anúncios</b>{!! Form::text('anun_1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Data</b> {!! Form::date('data_anun_1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Horário</b> {!! Form::text('hora_anun_1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Local</b> {!! Form::text('local_anun_1',null, ['class'=>'form-control']) !!}</td>
                         </tr>
-                        <tbody id="collapseAnuncios" class="panel-collapse collapse well well-xs">
+                        <tbody class="well well-xs">
                         <tr>
                             <td>{!! Form::text('anun_2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::date('data_anun_2',null, ['class'=>'form-control']) !!}</td>
@@ -99,20 +95,16 @@
                                     @endforeach
                                 </select>
                             </td>
-                            <td><b>Regente</b>{!! Form::text('regente',null, ['class'=>'form-control']) !!}</td>
-                            <td><b>Pianista</b>{!! Form::text('pianista',null, ['class'=>'form-control']) !!}</td>
-                            <td><b>Oração de abertura</b>{!! Form::text('oracao1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Regente</b>{!! Form::text('regente',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
+                            <td><b>Pianista</b>{!! Form::text('pianista',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
+                            <td><b>Oração de abertura</b>{!! Form::text('oracao1',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                         </tr>
                     </table>
 
                     <!--Bênção de crianças-->
                     <table class="table table-hover well well-xs" style="font-size:12px">
                         <tr>
-                            <td>
-                                <a data-toggle="collapse" href="#collapseBencaos">
-                                    <i class="fas fa-plus fa-xs"></i>
-                                </a> 
-                                <b>Bênção de Criança</b> {!! Form::text('bencao1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Bênção de Criança</b> {!! Form::text('bencao1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Quem fará a bênção</b> {!! Form::text('abencoador1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Ofício no sacerdócio</b>
                                  {!! Form::select('oficio1',[
@@ -124,7 +116,7 @@
                                  ],null, ['class'=>'form-control','placeholder'=>' -- Escolha o ofício -- ']) !!}</td>
                             <td></td>
                         </tr>
-                        <tbody id="collapseBencaos" class="panel-collapse collapse">
+                        <tbody>
                         <tr>
                             <td>{!! Form::text('bencao2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('abencoador2',null, ['class'=>'form-control']) !!}</td>
@@ -156,11 +148,7 @@
 
                         <!--Confirmação de conversos-->
                         <tr>
-                            <td>
-                                <a data-toggle="collapse" href="#collapseConfirmacoes">
-                                    <i class="fas fa-plus fa-xs"></i>
-                                </a>
-                                <b>Confirmação de Converso</b> {!! Form::text('converso1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Confirmação de Converso</b> {!! Form::text('converso1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Quem fará a confirmação</b> {!! Form::text('confirmador1',null, ['class'=>'form-control']) !!}</td>
                             <td>
                                 <b>Ofício no sacerdócio</b>
@@ -174,7 +162,7 @@
                             </td>
                             <td></td>
                         </tr>
-                        <tbody id="collapseConfirmacoes" class="panel-collapse collapse">
+                        <tbody>
                         <tr>
                             <td>{!! Form::text('converso2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('confirmador2',null, ['class'=>'form-control']) !!}</td>
@@ -235,16 +223,12 @@
 
                         <!--Desobrigações-->
                         <tr>
-                            <td>
-                                <a data-toggle="collapse" href="#collapseDesobrigacoes">
-                                    <i class="fas fa-plus fa-xs"></i>
-                                </a>
-                                <b>Desobrigações</b>{!! Form::text('desob_nome1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Desobrigações</b>{!! Form::text('desob_nome1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Chamado</b>{!! Form::text('desob_cham1',null, ['class'=>'form-control']) !!}</td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tbody id="collapseDesobrigacoes" class="panel-collapse collapse">
+                        <tbody>
                         <tr>
                             <td>{!! Form::text('desob_nome2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('desob_cham2',null, ['class'=>'form-control']) !!}</td>
@@ -281,16 +265,12 @@
 
                         <!--Apoios-->
                         <tr>
-                            <td>
-                                <a data-toggle="collapse" href="#collapseApoios">
-                                    <i class="fas fa-plus fa-xs"></i>
-                                </a>
-                                <b>Apoios</b>{!! Form::text('apoio_nome1',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Apoios</b>{!! Form::text('apoio_nome1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Chamado</b>{!! Form::text('apoio_cham1',null, ['class'=>'form-control']) !!}</td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tbody id="collapseApoios" class="panel-collapse collapse">
+                        <tbody>
                         <tr>
                             <td>{!! Form::text('apoio_nome2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('apoio_cham2',null, ['class'=>'form-control']) !!}</td>
@@ -399,7 +379,7 @@
                                         @endforeach
                                     </select>
                                 </td>
-                                <td><b>Oração de encerramento</b>{!! Form::text('oracao2',null, ['class'=>'form-control']) !!}</td>
+                                <td><b>Oração de encerramento</b>{!! Form::text('oracao2',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                             </tr>
                         </table>
                     </table>

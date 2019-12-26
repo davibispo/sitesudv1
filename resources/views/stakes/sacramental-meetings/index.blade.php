@@ -43,11 +43,11 @@
                                 <td>{{$sacramentalMeeting->dirigida}}</td>
                                 <td><b>{{$sacramentalMeeting->frequencia}}</b></td>
                                 <td>
-                                    <a href="{{route('sacramental-meetings.show',$sacramentalMeeting->id)}}" target="_blank" data-toggle = tooltip title=Ver><i class="fas fa-eye"></i></a> 
+                                    <a href="{{route('sacramental-meetings.show',$sacramentalMeeting->id)}}" target="_blank" data-toggle = tooltip title=Ver>ver</a> 
                                 </td>
                                 <td>
                                     @can('sacramental_meeting_update')
-                                    <a href="{{route('sacramental-meetings.edit',$sacramentalMeeting->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a>
+                                    <a href="{{route('sacramental-meetings.edit',$sacramentalMeeting->id)}}" data-toggle = tooltip title=Editar>editar</a>
                                     @endcan
                                 </td>
                             </tr>

@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading"><b>Downloads</b></div>
+                <div class="panel-heading"><b>Arquivos para Downloads</b></div>
 
                 <div class="panel-body">
                     @can('calendar_create')

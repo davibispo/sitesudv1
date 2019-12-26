@@ -37,7 +37,9 @@
                         <b>Líder da caravana:</b> {{$caravan->leader}} - <b>Fone:</b> {{$caravan->phone}} <br>
                         <b>Obs:</b> {{$caravan->obs}}      
                     </div>
-
+                    
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <br>
                     <div class="well">
                         <p class="text-left">Lista Principal</p>
                         <table class="table table-striped table-hover">
@@ -49,7 +51,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody style="font-size:12px">
+                            <tbody id="myTable" style="font-size:12px">
                                     @forelse($caravanUsers as $caravanUser)
                                         @foreach ($users as $user)
                                             @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status != $statusReserva && $caravanUser->status != 5)    

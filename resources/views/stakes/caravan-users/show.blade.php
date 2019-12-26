@@ -32,7 +32,7 @@
                         </tr>    
                     </table>
                     
-                    <div class="well well-xs">
+                    <div>
                         <table class="table table-bordered" style="font-size:12px; background-color:white">
                             <tr class="text-center">
                                 <td colspan="3"><b>Líder da caravana:</b> {{$caravan->leader}} - <b>Telefone:</b> {{$caravan->phone}}</td>
@@ -72,7 +72,8 @@
                             </tr>
                         </table>
                     </div>
-
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <br>
                     @can('caravan_user_update')
                     <div class="well">
                         <p class="text-left">Lista Principal</p>
@@ -91,7 +92,7 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="myTable">
                                 @forelse($caravanUsers as $caravanUser)
                                 @foreach ($users as $user)
                                 @if($caravanUser->caravan_id == $caravan->id && $caravanUser->user_id == $user->id && $caravanUser->status != $statusReserva && $caravanUser->status != 5)

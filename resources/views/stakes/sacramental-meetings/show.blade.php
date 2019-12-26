@@ -5,7 +5,7 @@
 <div class="container">
 
     <div class="col-md-12">
-        <div class="panel-heading text-center">Agenda da Reunião Sacramental - <b>{{strtoupper($sacramentalMeeting->ward)}}</b> - Estaca {{$stake}}</div>
+        <div class="panel-heading text-center">Agenda Sacramental - <b>{{strtoupper($sacramentalMeeting->ward)}}</b> - Estaca {{$stake}}</div>
 
         <a onclick="javascript:window.print();" class="btn btn-link btn-xs">
             <i class="fas fa-print fa-xs"></i>
@@ -27,12 +27,10 @@
             <table class="" style="font-size:12px; margin-top:5px;">
                 <tr>
                     <td style="padding-right:10px;"><b>Reconhecimentos:</b>
-                        <i> 
-                            <b>{{$sacramentalMeeting->rec_nome1}}</b> - {{$sacramentalMeeting->rec_cham1}},  
-                            <b>{{$sacramentalMeeting->rec_nome2}}</b> - {{$sacramentalMeeting->rec_cham2}},  
-                            <b>{{$sacramentalMeeting->rec_nome3}}</b> - {{$sacramentalMeeting->rec_cham3}},  
-                            <b>{{$sacramentalMeeting->rec_nome4}}</b> - {{$sacramentalMeeting->rec_cham4}}
-                        </i>
+                        {{$sacramentalMeeting->rec_nome1}} (<i>{{$sacramentalMeeting->rec_cham1}}</i>),  
+                        {{$sacramentalMeeting->rec_nome2}} (<i>{{$sacramentalMeeting->rec_cham2}}</i>),  
+                        {{$sacramentalMeeting->rec_nome3}} (<i>{{$sacramentalMeeting->rec_cham3}}</i>),  
+                        {{$sacramentalMeeting->rec_nome4}} (<i>{{$sacramentalMeeting->rec_cham4}}</i>)
                     </td>
                 </tr>
             </table>
@@ -127,7 +125,7 @@
 
         <!--Bênção de crianças-->
         <div class="well well-xs">
-
+            @if (isset($sacramentalMeeting->bencao1)) 
             <table class="" style="font-size:12px; margin-top:5px;">
                 <tr>
                     <td style="padding-right:10px;"><b>Bênção de Criança</b></td>
@@ -150,8 +148,10 @@
                     <td style="padding-right:10px;">{{$sacramentalMeeting->oficio3}}</td>   
                 </tr>
             </table>
+            @endif
 
             <!--Confirmação de conversos-->
+            @if (isset($sacramentalMeeting->converso1)) 
             <table class="" style="font-size:12px; margin-top:5px;">
                 <tr>
                     <td style="padding-right:10px;"><b>Confirmações</b></td>
@@ -189,8 +189,10 @@
                     </td>
                 </tr>
             </table>
-            
-            <!--Desobrigações-->    
+            @endif
+
+            <!--Desobrigações--> 
+            @if (isset($sacramentalMeeting->desob_nome1))    
             <table class="" style="font-size:12px; margin-top:5px;"> 
                 <tr>
                     <td style="padding-right:10px;"><b>Desobrigações</b></td>
@@ -240,8 +242,10 @@
                     </td>
                 </tr>
             </table>
+            @endif
 
             <!--Apoios-->
+            @if (isset($sacramentalMeeting->apoio_nome1))
             <table class="" style="font-size:12px; margin-top:5px;">
                 <tr>
                     <td style="padding-right:10px;"><b>Apoios</b></td>
@@ -291,6 +295,7 @@
                     </td>
                 </tr>
             </table>
+            @endif
 
             <!-- Sacramento -->
             <table class="" style="font-size:12px; margin-top:5px;">
@@ -304,6 +309,7 @@
             </table>
 
             <!-- Sacerdócio aaronico -->
+            @if (isset($sacramentalMeeting->sacerdote1))
             <table class="" style="font-size:12px; margin-top:5px;">
                 <tr>
                     <td style="padding-right:10px;"><b>Abençoando:</b> {{$sacramentalMeeting->sacerdote1}}, {{$sacramentalMeeting->sacerdote2}}</td>
@@ -315,7 +321,7 @@
                     </td>
                 </tr>
             </table>
-
+            @endif
         </div>
 
         <!-- Discursantes, hino especial e encerramento -->
@@ -333,9 +339,13 @@
                 </tr>
                 <tr>
                     @foreach ($hinos as $hino)
-                    @if ($hino->num == $sacramentalMeeting->hino3)
-                    <td style="padding-right:10px;"><b>Hino especial:</b> {{$hino->num}} - {{$hino->nome}}</td> 
-                    @endif
+                        @if ($hino->num == $sacramentalMeeting->hino3)
+                            <td style="padding-right:10px;"><b>Hino especial:</b> 
+                                @if (isset($hino->num))
+                                    {{$hino->num}} - {{$hino->nome}}
+                                @endif
+                            </td> 
+                        @endif
                     @endforeach
                     <td style="padding-right:10px;"></td>
                     <td style="padding-right:10px;"></td>

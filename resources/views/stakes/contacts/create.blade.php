@@ -6,14 +6,14 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Suporte do Sistema SiteSUD</b></div>
-                
-                <div class="container">
-                    @can('contact_index')
-                    <a href="{{route('contacts.index')}}" class="btn btn-sm btn-success">Ver Respostas</a>
-                    @endcan
-                </div>
 
                 <div class="panel-body">
+                    <div>
+                        @can('contact_index')
+                        <a href="{{route('contacts.index')}}" class="btn btn-sm btn-success">Visualizar envios</a>
+                        @endcan
+                    </div>
+                    <br>
                     {!! Form::open(['method'=>'POST', 'action'=>'ContactController@store', 'class'=>'form-horizontal']) !!}
                         
                     <div class="form-group">
