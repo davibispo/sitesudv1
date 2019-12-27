@@ -8,6 +8,13 @@
                 <div class="panel-heading"><b>Indicar Membro para servir na Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    
+                    <div class="text-left">
+                        <a href="{{route('calleds.index')}}" class="btn btn-default btn-xs">
+                            <i class="fas fa-angle-left"></i> voltar
+                        </a>
+                    </div>
+
                     {!! Form::open(['method'=>'POST', 'action'=>'CalledController@store', 'class'=>'form-horizontal']) !!}
                         {!! Form::hidden('status', '1') !!}
                     <div class="form-group">
@@ -17,7 +24,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('member', 'Nome do membro', ['class'=>'col-md-4 control-label']) !!}
+                        {!! Form::label('member', 'Membro indicado', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
                             {!! Form::text('member', null, ['class' => 'form-control','required', 'placeholder' => 'Digite o nome do membro']) !!}
                         </div>

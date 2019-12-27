@@ -18,6 +18,7 @@
                         @endcan
                     </div>
                     <br>
+                    <div style="overflow:auto; height: 600px;">
                     <table class="table table-striped" style="font-size: 12px">
                         <thead>
                             <tr>
@@ -75,6 +76,7 @@
                         @endforelse
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

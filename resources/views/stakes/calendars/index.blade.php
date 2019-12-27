@@ -31,8 +31,10 @@
                                 <th style="width:30%">Evento</th>
                                 <th style="width:20%">Local</th>
                                 <th style="width:30%">Público alvo</th>
+                                @can('calendar_create')
                                 <th></th>
                                 <th></th>
+                                @endcan
                             </tr>
                         </thead>
                         <tbody>

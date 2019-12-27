@@ -15,40 +15,46 @@
                     </div>
                     <br>
                     <table class="table table-striped table-hover" style="font-size: 12px">
-                        <thead>
-                            <tr>
-                                <tr>
-                                    <th>Chamado</th> 
-                                    <th>Membro</th>
-                                    <th>Unidade</th> 
-                                    <th>Ofício</th>
-                                    <th>Indicado por</th>
-                                    <th>Enviado em</th>
-                                </tr>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
-                                <td style="width:20%"><b>{!!$called->called!!}</b></td>
-                                <td style="width:20%"><b>{!!$called->member!!}</b></td>
-                                <td style="width:10%">{!!$called->ward!!}</td>
-                                <td style="width:10%">{!!$called->priesthood!!}</td>
-                                <td style="width:30%">{!!$userName!!} {!!$userLastname!!}</td>
-                                <td style="width:10%">{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
+                                <th>Chamado</th> 
+                                <td>{!!$called->called!!}</td>
                             </tr>
-                            <tr>   
-                                <td colspan="3"><b>OBS:</b> {!!$called->obs!!}</td>
-                                <td colspan="2"><b>Status:</b> 
+                            <tr>
+                                <th>Membro indicado</th>
+                                <td>{!!$called->member!!}</td>
+                            </tr>
+                            <tr>
+                                <th>Unidade</th> 
+                                <td>{!!$called->ward!!}</td>
+                            </tr>
+                            <tr>
+                                <th>Ofício</th>
+                                <td>{!!$called->priesthood!!}</td>
+                            </tr>
+                            <tr>
+                                <th>Indicado por</th>
+                                <td>{!!$userName!!} {!!$userLastname!!}</td>
+                            </tr>
+                            <tr>
+                                <th>Enviado em</th>
+                                <td>{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>   
+                                <td>
                                     @switch($called->status)
-                                        @case('1') <font color='orange'>{!!'Analisando indicação'!!}</font> @break
-                                        @case('2') <font color='green'>{!!'Foi aprovado e será apoiado(a)'!!}</font> @break
-                                        @case('3') <font color='blue'>{!!'Já apoiado em congregação e designado'!!}</font> @break
-                                        @case('4') <font color='red'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
-                                        @default    
+                                    @case('1') <font color='orange'>{!!'Analisando indicação'!!}</font> @break
+                                    @case('2') <font color='green'>{!!'Foi aprovado e será apoiado(a)'!!}</font> @break
+                                    @case('3') <font color='blue'>{!!'Já apoiado em congregação e designado'!!}</font> @break
+                                    @case('4') <font color='red'>{!!'Rejeitado'!!}. {!! $called->reason_reject !!}</font> @break
+                                    @default    
                                     @endswitch
                                 </td>
-
-                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>Observações</th>
+                                <td>{!!$called->obs!!}</td>
                             </tr>   
                         </tbody>
                     </table>

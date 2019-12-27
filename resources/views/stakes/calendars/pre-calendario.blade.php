@@ -23,8 +23,10 @@
                                 <th>Local</th>
                                 <th>Organização</th>
                                 <th>Público alvo</th>
+                                @can('calendar_create')
                                 <th></th>
                                 <th></th>
+                                @endcan
                             </tr>
                         </thead>
                         <tbody>
@@ -37,6 +39,7 @@
                                     <td>{{$calendar->local}}</td>
                                     <td>{{$calendar->organizacao}}</td>
                                     <td>{{$calendar->publico}}</td>
+                                    @can('calendar_create')
                                     <td>
                                         <a href="{{route('calendars.edit', $calendar->id)}}" data-toggle = tooltip title=Editar>editar</a> 
                                     </td>
@@ -45,6 +48,7 @@
                                             {!! Form::submit('excluir', ['class'=>'btn btn-link btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
                                         {!! Form::close() !!}
                                     </td>
+                                    @endcan
                                 </tr>
                                 @endif
                             @empty

@@ -16,7 +16,7 @@
                     </div>
                     <br>
                     <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
-                    <div style="overflow:auto; height: 500px;">
+                    <div style="overflow:auto; height: 600px;">
                     <br>
                     <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
