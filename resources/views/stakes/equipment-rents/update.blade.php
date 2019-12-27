@@ -13,30 +13,43 @@
                             <i class="fas fa-angle-left"></i> voltar
                         </a>
                     </div>
+                    <br>
                     <table class="table table-striped table-hover" style="font-size: 12px">
-                        <thead>
-                            <tr>
-                                <th>Equipamento</th>
-                                <th>Membro</th> 
-                                <th>Telefone</th> 
-                                <th>Unidade</th> 
-                                <th>Retirada</th>
-                                <th>Devolução</th>
-                                <th>Motivo da solicitação</th>
-                                <th>Solicitado em</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
                         <tbody>
                             <tr>
+                                <th>Equipamento</th>
                                 <td><b>{{$equipment}}</b></td>
+                            </tr>
+                            <tr>
+                                <th>Membro</th> 
                                 <td>{{$userName}} {{$userLastname}}</td>
+                            </tr>
+                            <tr>
+                                <th>Telefone</th> 
                                 <td>{{$userPhone}}</td>
+                            </tr>
+                            <tr>
+                                <th>Unidade</th> 
                                 <td>{{$userWard}}</td>
+                            </tr>
+                            <tr>
+                                <th>Retirada</th>
                                 <td><b>{{date('d/m/y', strtotime($equipmentRent->get_date))}}</b></td>
+                            </tr>
+                            <tr>
+                                <th>Devolução</th>
                                 <td><b>{{date('d/m/y', strtotime($equipmentRent->return_date))}}</b></td>
+                            </tr>
+                            <tr>
+                                <th>Motivo da solicitação</th>
                                 <td>{{$equipmentRent->reason_get}}</td>
+                            </tr>
+                            <tr>
+                                <th>Solicitado em</th>
                                 <td>{{date('d/m/y', strtotime($equipmentRent->created_at))}}</td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
                                 <td>
                                     @switch($equipmentRent->status)
                                         @case(1)<font color='orange'>{{'Solicitado'}}</font>@break
@@ -46,7 +59,6 @@
                                         @default Default case... 
                                     @endswitch
                                 </td>
-                                
                             </tr>   
                         </tbody>
                     </table>

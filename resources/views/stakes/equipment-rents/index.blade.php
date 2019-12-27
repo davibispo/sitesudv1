@@ -18,6 +18,7 @@
                         @endcan
                     </div>
                     <br>
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
                     <div style="overflow:auto; height: 600px;">
                     <table class="table table-striped" style="font-size: 12px">
                         <thead>
@@ -28,11 +29,13 @@
                                 <th>Unidade</th> 
                                 <th>Retirada</th>
                                 <th>Devolução</th>
-                                <th>Motivo da solicitação</th>
+                                <th>Motivo</th>
                                 <th>Solicitado</th>
+                                <th>Status</th>
+                                <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="myTable">
                             @forelse($equipmentRents as $equipmentRent)
                                 @foreach($users as $user)
                                     @if($user->id == $equipmentRent->user_id)
@@ -45,28 +48,30 @@
                                             <td><b>{{date('d/m/y', strtotime($equipmentRent->return_date))}}</b></td>
                                             <td>{{$equipmentRent->reason_get}}</td>
                                             <td>{{date('d/m/y', strtotime($equipmentRent->created_at))}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="border-top:none;">
-                                                @can('equipment_rent_update')
-                                                <a href="{{route('equipment-rents.edit', $equipmentRent->id)}}" data-toggle="tooltip" title="Ações">
-                                                    <i class="fas fa-sign-in-alt fa-lg"></i> Mudar status
-                                                </a>
-                                                @endcan
-                                            </td>
-                                            <td style="border-top:none;">
-                                                <i>Status: 
+                                            <td>
+                                                <i>
                                                 @switch($equipmentRent->status)
                                                     @case(1)<font color='orange'><b>{{'Solicitado'}}</b></font>@break
-                                                    @case(2)<font color='green'><b>{{'Retirada Liberada'}}</b></font>@break
+                                                    @case(2)<font color='green'><b>{{'Liberado'}}</b></font>@break
                                                     @case(3)<font color='blue'><b>{{'Devolvido'}}</b></font>@break
                                                     @case(4)<font color='red'><b>{{'Negado'}}</b></font>@break
                                                     @default Default case... 
                                                 @endswitch
                                                 </i>
                                             </td>
-                                            <td colspan="6" style="color:red; border-top:none;"> {{$equipmentRent->reason_refuses}} </td>
+                                            <td>
+                                                @can('equipment_rent_update')
+                                                <a href="{{route('equipment-rents.edit', $equipmentRent->id)}}" data-toggle="tooltip" title="Ações">
+                                                    <i class="fas fa-sign-in-alt fa-lg"></i>
+                                                </a>
+                                                @endcan
+                                            </td>
                                         </tr>
+                                        @if ($equipmentRent->reason_refuses)
+                                            <tr>
+                                                <td colspan="10" style="border-top:none;"><i style="color:red">{{$equipmentRent->reason_refuses}}</i></td>
+                                            </tr>
+                                        @endif
                                     @endif
                                 @endforeach
                             @empty

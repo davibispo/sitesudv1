@@ -58,7 +58,7 @@
                                             </td>
                                         </tr>
                                         @if (isset($called->obs))
-                                        <tr style="margin-top:0px;">   
+                                        <tr>   
                                             <td colspan="7" style="border-top:none;"><i>Obs: {!!$called->obs!!}</i></td>
                                         </tr>   
                                         @endif
