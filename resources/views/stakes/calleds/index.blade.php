@@ -42,10 +42,10 @@
                                             <td style="width:10%">{!!date('d/m/Y', strtotime($called->created_at))!!}</td>
                                             <td style="width:5%">
                                                 @switch($called->status)
-                                                    @case('1') <font color='orange'>{!!'Analisando'!!}</font> @break
-                                                    @case('2') <font color='green'>{!!'Aprovado'!!}</font> @break
-                                                    @case('3') <font color='blue'>{!!'Apoiado'!!}</font> @break
-                                                    @case('4') <font color='red'>{!!'Rejeitado'!!}</font> @break
+                                                    @case('1') <b style="color:orange">{!!'Analisando'!!}</b> @break
+                                                    @case('2') <b style="color:green">{!!'Aprovado'!!}</b> @break
+                                                    @case('3') <b style="color:blue">{!!'Apoiado'!!}</b> @break
+                                                    @case('4') <b style="color:red">{!!'Rejeitado'!!}</b> @break
                                                     @default    
                                                 @endswitch
                                             </td>

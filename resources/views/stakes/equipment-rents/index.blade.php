@@ -51,10 +51,10 @@
                                             <td>
                                                 <i>
                                                 @switch($equipmentRent->status)
-                                                    @case(1)<font color='orange'><b>{{'Solicitado'}}</b></font>@break
-                                                    @case(2)<font color='green'><b>{{'Liberado'}}</b></font>@break
-                                                    @case(3)<font color='blue'><b>{{'Devolvido'}}</b></font>@break
-                                                    @case(4)<font color='red'><b>{{'Negado'}}</b></font>@break
+                                                    @case(1)<b style="color:orange">{{'Solicitado'}}</b>@break
+                                                    @case(2)<b style="color:green">{{'Liberado'}}</b>@break
+                                                    @case(3)<b style="color:blue">{{'Devolvido'}}</b>@break
+                                                    @case(4)<b style="color:red">{{'Negado'}}</b>@break
                                                     @default Default case... 
                                                 @endswitch
                                                 </i>

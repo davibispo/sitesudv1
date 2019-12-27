@@ -53,10 +53,10 @@
                                             <th>{{$interview->interviewer}}</th>
                                             <td>
                                                 @switch($interview->status)
-                                                    @case(1)<font color='orange'>{{'Solicitada'}}</font>@break
-                                                    @case(2)<font color='green'><b>{{'CONFIRMADA'}}</b></font>@break
-                                                    @case(3)<font color='red'>{{'Cancelada'}}</font>@break
-                                                    @case(4)<font color='blue'>{{'Realizada'}}</font>@break
+                                                    @case(1)<b style="color:orange">{{'Solicitada'}}</b>@break
+                                                    @case(2)<b style="color:green">{{'CONFIRMADA'}}</b>@break
+                                                    @case(3)<b style="color:red">{{'Cancelada'}}</b>@break
+                                                    @case(4)<b style="color:blue">{{'Realizada'}}</b>@break
                                                     @default Default case... 
                                                 @endswitch
                                             </td>
@@ -94,10 +94,10 @@
                                             <th>{{$interview->interviewer}}</th>
                                             <td>
                                                 @switch($interview->status)
-                                                    @case(1)<font color='orange'>{{'Solicitada'}}</font>@break
-                                                    @case(2)<font color='green'><b>{{'CONFIRMADA'}}</b></font>@break
-                                                    @case(3)<font color='red'>{{'Cancelada'}}</font>@break
-                                                    @case(4)<font color='blue'>{{'Realizada'}}</font>@break
+                                                    @case(1)<b style="color:orange">{{'Solicitada'}}</b>@break
+                                                    @case(2)<b style="color:green">{{'CONFIRMADA'}}</b>@break
+                                                    @case(3)<b style="color:red">{{'Cancelada'}}</b>@break
+                                                    @case(4)<b style="color:blue">{{'Realizada'}}</b>@break
                                                     @default Default case... 
                                                 @endswitch
                                             </td>
