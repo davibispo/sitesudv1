@@ -47,11 +47,11 @@
                                     <td>{{$calendar->publico}}</td>
                                     @can('calendar_create')
                                     <td>
-                                        <a href="{{route('calendars.edit', $calendar->id)}}" data-toggle = tooltip title=Editar><i class="fas fa-edit"></i></a> 
+                                        <a href="{{route('calendars.edit', $calendar->id)}}" data-toggle = tooltip title=Editar>editar</a> 
                                     </td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['CalendarController@destroy', $calendar->id], 'style'=>'display:inline']) !!}
-                                            {!! Form::submit('x', ['class'=>'btn btn-danger btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
+                                            {!! Form::submit('excluir', ['class'=>'btn btn-link btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
                                         {!! Form::close() !!}
                                     </td>
                                     @endcan

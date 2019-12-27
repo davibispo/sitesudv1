@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover" style="font-size:10px">
+                    <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
                                 <th>Data</th>
@@ -23,6 +23,8 @@
                                 <th>Local</th>
                                 <th>Organização</th>
                                 <th>Público alvo</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,6 +37,14 @@
                                     <td>{{$calendar->local}}</td>
                                     <td>{{$calendar->organizacao}}</td>
                                     <td>{{$calendar->publico}}</td>
+                                    <td>
+                                        <a href="{{route('calendars.edit', $calendar->id)}}" data-toggle = tooltip title=Editar>editar</a> 
+                                    </td>
+                                    <td>
+                                        {!! Form::open(['method'=>'DELETE', 'action'=>['CalendarController@destroy', $calendar->id], 'style'=>'display:inline']) !!}
+                                            {!! Form::submit('excluir', ['class'=>'btn btn-link btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
+                                        {!! Form::close() !!}
+                                    </td>
                                 </tr>
                                 @endif
                             @empty
