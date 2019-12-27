@@ -108,4 +108,18 @@ class CalendarController extends Controller {
 
         return view('stakes.calendars.print.imprimir', compact('stake','calendars'));
     }
+
+    public function precalendario(){
+        $stake = auth()->user()->stake;
+
+        $calendars = Calendar::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
+        
+        //pega data por extenso em portugues
+        setlocale(LC_TIME, 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        //dd(strftime("%A, %d de %B de %Y", strtotime($data)));
+        //dd(strtoupper(strftime("%B de %Y", strtotime($data))));
+
+        return view('stakes.calendars.pre-calendario', compact('stake','calendars'));
+    }
 }

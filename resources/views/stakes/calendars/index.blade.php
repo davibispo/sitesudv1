@@ -16,7 +16,10 @@
                         </a>
                         @endcan
                         <a href="{{route('calendars.print.imprimir')}}" target="_blank" class="btn btn-default btn-sm">
-                            <i class="fas fa-search"></i> Ver Completo
+                            <i class="fas fa-search"></i> Ver Completo {{ date('Y') }}
+                        </a>
+                        <a href="{{route('calendars.pre-calendario')}}" target="_blank" class="btn btn-default btn-sm">
+                            <i class="fas fa-search"></i> Pré-calendário {{ date('Y', strtotime('+1 year')) }}
                         </a>
                     </div>
                     <br>

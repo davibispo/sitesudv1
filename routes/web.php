@@ -21,8 +21,9 @@ Route::group(['middleware'=>'web'], function(){
     Route::get('/adm/users/create', 'UserController@create')->name('users.create');
     Route::post('/adm/users/create', 'UserController@store');
     //calendar
-    Route::resource('/stakes/calendars', 'CalendarController');
+    Route::get('/stakes/calendars/pre-calendario','CalendarController@preCalendario')->name('calendars.pre-calendario');
     Route::get('/stakes/calendars/print/imprimir','CalendarController@imprimir')->name('calendars.print.imprimir');
+    Route::resource('/stakes/calendars', 'CalendarController');
     //interview
     Route::resource('/stakes/interviews', 'InterviewController');
     //caravan
