@@ -12,9 +12,10 @@
                     @can('calendar_create')
                     <div>
                         <a href="{{route('downloads.create')}}" class="btn btn-primary btn-xs">
-                            <i class="fas fa-plus"></i> Cadastrar novo arquivo
+                            Inserir novo arquivo
                         </a>
                     </div>
+                    <br>
                     @endcan
                     <div class="perfil">
                         <table class="table table-striped" style="font-size:12px">

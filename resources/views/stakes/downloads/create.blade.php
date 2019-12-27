@@ -36,7 +36,7 @@
                     <div class="form-group">
                         {!! Form::label('arquivo', 'Arquivo', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            {!! Form::file('arquivo', null, ['class'=>'form-control','required', 'placeholder'=>' -- Escolha o assunto -- ']) !!}
+                            {!! Form::file('arquivo', null, ['class'=>'form-control','required']) !!}
                         </div>
                     </div>
  

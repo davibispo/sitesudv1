@@ -5,17 +5,17 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Entrar no sistema</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Login</label>
+                            <label for="email" class="col-md-4 control-label">E-mail</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="E-mail" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
