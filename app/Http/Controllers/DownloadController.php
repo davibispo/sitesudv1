@@ -57,7 +57,7 @@ class DownloadController extends Controller
             $extension = $request->arquivo->extension();
 
             // Define finalmente o nome
-            $nameFile = "{$name}.{$extension}";
+            $nameFile = "u{$arquivo->user_id}f{$name}.{$extension}";
 
             // Faz o upload:
             $arquivo->arquivo = $request->arquivo->storeAs('downloads', $nameFile);
