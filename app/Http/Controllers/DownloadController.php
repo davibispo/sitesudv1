@@ -40,7 +40,7 @@ class DownloadController extends Controller
     public function store(Request $request)
     {
         $arquivo = new Downloads();
-        $userId = auth()->user()->id;
+        $arquivo->user_id = auth()->user()->id;
         $arquivo->descricao = $request->descricao;
         $arquivo->stake = auth()->user()->stake;
 
@@ -57,7 +57,7 @@ class DownloadController extends Controller
             $extension = $request->arquivo->extension();
 
             // Define finalmente o nome
-            $nameFile = "f{$userId}.{$name}.{$extension}";
+            $nameFile = "{$name}.{$extension}";
 
             // Faz o upload:
             $arquivo->arquivo = $request->arquivo->storeAs('downloads', $nameFile);

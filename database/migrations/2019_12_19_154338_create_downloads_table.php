@@ -17,6 +17,8 @@ class CreateDownloadsTable extends Migration
             $table->increments('id');
             $table->string('arquivo');
             $table->text('descricao')->nullable();
+            $table->string('stake');
+            $table->interger('user_id');
             $table->char('ativo', 1)->default(1);
             $table->timestamps();
         });

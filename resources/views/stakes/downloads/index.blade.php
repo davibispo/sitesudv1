@@ -31,7 +31,7 @@
                             <tbody>
                                 @foreach ($downloads as $item)
                                 <tr>
-                                    <td>{{ $item->descricao }}</td>
+                                    <td><a href="{{url("storage/{$item->arquivo}")}}" target="_blank">{{ $item->descricao }}</a></td>
                                     <td style="text-align:center"><a href="{{url("storage/{$item->arquivo}")}}" target="_blank">baixar</a></td>
                                     @can('calendar_create')
                                     <td style="text-align:center">

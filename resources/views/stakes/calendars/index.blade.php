@@ -53,7 +53,7 @@
                                     </td>
                                     <td>
                                         {!! Form::open(['method'=>'DELETE', 'action'=>['CalendarController@destroy', $calendar->id], 'style'=>'display:inline']) !!}
-                                            {!! Form::submit('excluir', ['class'=>'btn btn-link btn-xs', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
+                                            {!! Form::submit('excluir', ['class'=>'btn btn-link btn-xs', 'style'=>'color:red', 'data-toggle'=>'tooltip', 'title'=>'Excluir']) !!}
                                         {!! Form::close() !!}
                                     </td>
                                     @endcan
