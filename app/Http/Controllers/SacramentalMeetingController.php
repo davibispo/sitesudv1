@@ -379,17 +379,16 @@ class SacramentalMeetingController extends Controller
         $stake  = auth()->user()->stake;
         $ward   = auth()->user()->ward;
 
-        $ano = date('Y');
-        //dd($ano);
+        $anoAtual = date('Y');
+        $anoAnterior = date('Y', strtotime('-1 year'));
+        //dd($anoAnterior);
         $sacramentalMeetings = SacramentalMeeting::all()
                                         ->where('ward', $ward)
                                         ->where('stake', $stake)
                                         ->where('ativo','1')
                                         ->sortByDesc('created_at');
-
-        $numSacramental = DB::table('sacramental_meetings')->select('id')->where('ward', $ward)->count('id');
-        //dd($numSacramental);
-        return view('stakes.sacramental-meetings.chart', compact('stake', 'ward', 'sacramentalMeetings','numSacramental'));
+        
+        return view('stakes.sacramental-meetings.chart', compact('stake', 'ward', 'sacramentalMeetings', 'anoAtual', 'anoAnterior'));
 
     }
 }
