@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Equipment;
 use App\Models\EquipmentRent;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class EquipmentRentController extends Controller
 {
@@ -42,9 +43,18 @@ class EquipmentRentController extends Controller
         $equipmentRent->reason_get = $request->reason_get;
         $equipmentRent->status = $request->status;
         
-        $equipmentRent->save();
-        
-        return redirect()->route('equipment-rents.index')->with('alertSuccess', 'Solicitação realizada! Acompanhe seu pedido em Status');
+        // Verifidores de equipamento solicitado e data de solicitação
+        $verificaID = DB::table('equipment_rents')->select('equipment_id')->where('equipment_id', $request->equipment_id)->exists();
+        $verificaData = DB::table('equipment_rents')->select('get_date')->where('get_date', $request->get_date)->exists();
+        //dd($verificaData);
+
+        if ($verificaID == true && $verificaData == true) {
+            return redirect()->back()->with('alertDanger', 'Ops! Equipamento não pôde ser solicitado, pois já tem uma solicitaçao na mesma data.');
+        }else{
+            $equipmentRent->save();
+            return redirect()->route('equipment-rents.index')->with('alertSuccess', 'Solicitação realizada! Acompanhe seu pedido em Status');
+        }
+
     }
 
     public function show($id)
