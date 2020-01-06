@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading text-center"><b>Calendário {{date('Y')}} da Estaca {{$stake}}</b></div>
+                <div class="panel-heading text-center"><b>Calendário {{date('Y', strtotime('-1 year'))}} da Estaca {{$stake}}</b></div>
                 <div class="text-center">
                     <a onclick="javascript:window.print();" class="btn btn-link btn-xs">
                         <i class="fas fa-print"></i>
@@ -14,7 +14,7 @@
                     </a>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped table-hover" style="font-size:10px">
+                    <table class="table table-striped table-hover" style="font-size:12px">
                         <thead>
                             <tr>
                                 <th>Data</th>
@@ -27,7 +27,7 @@
                         </thead>
                         <tbody>
                             @forelse($calendars as $calendar)
-                                @if(date('Y', strtotime($calendar->data)) == date('Y'))
+                                @if(date('Y', strtotime($calendar->data)) == date('Y', strtotime('-1 year')))
                                 <tr>
                                     <td><b>{{ date('d/m', strtotime($calendar->data))}}</b></td>
                                     <td>{{$calendar->horario}}</td>

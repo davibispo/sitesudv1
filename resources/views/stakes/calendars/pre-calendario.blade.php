@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading text-center"><b>Pré-calendário da Estaca {{$stake}} - {{date('Y', strtotime('+1 year'))}}</b></div>
+                <div class="panel-heading text-center"><b>Pré-calendário {{date('Y', strtotime('+1 year'))}} da Estaca {{$stake}}</b></div>
                 <div class="text-center">
                     <a onclick="javascript:window.print();" class="btn btn-link btn-xs">
                         <i class="fas fa-print"></i>

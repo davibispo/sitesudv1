@@ -15,8 +15,11 @@
                             <i class="fas fa-plus"></i> Adicionar Evento
                         </a>
                         @endcan
+                        <a href="{{route('calendars.calendario-anterior')}}" target="_blank" class="btn btn-default btn-sm">
+                            <i class="fas fa-search"></i> Calendário {{ date('Y', strtotime('-1 year')) }}
+                        </a>
                         <a href="{{route('calendars.print.imprimir')}}" target="_blank" class="btn btn-default btn-sm">
-                            <i class="fas fa-search"></i> Ver Completo {{ date('Y') }}
+                            <i class="fas fa-search"></i> Calendário {{ date('Y') }} completo
                         </a>
                         <a href="{{route('calendars.pre-calendario')}}" target="_blank" class="btn btn-default btn-sm">
                             <i class="fas fa-search"></i> Pré-calendário {{ date('Y', strtotime('+1 year')) }}
