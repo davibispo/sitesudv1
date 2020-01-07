@@ -21,9 +21,10 @@ class SelfRelianceController extends Controller
         $user = auth()->user()->id;
 
         $perfiLiderEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 16)->exists();
+        $perfiPresidenciaEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->exists();
         //dd($perfiLiderEstaca);
 
-        if($perfiLiderEstaca == true){
+        if($perfiLiderEstaca == true || $perfiPresidenciaEstaca == true){
             $groupMembers = SelfReliance::all()
                             ->where('stake', $stake)
                             ->where('ativo','1')
