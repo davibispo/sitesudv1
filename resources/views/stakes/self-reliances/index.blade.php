@@ -5,210 +5,83 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-            <!--<div class="panel-heading"><b>Grupos de Autossuficiência de {{strtoupper($ward)}}</b></div>-->
-            <div class="panel-heading">Inscrições para Cursos <b>ENGLISH CONNECT</b></div>
+            <div class="panel-heading"><b>Grupos de Autossuficiência de {{strtoupper($ward)}}</b></div>
+            <!--<div class="panel-heading">Inscrições para Cursos <b>ENGLISH CONNECT</b></div>-->
 
                 <div class="panel-body">
-                    <div class="text-center">
-                        <!--
-                        <a href="{!!route('self-reliances.create')!!}" class="btn btn-success">
-                            Ver Cursos
+                    <div class="text-center">    
+                        <a href="{!!route('self-reliances.create')!!}" class="btn btn-primary btn-xs">
+                            Inscrições
                         </a>
-                    -->
-                        <!-- 
-                        <a href="http://autossuficiencia.org.br/manuais/" target="_blank" class="btn btn-default">
-                            <i class="fas fa-download"></i>
-                            Baixar Manuais
+                        <a href="http://autossuficiencia.org.br/manuais/" target="_blank" class="btn btn-default btn-xs">
+                            <i class="fas fa-book"></i>
+                            Manuais e site
                         </a>
-                    -->
                     </div>
                     <br>
-                    <div class="well well-sm text-center">
+                    <div class="alert alert-success text-center">
                         <p>
-                            <b>EnglishConnect</b> é uma família de produtos para aprendizado
-                            da língua Inglesa criado pela Igreja para ajudar os membros
-                            da Igreja a aumentar sua proficiência na língua em um
-                            ambiente centralizado no evangelho.
+                            Ao se inscrever em um dos cursos acompanhe o seu <b>status</b>, pois pode mudar de '<b style="color:orange">Solicitado</b>' 
+                            para '<b style="color:green">Matriculado</b>' dependendo do número de vagas. <br>
+                            <b>Procure seu líder de autossuficiência para mais informações.</b>
                         </p>
-                        <!--
-                        <p>
-                            Ao se cadastrar em um dos cursos, o líder de autossuficiência da Estaca poderá atualizar seu status de '<font color='orange'><b>Solicitado</b></font>' 
-                            para '<font color='green'><b>Matriculado</b></font>'. <br>
-                            Procure seu líder para mais informações.
-                        </p>
-                    -->
                     </div>
-                    <table class="table table-bordered" style="font-size:12px;">
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <table class="table table-bordered table-hover" style="font-size:10px;">
                         <thead>
                             <tr>
-                                <!--<th class="text-center" style="background-color:blue; color:white;">Educação para um Emprego Melhor</th>
-                                <th class="text-center" style="background-color:green; color:white;">Encontrar um Emprego Melhor</th>
-                                <th class="text-center" style="background-color:blueviolet; color:white;">Finanças Pessoais</th>
-                                <th class="text-center" style="background-color:red; color:white;">Iniciar e Melhorar Meu Negócio</th>-->
-                                <th class="text-center" style="background-color:red; color:white;">English Connect 1 e 2</th>
+                                <th>Nome</th>
+                                <th>Contato</th>
+                                <th>Curso</th>
+                                <th>Unidade</th>
+                                <th>Status</th>
+                                @can('self-reliance_edit')
+                                <th></th>
+                                @endcan
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="text-left">
-                                <td>
-                                    <ol type="1">
-                                        @forelse ($groupMembers as $groupMember)
-                                            @foreach ($users as $user)
-                                                @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'English Connect 1 e 2'))
-                                                    @php $count++ @endphp
-                                                        <li>
-                                                            <b>{!! $user->name !!} {!! $user->lastname !!} - {!! $user->phone !!} - {!! $user->email !!} - ({!! $user->ward !!})</b>
-                                                            <!-- - 
-                                                            @switch($groupMember->status)
-                                                                @case('1')
-                                                                    <font color='orange'>{!! "Solicitado" !!}</font>
-                                                                    @break
-                                                                @case('2')
-                                                                    <font color='green'>{!! "Matriculado" !!}</font>    
-                                                                    @break
-                                                                @case('4')
-                                                                    <font color='red'>{!! "Desistente" !!}</font>    
-                                                                    @break
-                                                                @case('5')
-                                                                    <font color='blue'>{!! "CONCLUÍDO" !!}</font>    
-                                                                    @break
-                                                                @default
-                                                            @endswitch
-                                                            @can('self-reliance_edit') 
-                                                            <a href="{!!route('self-reliances.edit', $groupMember->id)!!}" data-toggle="tooltip" title="Ações">
-                                                                <i class="fas fa-sign-in-alt fa-lg"></i>
-                                                            </a>
-                                                            @endcan
-                                                        -->
-                                                        </li>
-                                                @endif
-                                            @endforeach
-                                        @empty
-                                            <div>
-                                                <p>Não há membros cadastrados neste grupo!</p>
-                                            </div>
-                                        @endforelse
-                                    </ol>
-                                </td>
-                                <!--
-                                <td>
-                                    <ol type="1">
-                                        @forelse ($groupMembers as $groupMember)
-                                            @foreach ($users as $user)
-                                                @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'Encontrar um Emprego Melhor'))
-                                                    @php $count++ @endphp
-                                                        <li>
-                                                            <b>{!! $user->name !!} {!! $user->lastname !!}</b> - 
-                                                            @switch($groupMember->status)
-                                                                @case('1')
-                                                                    <font color='orange'>{!! "Solicitado" !!}</font>
-                                                                    @break
-                                                                @case('2')
-                                                                    <font color='green'>{!! "Matriculado" !!}</font> 
-                                                                    @break
-                                                                @case('4')
-                                                                    <font color='red'>{!! "Desistente" !!}</font>    
-                                                                    @break
-                                                                @case('5')
-                                                                    <font color='blue'>{!! "CONCLUÍDO" !!}</font>    
-                                                                    @break
-                                                                @default
-                                                            @endswitch
-                                                            @can('self-reliance_edit')  
-                                                            <a href="{!!route('self-reliances.edit', $groupMember->id)!!}" data-toggle="tooltip" title="Ações">
-                                                                <i class="fas fa-sign-in-alt fa-lg"></i>
-                                                            </a>
-                                                            @endcan
-                                                        </li>
-                                                @endif
-                                            @endforeach
-                                        @empty
-                                            <div>
-                                                <p>Não há membros cadastrados neste grupo!</p>
-                                            </div>
-                                        @endforelse
-                                    </ol>
-                                </td>
-                                <td>
-                                    <ol type="1">
-                                        @forelse ($groupMembers as $groupMember)
-                                            @foreach ($users as $user)
-                                                @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'Finanças Pessoais'))
-                                                    @php $count++ @endphp
-                                                        <li>
-                                                            <b>{!! $user->name !!} {!! $user->lastname !!}</b> - 
-                                                            @switch($groupMember->status)
-                                                                @case('1')
-                                                                    <font color='orange'>{!! "Solicitado" !!}</font>
-                                                                    @break
-                                                                @case('2')
-                                                                    <font color='green'>{!! "Matriculado" !!}</font>    
-                                                                    @break
-                                                                @case('4')
-                                                                    <font color='red'>{!! "Desistente" !!}</font>    
-                                                                    @break
-                                                                @case('5')
-                                                                    <font color='blue'>{!! "CONCLUÍDO" !!}</font>    
-                                                                    @break
-                                                                @default
-                                                            @endswitch
-                                                            @can('self-reliance_edit')  
-                                                            <a href="{!!route('self-reliances.edit', $groupMember->id)!!}" data-toggle="tooltip" title="Ações">
-                                                                <i class="fas fa-sign-in-alt fa-lg"></i>
-                                                            </a>
-                                                            @endcan
-                                                        </li>
-                                                @endif
-                                            @endforeach
-                                        @empty
-                                            <div>
-                                                <p>Não há membros cadastrados neste grupo!</p>
-                                            </div>
-                                        @endforelse
-                                    </ol>
-                                </td>
-                                <td>
-                                    <ol type="1">
-                                        @forelse ($groupMembers as $groupMember)
-                                            @foreach ($users as $user)
-                                                @if (($groupMember->user_id == $user->id) && ($groupMember->grupo == 'Iniciar e Melhorar Meu Negócio'))
-                                                    @php $count++ @endphp
-                                                        <li>
-                                                            <b>{!! $user->name !!} {!! $user->lastname !!}</b> - 
-                                                            @switch($groupMember->status)
-                                                                @case('1')
-                                                                    <font color='orange'>{!! "Solicitado" !!}</font>
-                                                                    @break
-                                                                @case('2')
-                                                                    <font color='green'>{!! "Matriculado" !!}</font>  
-                                                                    @break
-                                                                @case('4')
-                                                                    <font color='red'>{!! "Desistente" !!}</font>    
-                                                                    @break
-                                                                @case('5')
-                                                                    <font color='blue'>{!! "CONCLUÍDO" !!}</font>    
-                                                                    @break
-                                                                @default
-                                                            @endswitch
-                                                            @can('self-reliance_edit')  
-                                                            <a href="{!!route('self-reliances.edit', $groupMember->id)!!}" data-toggle="tooltip" title="Ações">
-                                                                <i class="fas fa-sign-in-alt fa-lg"></i>
-                                                            </a>
-                                                            @endcan
-                                                        </li>
-                                                @endif
-                                            @endforeach
-                                        @empty
-                                            <div>
-                                                <p>Não há membros cadastrados neste grupo!</p>
-                                            </div>
-                                        @endforelse
-                                    </ol>
-                                </td>-->
-                                
-                                
-                            </tr>
-                                    
+                        <tbody id="myTable">
+                                @forelse ($groupMembers as $groupMember)
+                                    @foreach ($users as $user)
+                                        @if ($groupMember->user_id == $user->id)
+                                            @php $count++ @endphp
+                                                <tr>
+                                                    <td>{!! $user->name !!} {!! $user->lastname !!}</td>
+                                                    <td>{!! $user->phone !!} - {!! $user->email !!}</td>
+                                                    <td>{!! $groupMember->grupo !!}</td>
+                                                    <td>{!! $user->ward !!}</td>
+                                                    <td>
+                                                    @switch($groupMember->status)
+                                                        @case('1')
+                                                            <b style="color:orange">{!! "Solicitado" !!}</b>
+                                                            @break
+                                                        @case('2')
+                                                            <b style="color:green">{!! "Matriculado" !!}</b>    
+                                                            @break
+                                                        @case('4')
+                                                            <b style="color:red">{!! "Desistente" !!}</b>    
+                                                            @break
+                                                        @case('5')
+                                                            <b style="color:blue">{!! "CONCLUÍDO" !!}</b>    
+                                                            @break
+                                                        @default
+                                                    @endswitch
+                                                    </td>
+                                                    @can('self-reliance_edit') 
+                                                    <td>
+                                                        <a href="{!!route('self-reliances.edit', $groupMember->id)!!}" data-toggle="tooltip" title="Mudar Status">
+                                                            <i class="fas fa-sign-in-alt fa-lg"></i>
+                                                        </a>
+                                                    </td>
+                                                    @endcan
+                                                </tr>
+                                        @endif
+                                    @endforeach
+                                @empty
+                                    <div class="alert alert-warning">
+                                        <p>Não há membros inscritos até o momento!</p>
+                                    </div>
+                                @endforelse
                         </tbody>
                     </table>
                     <br>

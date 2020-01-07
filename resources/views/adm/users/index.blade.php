@@ -12,13 +12,15 @@
                     <div>
                         <a href="{{route('users.create')}}" class="btn btn-default"><i class="fas fa-user-plus"></i></a>
                     </div>
+                    <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
+                    <br>
+                    <div style="overflow:auto; height: 600px;">
                     <div class="perfil">
                         <table class="table table-striped" style="font-size:10px">
                             <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Nome</th>
-                                    <th>Sobrenome</th>
                                     <th>Telefone</th>
                                     <th>E-mail</th>
                                     <th>Estaca</th>
@@ -26,12 +28,11 @@
                                     <th colspan="3">Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="myTable">
                                 @forelse($users as $user)
                                 <tr>
                                     <td>{{$user->id}}</td>
-                                    <td>{{$user->name}}</td>
-                                    <td>{{$user->lastname}}</td>
+                                    <td>{{$user->name}} {{$user->lastname}}</td>
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->stake}}</td>
@@ -57,6 +58,7 @@
                             @endforelse
                             </tbody>
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -100,13 +100,14 @@
                             @can('caravan_user_index')
                                 <li><a href="{{route('downloads.index')}}">Arquivos</a></li>
                             @endcan
-                               
+                            <!--   
                             @can('contact_create')
                                 <li><a href="{{route('contacts.create')}}">Suporte</a></li>
                             @endcan
-                            
-                                
-                            
+                            -->  
+                            @can('caravan_user_index')                      
+                                <li><a href="">Contribua</a></li>
+                            @endcan
                         </ul>
 
                         <!-- Right Side Of Navbar -->

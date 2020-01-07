@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\SelfReliance;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class SelfRelianceController extends Controller
 {
@@ -17,13 +18,27 @@ class SelfRelianceController extends Controller
     {
         $stake = auth()->user()->stake;
         $ward = auth()->user()->ward;
-        $groupMembers = SelfReliance::all()
-                        ->where('stake', $stake)
-                        ->where('ward', $ward)
-                        ->where('ativo','1');
-        $users = User::all()
-                        ->where('stake', $stake)
-                        ->where('ward', $ward);
+        $user = auth()->user()->id;
+
+        $perfiLiderEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 16)->exists();
+        //dd($perfiLiderEstaca);
+
+        if($perfiLiderEstaca == true){
+            $groupMembers = SelfReliance::all()
+                            ->where('stake', $stake)
+                            ->where('ativo','1')
+                            ->sortBy('grupo');
+            $users = User::all()->where('stake', $stake);
+        }else{
+            $groupMembers = SelfReliance::all()
+                            ->where('stake', $stake)
+                            ->where('ward', $ward)
+                            ->where('ativo','1')
+                            ->sortByDesc('grupo');
+            $users = User::all()
+                            ->where('stake', $stake)
+                            ->where('ward', $ward);
+        }
         $count = 0;
 
         return view('stakes.self-reliances.index', compact('stake','ward','groupMembers','users','count'));
