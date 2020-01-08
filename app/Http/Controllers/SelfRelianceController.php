@@ -98,10 +98,11 @@ class SelfRelianceController extends Controller
     public function edit($id)
     {
         $ward = auth()->user()->ward;
+        $stake = auth()->user()->stake;
         $groupMember = SelfReliance::find($id);
         $users = User::all()->where('id', $groupMember->user_id);
 
-        return view('stakes.self-reliances.update', compact('groupMember','users','ward'));
+        return view('stakes.self-reliances.update', compact('groupMember','users','ward','stake'));
     }
 
     /**

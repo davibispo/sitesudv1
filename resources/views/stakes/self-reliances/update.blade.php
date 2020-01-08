@@ -8,7 +8,20 @@
             <div class="panel-heading"><b>Mudar Status de inscrição</b></div>
 
                 <div class="panel-body">
-                    
+                    <a href="{{route('self-reliances.index')}}" class="btn btn-default btn-xs">
+                        <i class="fas fa-angle-left"></i> voltar
+                    </a>
+                    <br>
+
+                    <!-- controle de permissão -->
+                    @if ($groupMember->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca, então mostra -->
                     <table class="table" style="font-size:12px;">
                         <tbody>
                             @foreach ($users as $user)
@@ -92,6 +105,7 @@
                         </tbody>           
                     </table>
                     <br>
+                    @endif
                 </div>
             </div>
         </div>
