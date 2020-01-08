@@ -7,6 +7,14 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Reservar Vaga em Caravana da Estaca {{$stake}}</b></div>
                 <div class="panel-body">
+                    @if ($caravan->ativo != 1 || $caravan->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca e a caravana estiver ativa, então mostra a caravana -->
                     <div>
                         <a href="{{route('caravan-users.index')}}" class="btn btn-default btn-xs text-left"><i class="fas fa-angle-left"></i> voltar</a>
                         <h4 class="text-center">Caravana de <b>{{date('d-m-Y', strtotime($caravan->data))}}</b></h4>
@@ -110,6 +118,7 @@
                             </td>
                         </tr>
                     </table>
+                    @endif
                 </div>
             </div>
         </div>

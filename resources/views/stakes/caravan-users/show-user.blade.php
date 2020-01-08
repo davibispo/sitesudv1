@@ -8,6 +8,15 @@
                 <div class="panel-heading"><b>Caravana da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    
+                    @if ($caravan->ativo != 1 || $caravan->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca e a caravana estiver ativa, então mostra a caravana -->    
                     <div class="text-center">
                         <h4>Caravana de <b>{{date('d-m-Y', strtotime($caravan->data))}}</b></h4>
                     </div>
@@ -133,7 +142,7 @@
                             </tbody>
                         </table>
                     </div>
-                    
+                    @endif
                 </div>
             </div>
         </div> 

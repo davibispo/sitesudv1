@@ -7,17 +7,26 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><b>Reservar Vaga para Outra Pessoa</b> em Caravana da Estaca {{$stake}}</div>
                 <div class="panel-body">
+                    @if ($caravan->ativo != 1 || $caravan->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca e a caravana estiver ativa, então mostra a caravana -->
                     <div>
                         <a href="{{route('caravan-users.index')}}" class="btn btn-default btn-xs text-left"><i class="fas fa-angle-left"></i> voltar</a>
                         <h4 class="text-center"><i class="fas fa-bus fa-lg"></i> Caravana de <b>{{date('d-m-Y', strtotime($caravan->data))}}</b></h4>
                     </div>
                     <div class="alert alert-danger">
-                        <p class="text-center">ATENÇÃO! Ao cadastrar os dados de outra pessoa você estará se responsabilizando pela veracidade.</p>
+                        <p><b>ATENÇÃO!</b></p>
+                        <ul>
+                            <li><b>Ao cadastrar os dados de outra pessoa você estará se responsabilizando pela veracidade das informações.</b></li>
+                            <li><b>Você só pode reservar vaga de outra pessoa que pertença a sua ala/ramo.</b></li>
+                        </ul>
                     </div>
-                    <div class="alert alert-danger">
-                        <p>ATENÇÃO! VOCÊ SÓ PODE RESERVAR VAGA DE OUTRA PESSOA QUE PERTENÇA A SUA ALA.</p>
-                    </div>
-
+                    
                     {!! Form::open(['method'=>'POST', 'action'=>['CaravanUserController@store', $caravan->id], 'class'=>'form-horizontal']) !!}
                     {!! Form::hidden('caravan_id', $caravan->id) !!}
                     {!! Form::hidden('user_id', $userId) !!}
@@ -128,7 +137,7 @@
                         </div>
                     </div>
                     {!! Form::close() !!}
-                    
+                    @endif
                 </div>
             </div>
         </div>
