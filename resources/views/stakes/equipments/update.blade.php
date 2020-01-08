@@ -13,7 +13,16 @@
                             <i class="fas fa-angle-left"></i> voltar
                         </a>
                     </div>
-
+                    <br>
+                    <!-- controle de permissão -->
+                    @if ($equipment->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca, então mostra -->
                     {!! Form::model($equipment,['method'=>'PATCH', 'action'=>['EquipmentController@update', $equipment->id], 'class'=>'form-horizontal']) !!}
                     {!! Form::hidden('stake', $stake)!!}
                     <div class="form-group">
@@ -53,6 +62,8 @@
                         </div>
                     </div>
                     {!! Form::close() !!}
+
+                    @endif
                 </div>
             </div>
         </div>

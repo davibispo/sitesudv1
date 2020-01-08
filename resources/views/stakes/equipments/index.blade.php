@@ -26,7 +26,7 @@
                                 <th>Marca</th>
                                 <th>Modelo</th>
                                 <th>Nº Série</th>
-                                <th>Disponível</th>
+                                <th>Disponibilizar</th>
                                 <th></th>
                                 <th></th>
                             </tr>

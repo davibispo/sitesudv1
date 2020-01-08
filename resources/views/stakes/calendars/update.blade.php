@@ -8,6 +8,21 @@
                 <div class="panel-heading"><b>Editar evento do calendário da Estaca {{$stake}}</b></div>
 
                 <div class="panel-body">
+                    <a href="{{route('calendars.index')}}" class="btn btn-default btn-xs">
+                        <i class="fas fa-angle-left"></i> voltar
+                    </a>
+                    <br>
+
+                    <!-- controle de permissão -->
+                    @if ($calendar->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca, então mostra -->
+
                     {!! Form::model($calendar,['method'=>'PATCH', 'action'=>['CalendarController@update', $calendar->id], 'class'=>'form-horizontal']) !!}
                    
                     {!! Form::hidden('stake', $stake) !!}
@@ -70,6 +85,7 @@
                         </div>
                     </div>
                     {!! Form::close() !!}
+                    @endif
                 </div>
             </div>
         </div>
