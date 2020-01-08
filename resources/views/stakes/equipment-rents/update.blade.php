@@ -14,6 +14,15 @@
                         </a>
                     </div>
                     <br>
+                    <!-- controle de permissão -->
+                    @if ($equipmentRent->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca, então mostra -->
                     <table class="table table-striped table-hover" style="font-size: 12px">
                         <tbody>
                             <tr>
@@ -69,25 +78,26 @@
                         {!! Form::close() !!}
                     </div>
                         
-                        <div class="form-group">    
-                        {!! Form::model($equipmentRent,['method'=>'PATCH', 'action'=>['EquipmentRentController@update', $equipmentRent->id], 'class'=>'form-inline']) !!}
-                            {!! Form::hidden('status', '3') !!}
-                            {!! Form::submit('Equipamento Devolvido', ['class'=>'btn btn-primary btn-sm']) !!}
-                        {!! Form::close() !!}
-                        </div>
-                            <div class="form-group">
-                            {!! Form::model($equipmentRent,['method'=>'PATCH', 'action'=>['EquipmentRentController@update', $equipmentRent->id], 'class'=>'form-inline']) !!}
-                                {!! Form::hidden('status', '4') !!}
-                                {!! Form::label('reason_refuses', 'Negar solicitação: ', ['class'=>'control-label']) !!} <br>
-                                <textarea name="reason_refuses" cols="100" rows="" class="form-control" placeholder="Se desejar, informe o motivo da rejeição."></textarea><br>
-                                {!! Form::submit('Negar', ['class'=>'btn btn-danger btn-sm']) !!}
-                            {!! Form::close() !!}
-                            </div>
-                            <div class="form-group">
-                            {!! Form::open(['method'=>'DELETE', 'action'=>['EquipmentRentController@destroy', $equipmentRent->id], 'style'=>'display:inline']) !!}
-                                {!! Form::submit('Excluir Solicitação', ['class'=>'btn btn-default btn-sm']) !!}
-                            {!! Form::close() !!}
-                            </div>
+                    <div class="form-group">    
+                    {!! Form::model($equipmentRent,['method'=>'PATCH', 'action'=>['EquipmentRentController@update', $equipmentRent->id], 'class'=>'form-inline']) !!}
+                        {!! Form::hidden('status', '3') !!}
+                        {!! Form::submit('Equipamento Devolvido', ['class'=>'btn btn-primary btn-sm']) !!}
+                    {!! Form::close() !!}
+                    </div>
+                    <div class="form-group">
+                    {!! Form::model($equipmentRent,['method'=>'PATCH', 'action'=>['EquipmentRentController@update', $equipmentRent->id], 'class'=>'form-inline']) !!}
+                        {!! Form::hidden('status', '4') !!}
+                        {!! Form::label('reason_refuses', 'Negar solicitação: ', ['class'=>'control-label']) !!} <br>
+                        <textarea name="reason_refuses" cols="100" rows="" class="form-control" placeholder="Se desejar, informe o motivo da rejeição."></textarea><br>
+                        {!! Form::submit('Negar', ['class'=>'btn btn-danger btn-sm']) !!}
+                    {!! Form::close() !!}
+                    </div>
+                    <div class="form-group">
+                    {!! Form::open(['method'=>'DELETE', 'action'=>['EquipmentRentController@destroy', $equipmentRent->id], 'style'=>'display:inline']) !!}
+                        {!! Form::submit('Excluir Solicitação', ['class'=>'btn btn-default btn-sm']) !!}
+                    {!! Form::close() !!}
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

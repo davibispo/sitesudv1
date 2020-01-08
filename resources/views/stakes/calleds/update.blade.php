@@ -14,6 +14,15 @@
                         </a>
                     </div>
                     <br>
+                    <!-- controle de permissão -->
+                    @if ($called->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca, então mostra -->
                     <table class="table table-striped table-hover" style="font-size: 12px">
                         <tbody>
                             <tr>
@@ -84,6 +93,7 @@
                                 {!! Form::submit('Excluir Indicação', ['class'=>'btn btn-default btn-sm']) !!}
                             {!! Form::close() !!}
                         </div>
+                    @endif
                 </div>
             </div>
         </div>

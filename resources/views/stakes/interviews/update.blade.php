@@ -14,6 +14,15 @@
                         </a>
                     </div>
                     <br>
+                    <!-- controle de permissão -->
+                    @if ($interview->stake != $stake)
+                        <div class="alert alert-danger">
+                            <p>
+                                Sem permissão para acesso!
+                            </p>
+                        </div>
+                    @else    
+                    <!-- Se o usuário for da mesma estaca, então mostra -->
                     <table class="table table-striped table-hover" style="font-size:12px">
                         <tbody>
                             @if($interview->interview_type_id == 6)
@@ -155,6 +164,7 @@
                         {!! Form::close() !!}
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

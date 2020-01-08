@@ -9,12 +9,23 @@
                 <div class="panel-heading text-center"><b>Editar Agenda da Reunião Sacramental<br>{{strtoupper($sacramentalMeeting->ward)}}</b><br>Estaca {{$stake}}</div>
 
                 <div class="panel-body">
+                    
                     <div class="text-left">
                         <a href="{{route('sacramental-meetings.index')}}" class="btn btn-default btn-xs">
                             <i class="fas fa-angle-left"></i> voltar
                         </a>
                     </div>
                     <br>
+                    <!-- controle de permissão -->
+                    @if ($sacramentalMeeting->ward != $ward)
+                    <div class="alert alert-danger">
+                        <p>
+                            Sem permissão para acesso!
+                        </p>
+                    </div>
+                    @else    
+                    <!-- Se o usuário for da mesma unidade, então mostra -->
+                    
                     {!! Form::model($sacramentalMeeting,['method'=>'PATCH','action'=>['SacramentalMeetingController@update', $sacramentalMeeting->id],'class'=>'form-horizontal']) !!}
                         {!! Form::hidden('user_id',$user_id) !!}
                         {!! Form::hidden('stake',$stake) !!}
@@ -387,6 +398,7 @@
                     {!! Form::submit('Atualizar Agenda', ['class'=>'btn btn-warning']) !!}
                     </div>
                     {!! Form::close() !!}
+                    @endif
                 </div>
             </div>
         </div>
