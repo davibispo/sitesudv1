@@ -94,7 +94,7 @@
                                     <th>Pagto</th> 
                                     <th>RG</th> 
                                     <th>Idade</th> 
-                                    <th>Contato</th> 
+                                    <th>Telefone</th> 
                                     <th>Unidade</th> 
                                     <th>Cadastro</th> 
                                     <th></th>
@@ -215,8 +215,16 @@
                                         {!! Form::close() !!}
                                     </td>
                                     @if(isset($caravanUser->kid))
-                                        <td>{{$caravanUser->kid}}</i></td>
+                                        <td>{{$caravanUser->kid}}</td>
+                                        <td>
+                                            @if ($caravanUser->pagto == 1)
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-on" style="color:green"></i></a>
+                                            @else
+                                                <a href="{{ route('caravan-users.pagto', $caravanUser->id) }}"><i class="fas fa-toggle-off" style="color:red"></i></a>
+                                            @endif
+                                        </td>
                                         <td>{{$caravanUser->kid_doc}}</td>
+                                        <td>{{$caravanUser->kid_age}}</td>
                                     @else
                                         <td>{{$user->name}} {{$user->lastname}}</td>
                                         <td>
@@ -227,25 +235,25 @@
                                             @endif
                                         </td>
                                         <td>{{$user->rg}} {{$user->orgao_exp}}</td>
+                                        <td>
+                                            @php
+                                                $dataNasc = $user->dt_nasc;
+                                                $anoAtual = date('Y');
+                                                $mesAtual = date('m');
+                                                $anoNasc = date('Y', strtotime($dataNasc));
+                                                $mesNasc = date('m', strtotime($dataNasc));
+    
+                                                $idade = $anoAtual - $anoNasc;
+    
+                                                if ($mesNasc >= $mesAtual) {
+                                                    $idade --;
+                                                } else {
+                                                    $idade ++;
+                                                }
+                                            @endphp
+                                            {{$idade}}
+                                        </td>
                                     @endif
-                                    <td>
-                                        @php
-                                            $dataNasc = $user->dt_nasc;
-                                            $anoAtual = date('Y');
-                                            $mesAtual = date('m');
-                                            $anoNasc = date('Y', strtotime($dataNasc));
-                                            $mesNasc = date('m', strtotime($dataNasc));
-
-                                            $idade = $anoAtual - $anoNasc;
-
-                                            if ($mesNasc >= $mesAtual) {
-                                                $idade --;
-                                            } else {
-                                                $idade ++;
-                                            }
-                                        @endphp
-                                        {{$idade}}
-                                    </td>
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->ward}}</td>
                                     <td>{{ date('d/m H:i', strtotime($caravanUser->created_at))}}</td>
