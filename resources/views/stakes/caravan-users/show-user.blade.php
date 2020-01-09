@@ -48,7 +48,7 @@
                     </div>
                     
                     <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
-                    <br>
+                    
                     <div class="well">
                         <p class="text-left">Lista Principal</p>
                         <table class="table table-striped table-hover">

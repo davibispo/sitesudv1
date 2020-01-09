@@ -9,28 +9,26 @@
                 <div class="panel-heading"><b>Contribua!</b></div>
 
                 <div class="panel-body">
-                    <h4>Contribua para manter o SiteSUD sempre atualizado e sem anúncios!</h4>
-                    <p>Para ajudar realize um depósito em qualquer valor em uma das contas abaixo:</p>
+                    <h4 style="text-align:center">Ajude a melhorar o SiteSUD!</h4>
+                    <br>
+                    <div>
+                        <p>Contribua enviando sugestões para melhoria do site:</p>
+                        @can('contact_index')
+                        <a href="{{route('contacts.create')}}" class="btn btn-sm btn-success">Enviar sugestões de melhorias</a>
+                        @endcan
+                    </div>
+                    <br>
+                    <!--
+                    <p>Se desejar você também pode contribuir realizando um depósito em qualquer valor na conta abaixo:</p>
                     <div class="alert alert-success">
                         <p>
                             <ins>Caixa Econômica Federal</ins> <br>
                             Agência: <b>1545</b><br>
-                            Conta corrente: <b>9844-7</b><br>
-                            <br>
-                        </p><br>
-                        <p>
-                            <ins>Banco Inter</ins> <br>
-                            Agência: <b>0001</b><br>
-                            Conta corrente: <b>22967524</b><br>
-                            <br>
-                        </p><br>
-                        <p>
-                            <ins>PagSeguro Internet</ins> <br>
-                            Agência: <b>0001</b><br>
-                            Conta corrente: <b>04810119-0</b><br>
-                            <br>
+                            Conta corrente: <b>9844-7</b>
+                            
                         </p>
                     </div>
+                    -->
                 </div>
             </div>
         </div>

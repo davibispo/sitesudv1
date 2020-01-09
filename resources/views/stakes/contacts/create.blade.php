@@ -9,8 +9,12 @@
 
                 <div class="panel-body">
                     <div>
+                        <a href="{{route('help.index')}}" class="btn btn-default btn-xs">
+                            <i class="fas fa-angle-left"></i> voltar
+                        </a>
+                       
                         @can('contact_index')
-                        <a href="{{route('contacts.index')}}" class="btn btn-sm btn-success">Visualizar envios</a>
+                        <a href="{{route('contacts.index')}}" class="btn btn-success btn-xs">Visualizar envios</a>
                         @endcan
                     </div>
                     <br>
@@ -30,7 +34,7 @@
                     <div class="form-group">
                         {!! Form::label('message', 'Mensagem', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            <textarea name="message" class="form-control" required></textarea>
+                            <textarea rows="10" cols="" maxlength="400" name="message" class="form-control" required></textarea>
                         </div>
                     </div>
 

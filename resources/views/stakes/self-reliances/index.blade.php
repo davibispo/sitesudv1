@@ -31,7 +31,9 @@
                         <thead>
                             <tr>
                                 <th>Nome</th>
+                                @can('self-reliance_edit')
                                 <th>Contato</th>
+                                @endcan
                                 <th>Curso</th>
                                 <th>Unidade</th>
                                 <th>Status</th>
@@ -47,7 +49,9 @@
                                             @php $count++ @endphp
                                                 <tr>
                                                     <td>{!! $user->name !!} {!! $user->lastname !!}</td>
+                                                    @can('self-reliance_edit')
                                                     <td>{!! $user->phone !!} - {!! $user->email !!}</td>
+                                                    @endcan
                                                     <td>{!! $groupMember->grupo !!}</td>
                                                     <td>{!! $user->ward !!}</td>
                                                     <td>
