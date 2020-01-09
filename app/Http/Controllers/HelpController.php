@@ -13,7 +13,7 @@ class HelpController extends Controller
      */
     public function index()
     {
-        //
+        return view('stakes.help.index');
     }
 
     /**

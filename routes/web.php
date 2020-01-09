@@ -12,6 +12,8 @@ Route::group(['middleware'=>'web'], function(){
     
     Route::get('/home', 'HomeController@index')->name('home');
     
+    //help
+    Route::resource('/stakes/help', 'HelpController');
     //role
     Route::resource('/adm/roles', 'RoleController');
     //permission

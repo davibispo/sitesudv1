@@ -106,7 +106,7 @@
                             @endcan
                             -->  
                             @can('caravan_user_index')                      
-                                <li><a href="">Contribua</a></li>
+                                <li><a href=" {{route('help.index')}} ">Contribua</a></li>
                             @endcan
                         </ul>
 
