@@ -36,6 +36,7 @@
                                 @endcan
                                 <th>Curso</th>
                                 <th>Unidade</th>
+                                <th>Data</th>
                                 <th>Status</th>
                                 @can('self-reliance_edit')
                                 <th></th>
@@ -54,6 +55,7 @@
                                                     @endcan
                                                     <td>{!! $groupMember->grupo !!}</td>
                                                     <td>{!! $user->ward !!}</td>
+                                                    <td>{!! date('d-m-y', strtotime($user->created_at)) !!}</td>
                                                     <td>
                                                     @switch($groupMember->status)
                                                         @case('1')
