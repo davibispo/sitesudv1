@@ -46,7 +46,7 @@
                         <tbody id="myTable">
                                 @forelse ($groupMembers as $groupMember)
                                     @foreach ($users as $user)
-                                        @if ($groupMember->user_id == $user->id)
+                                        @if ($groupMember->user_id == $user->id && $groupMember->created_at >= $ano)
                                             @php $count++ @endphp
                                                 <tr>
                                                     <td>{!! $user->name !!} {!! $user->lastname !!}</td>
@@ -55,7 +55,7 @@
                                                     @endcan
                                                     <td>{!! $groupMember->grupo !!}</td>
                                                     <td>{!! $user->ward !!}</td>
-                                                    <td>{!! date('d-m-y', strtotime($user->created_at)) !!}</td>
+                                                    <td>{!! date('d-m-y', strtotime($groupMember->created_at)) !!}</td>
                                                     <td>
                                                     @switch($groupMember->status)
                                                         @case('1')

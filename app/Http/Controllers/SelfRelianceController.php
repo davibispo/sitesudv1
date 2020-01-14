@@ -23,12 +23,13 @@ class SelfRelianceController extends Controller
         $perfiLiderEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 16)->exists();
         $perfiPresidenciaEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->exists();
         //dd($perfiLiderEstaca);
+        $ano = date('Y');
 
         if($perfiLiderEstaca == true || $perfiPresidenciaEstaca == true){
             $groupMembers = SelfReliance::all()
                             ->where('stake', $stake)
                             ->where('ativo','1')
-                            ->sortBy('grupo');
+                            ->sortByDesc('grupo');
             $users = User::all()->where('stake', $stake);
         }else{
             $groupMembers = SelfReliance::all()
@@ -42,7 +43,7 @@ class SelfRelianceController extends Controller
         }
         $count = 0;
 
-        return view('stakes.self-reliances.index', compact('stake','ward','groupMembers','users','count'));
+        return view('stakes.self-reliances.index', compact('stake','ward','groupMembers','users','count','ano'));
 
     }
 
