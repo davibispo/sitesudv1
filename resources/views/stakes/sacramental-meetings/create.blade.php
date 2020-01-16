@@ -19,9 +19,9 @@
                     <table class="table table-hover" style="font-size:12px">
                         <tbody class="well well-xs"> 
                         <tr>
-                            <td><b>Data</b> {!! Form::date('date',null, ['class'=>'form-control', 'required']) !!}</td>
-                            <td><b>Presidida</b> {!! Form::text('presidida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
-                            <td><b>Dirigida</b> {!! Form::text('dirigida',null, ['class'=>'form-control','maxlength'=>'35','required']) !!}</td>
+                            <td><b>Data <i style="color:red">*</i></b> {!! Form::date('date',null, ['class'=>'form-control', 'required']) !!}</td>
+                            <td><b>Presidida <i style="color:red">*</i></b> {!! Form::text('presidida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
+                            <td><b>Dirigida <i style="color:red">*</i></b> {!! Form::text('dirigida',null, ['class'=>'form-control','maxlength'=>'35','required']) !!}</td>
                             <td><b>Frequência</b> {!! Form::text('frequencia',null, ['class'=>'form-control','maxlength'=>'4']) !!}</td>
                         </tr>
 
@@ -41,26 +41,26 @@
 
                         
                         <!--Anuncios-->
+                        <tbody class="well well-xs">
                         <tr>
                             <td><b>Anúncios</b> {!! Form::text('anun_1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Data</b> {!! Form::date('data_anun_1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Horário</b> {!! Form::text('hora_anun_1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Local</b> {!! Form::text('local_anun_1',null, ['class'=>'form-control']) !!}</td>
                         </tr>
-                        <tbody class="well well-xs">
                         <tr>
                             <td>{!! Form::text('anun_2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::date('data_anun_2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('hora_anun_2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('local_anun_2',null, ['class'=>'form-control']) !!}</td>
                         </tr>
-                        <!--
                         <tr>
                             <td>{!! Form::text('anun_3',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::date('data_anun_3',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('hora_anun_3',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('local_anun_3',null, ['class'=>'form-control']) !!}</td>
                         </tr>
+                        <!--
                         <tr>
                             <td>{!! Form::text('anun_4',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::date('data_anun_4',null, ['class'=>'form-control']) !!}</td>
@@ -73,7 +73,7 @@
                             <td>{!! Form::text('hora_anun_5',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('local_anun_5',null, ['class'=>'form-control']) !!}</td>
                         </tr>
-                        -->
+                        -->                        
                         </tbody>
                     </table>
                 </tbody>
@@ -96,6 +96,7 @@
 
                     <!--Bênção de crianças-->
                     <table class="table table-hover well well-xs" style="font-size:12px">
+                        <tbody>
                         <tr>
                             <td><b>Bênção de Criança</b> {!! Form::text('bencao1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Quem fará a bênção</b> {!! Form::text('abencoador1',null, ['class'=>'form-control']) !!}</td>
@@ -109,7 +110,6 @@
                                  ],null, ['class'=>'form-control','placeholder'=>' -- Escolha o ofício -- ']) !!}</td>
                             <td></td>
                         </tr>
-                        <tbody>
                         <tr>
                             <td>{!! Form::text('bencao2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('abencoador2',null, ['class'=>'form-control']) !!}</td>
@@ -140,6 +140,7 @@
                         </tbody>
 
                         <!--Confirmação de conversos-->
+                        <tbody>
                         <tr>
                             <td><b>Confirmação de Converso</b> {!! Form::text('converso1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Quem fará a confirmação</b> {!! Form::text('confirmador1',null, ['class'=>'form-control']) !!}</td>
@@ -155,7 +156,6 @@
                             </td>
                             <td></td>
                         </tr>
-                        <tbody>
                         <tr>
                             <td>{!! Form::text('converso2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('confirmador2',null, ['class'=>'form-control']) !!}</td>
@@ -215,13 +215,13 @@
                         </tbody>
 
                         <!--Desobrigações-->
+                        <tbody>
                         <tr>
                             <td><b>Desobrigações</b>{!! Form::text('desob_nome1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Chamado</b>{!! Form::text('desob_cham1',null, ['class'=>'form-control']) !!}</td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tbody>
                         <tr>
                             <td>{!! Form::text('desob_nome2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('desob_cham2',null, ['class'=>'form-control']) !!}</td>
@@ -240,7 +240,6 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <!--
                         <tr>
                             <td>{!! Form::text('desob_nome5',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('desob_cham5',null, ['class'=>'form-control']) !!}</td>
@@ -253,17 +252,17 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        -->
+                       
                         </tbody>
 
                         <!--Apoios-->
+                        <tbody>
                         <tr>
                             <td><b>Apoios</b>{!! Form::text('apoio_nome1',null, ['class'=>'form-control']) !!}</td>
                             <td><b>Chamado</b>{!! Form::text('apoio_cham1',null, ['class'=>'form-control']) !!}</td>
                             <td></td>
                             <td></td>
                         </tr>
-                        <tbody>
                         <tr>
                             <td>{!! Form::text('apoio_nome2',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('apoio_cham2',null, ['class'=>'form-control']) !!}</td>
@@ -282,7 +281,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        <!--
+                        
                         <tr>
                             <td>{!! Form::text('apoio_nome5',null, ['class'=>'form-control']) !!}</td>
                             <td>{!! Form::text('apoio_cham5',null, ['class'=>'form-control']) !!}</td>
@@ -295,7 +294,7 @@
                             <td></td>
                             <td></td>
                         </tr>
-                        -->
+                        
                         </tbody>
                     </table>
                     <!-- Sacramento -->
@@ -364,8 +363,9 @@
                             </tr>
                         </table>
                     </table>
+                    <p>(<i style="color:red">* </i>) campos obrigatórios</p>
                     <div class="text-center">
-                    {!! Form::submit('Salvar Agenda', ['class'=>'btn btn-primary']) !!}
+                        {!! Form::submit('Salvar Agenda', ['class'=>'btn btn-primary']) !!}
                     </div>
                     {!! Form::close() !!}
                 </div>
