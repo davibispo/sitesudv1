@@ -123,6 +123,7 @@ class CreateSacramentalMeetingsTable extends Migration
             $table->string('tempo1',60)->nullable();
             $table->string('tempo2',60)->nullable();
             $table->string('tempo3',60)->nullable();
+            $table->text('obs')->nullable();
             $table->char('ativo',1)->nullable()->default('1');
             $table->timestamps();
         });

@@ -393,6 +393,11 @@
                                 </td>
                                 <td><b>Oração de encerramento</b>{!! Form::text('oracao2',null, ['class'=>'form-control','maxlength'=>'35']) !!}</td>
                             </tr>
+                            <tr>
+                                <td colspan="4">
+                                    <textarea name="obs" id="" rows="5" class="form-control" placeholder="Observações" maxlength="800"></textarea>
+                                </td>
+                            </tr>
                         </table>
                     </table>
                     <div class="text-center">

@@ -382,6 +382,12 @@
                 </tr>
             </table>
         </div>
+        <!-- Obs --> 
+        @if (isset($sacramentalMeeting->obs))
+            <div class="well well-xs">
+                <p style="font-size:12px">{{$sacramentalMeeting->obs}}</p>
+            </div>
+        @endif
         @endif         
     </div>
 </div>

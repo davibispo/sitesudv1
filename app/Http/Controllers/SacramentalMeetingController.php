@@ -188,6 +188,8 @@ class SacramentalMeetingController extends Controller
         $sacramentalMeeting->tempo1 = $request->tempo1;
         $sacramentalMeeting->tempo2 = $request->tempo2;
         $sacramentalMeeting->tempo3 = $request->tempo3;
+        
+        $sacramentalMeeting->obs = $request->obs;
 
         $sacramentalMeeting->save();
 
@@ -358,6 +360,8 @@ class SacramentalMeetingController extends Controller
         $sacramentalMeeting->tempo1 = $request->tempo1;
         $sacramentalMeeting->tempo2 = $request->tempo2;
         $sacramentalMeeting->tempo3 = $request->tempo3;
+
+        $sacramentalMeeting->obs = $request->obs;
 
         $sacramentalMeeting->update();
 
