@@ -26,8 +26,8 @@
                     <br>
                     <table class="table table-striped table-hover">
                         <tr>
-                            <th>Unidade</th>
                             <th>Data</th>
+                            <th>Unidade</th>
                             <th>Presidida por</th>
                             <th>Dirigida por</th>
                             <th>Frequência</th>
@@ -39,8 +39,8 @@
                         <tbody id="myTable">
                         @foreach ($sacramentalMeetings as $sacramentalMeeting)
                             <tr>
-                                <td>{{$sacramentalMeeting->ward}}</td>
                                 <td>{{date('d-m-y',strtotime($sacramentalMeeting->date))}}</td>
+                                <td>{{$sacramentalMeeting->ward}}</td>
                                 <td>{{$sacramentalMeeting->presidida}}</td>
                                 <td>{{$sacramentalMeeting->dirigida}}</td>
                                 <td><b>{{$sacramentalMeeting->frequencia}}</b></td>
