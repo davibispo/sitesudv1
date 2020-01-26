@@ -395,7 +395,7 @@
                             </tr>
                             <tr>
                                 <td colspan="4">
-                                    <textarea name="obs" id="" rows="5" class="form-control" placeholder="Observações" maxlength="800"></textarea>
+                                    <textarea name="obs" id="" rows="5" class="form-control" placeholder="Observações" maxlength="800">{{$sacramentalMeeting->obs}}</textarea>
                                 </td>
                             </tr>
                         </table>

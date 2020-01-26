@@ -49,7 +49,7 @@
                     <div class="form-group">
                         {!! Form::label('obs', 'Observações', ['class'=>'col-md-4 control-label']) !!}
                         <div class="col-md-6">
-                            <textarea name="obs" class="form-control"></textarea>
+                            <textarea name="obs" rows="5" maxlength="600" class="form-control"></textarea>
                         </div>
                     </div>
 
