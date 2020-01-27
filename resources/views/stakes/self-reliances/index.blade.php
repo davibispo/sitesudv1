@@ -10,6 +10,9 @@
 
                 <div class="panel-body">
                     <div class="text-center">    
+                        <a href="{!!route('talents.index')!!}" class="btn btn-warning btn-xs">
+                            Banco de Talentos
+                        </a>
                         <a href="{!!route('self-reliances.create')!!}" class="btn btn-primary btn-xs">
                             Inscrições
                         </a>
