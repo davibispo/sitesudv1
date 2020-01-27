@@ -8,7 +8,7 @@
             <div class="panel-heading"><b>Mudar Status de inscrição</b></div>
 
                 <div class="panel-body">
-                    <a href="{{route('self-reliances.index')}}" class="btn btn-default btn-xs">
+                    <a href="{{route('groups.index')}}" class="btn btn-default btn-xs">
                         <i class="fas fa-angle-left"></i> voltar
                     </a>
                     <br>
@@ -70,7 +70,7 @@
                                         <th class="text-center">Ações</th>
                                         <td class="text-left">
                                             <div class="form-group">    
-                                                {!! Form::model($groupMember,['method'=>'PATCH', 'action'=>['SelfRelianceController@update', $groupMember->id], 'class'=>'form-inline']) !!}
+                                                {!! Form::model($groupMember,['method'=>'PATCH', 'action'=>['GroupsController@update', $groupMember->id], 'class'=>'form-inline']) !!}
                                                     {!! Form::hidden('status', '2') !!}
                                                     {!! Form::submit('Matricular', ['class'=>'btn btn-success btn-xs']) !!}
                                                 {!! Form::close() !!}
@@ -78,7 +78,7 @@
                                         </td>
                                         <td>
                                             <div class="form-group">    
-                                                {!! Form::model($groupMember,['method'=>'PATCH', 'action'=>['SelfRelianceController@update', $groupMember->id], 'class'=>'form-inline']) !!}
+                                                {!! Form::model($groupMember,['method'=>'PATCH', 'action'=>['GroupsController@update', $groupMember->id], 'class'=>'form-inline']) !!}
                                                     {!! Form::hidden('status', '4') !!}
                                                     {!! Form::submit('Desistiu', ['class'=>'btn btn-danger btn-xs']) !!}
                                                 {!! Form::close() !!}
@@ -86,7 +86,7 @@
                                         </td>
                                         <td>
                                             <div class="form-group">    
-                                                {!! Form::model($groupMember,['method'=>'PATCH', 'action'=>['SelfRelianceController@update', $groupMember->id], 'class'=>'form-inline']) !!}
+                                                {!! Form::model($groupMember,['method'=>'PATCH', 'action'=>['GroupsController@update', $groupMember->id], 'class'=>'form-inline']) !!}
                                                     {!! Form::hidden('status', '5') !!}
                                                     {!! Form::submit('Concluiu', ['class'=>'btn btn-primary btn-xs']) !!}
                                                 {!! Form::close() !!}
@@ -94,7 +94,7 @@
                                         </td>
                                         <td>    
                                             <div class="form-group">
-                                                {!! Form::open(['method'=>'DELETE', 'action'=>['SelfRelianceController@destroy', $groupMember->id], 'style'=>'display:inline']) !!}
+                                                {!! Form::open(['method'=>'DELETE', 'action'=>['GroupsController@destroy', $groupMember->id], 'style'=>'display:inline']) !!}
                                                     {!! Form::submit('Excluir', ['class'=>'btn btn-default btn-xs']) !!}
                                                 {!! Form::close() !!}
                                             </div>

@@ -91,8 +91,9 @@ Route::group(['middleware'=>'web'], function(){
     Route::resource('/stakes/messages', 'MessageController');
 
     //Self Reliance
-    Route::resource('/stakes/talents', 'TalentsController');
     Route::resource('/stakes/self-reliances', 'SelfRelianceController');
+    Route::resource('/stakes/groups', 'GroupsController');
+    Route::resource('/stakes/talents', 'TalentsController');
     
     //Downloads
     Route::resource('/stakes/downloads', 'DownloadController');

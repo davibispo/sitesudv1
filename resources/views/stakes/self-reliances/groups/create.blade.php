@@ -9,12 +9,12 @@
 
                 <div class="panel-body">
                     <div>
-                        <a href="{{route('self-reliances.index')}}" class="btn btn-default btn-xs">
+                        <a href="{{route('groups.index')}}" class="btn btn-default btn-xs">
                             <i class="fas fa-angle-left"></i> voltar
                         </a>
                     </div>
                     <br>
-                    {!! Form::open(['method'=>'POST', 'action'=>'SelfRelianceController@store', 'class'=>'form-horizontal']) !!}
+                    {!! Form::open(['method'=>'POST', 'action'=>'GroupsController@store', 'class'=>'form-horizontal']) !!}
                         
                     <div class="text-left">
                         <table class="table table-striped table-hover">

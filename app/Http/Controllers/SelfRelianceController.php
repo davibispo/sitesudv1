@@ -16,35 +16,8 @@ class SelfRelianceController extends Controller
      */
     public function index()
     {
-        $stake = auth()->user()->stake;
-        $ward = auth()->user()->ward;
-        $user = auth()->user()->id;
-
-        $perfiLiderEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 16)->exists();
-        $perfiPresidenciaEstaca = DB::table('role_user')->where('user_id', $user)->where('role_id', 5)->exists();
-        //dd($perfiLiderEstaca);
-        $ano = date('Y');
-
-        if($perfiLiderEstaca == true || $perfiPresidenciaEstaca == true){
-            $groupMembers = SelfReliance::all()
-                            ->where('stake', $stake)
-                            ->where('ativo','1')
-                            ->sortByDesc('grupo');
-            $users = User::all()->where('stake', $stake);
-        }else{
-            $groupMembers = SelfReliance::all()
-                            ->where('stake', $stake)
-                            ->where('ward', $ward)
-                            ->where('ativo','1')
-                            ->sortByDesc('grupo');
-            $users = User::all()
-                            ->where('stake', $stake)
-                            ->where('ward', $ward);
-        }
-        $count = 0;
-
-        return view('stakes.self-reliances.index', compact('stake','ward','groupMembers','users','count','ano'));
-
+        
+        return view('stakes.self-reliances.index');
     }
 
     /**
@@ -54,9 +27,7 @@ class SelfRelianceController extends Controller
      */
     public function create()
     {
-        $ward = auth()->user()->ward;
-
-        return view('stakes.self-reliances.create', compact('ward'));
+        
     }
 
     /**
@@ -67,16 +38,7 @@ class SelfRelianceController extends Controller
      */
     public function store(Request $request)
     {
-        $groupMember = new SelfReliance();
-
-        $groupMember->stake = auth()->user()->stake;        
-        $groupMember->ward = auth()->user()->ward;        
-        $groupMember->user_id = auth()->user()->id;        
-        $groupMember->grupo = $request->grupo;        
-       
-        $groupMember->save();
-
-        return redirect()->route('self-reliances.index')->with('alertSuccess','Solicitação cadastrada com sucesso!');
+        
     }
 
     /**
@@ -98,12 +60,7 @@ class SelfRelianceController extends Controller
      */
     public function edit($id)
     {
-        $ward = auth()->user()->ward;
-        $stake = auth()->user()->stake;
-        $groupMember = SelfReliance::find($id);
-        $users = User::all()->where('id', $groupMember->user_id);
-
-        return view('stakes.self-reliances.update', compact('groupMember','users','ward','stake'));
+        
     }
 
     /**
@@ -115,26 +72,7 @@ class SelfRelianceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $groupMember = SelfReliance::find($id);
-
-        $groupMember->status = $request->status;
-        $groupMember->update();
-
-        switch($groupMember->status){
-            case '2' :
-                $return = redirect()->route('self-reliances.index')->with('alertSuccess', 'Membro Matriculado com Sucesso!');
-            break;
-            case '4' :
-                $return = redirect()->route('self-reliances.index')->with('alertDanger', 'Desistência registrada!');
-            break;
-            case '5' :
-                $return = redirect()->route('self-reliances.index')->with('alertSuccess', 'Conclusão do curso registrada!');
-            break;
-            
-            default;
-        }
-        
-        return $return;
+       
     }
 
     /**
@@ -145,11 +83,6 @@ class SelfRelianceController extends Controller
      */
     public function destroy($id)
     {
-        $groupMember = SelfReliance::find($id);
-
-        $groupMember->ativo = '0';
-        $groupMember->update();
         
-        return redirect()->route('self-reliances.index')->with('alertDanger', 'Cadastro excluído!');
     }
 }
