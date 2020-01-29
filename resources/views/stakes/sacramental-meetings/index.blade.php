@@ -11,11 +11,10 @@
                 <div class="panel-body">
                     @can('sacramental_meeting_create')
                     <div class="">
-                        <a href="{{route('sacramental-meetings.create')}}" class="btn btn-primary btn-sm">
-                            <i class="fas fa-plus"></i> 
+                        <a href="{{route('sacramental-meetings.create')}}" class="btn btn-primary btn-xs">
                             Nova Agenda
                         </a>
-                        <a href="{{route('sacramental-meetings.chart')}}" class="btn btn-success btn-sm">
+                        <a href="{{route('sacramental-meetings.chart')}}" class="btn btn-success btn-xs">
                             <i class="fas fa-chart-line"></i> 
                             Gráfico
                         </a>

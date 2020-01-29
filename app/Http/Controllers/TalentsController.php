@@ -23,7 +23,7 @@ class TalentsController extends Controller
      */
     public function create()
     {
-        //
+        return view('stakes.self-reliances.talents.create');
     }
 
     /**

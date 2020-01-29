@@ -7,7 +7,7 @@
             <div class="panel panel-default">
             <div class="panel-heading"><b>Autossuficiência da Estaca</b></div>
                 <div class="panel-body">
-                    <div class="text-center">    
+                    <div class="text-center">  
                         <a href="{!!route('talents.index')!!}" class="btn btn-warning btn-xs">
                             Banco de Talentos
                         </a>

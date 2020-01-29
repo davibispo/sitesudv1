@@ -10,7 +10,7 @@
 
                 <div class="panel-body">
                     <div>
-                        <a href="{{route('interviews.create')}}" class="btn btn-primary btn-sm">
+                        <a href="{{route('interviews.create')}}" class="btn btn-primary btn-xs">
                             <i class=""></i> Solicitar uma entrevista
                         </a>
                     </div>

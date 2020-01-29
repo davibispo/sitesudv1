@@ -6,17 +6,20 @@
         <div class="col-md-12">
             <div class="panel panel-default">
             <div class="panel-heading"><b>Banco de Talentos</b></div>
-            <!--<div class="panel-heading">Inscrições para Cursos <b>ENGLISH CONNECT</b></div>-->
-
+            
                 <div class="panel-body">
                     
                     <div class="alert alert-success text-center">
                         <p>
-                            Ao se inscrever em um dos cursos acompanhe o seu <b>status</b>, pois pode mudar de '<b style="color:orange">Solicitado</b>' 
-                            para '<b style="color:green">Matriculado</b>' dependendo do número de vagas. <br>
-                            <b>Procure seu líder de autossuficiência para mais informações.</b>
+                            Nesta lista temos irmãos e irmãs que não possuem um emprego formal, mas possuem algum talento ou habilidade.
                         </p>
                     </div>
+
+                    <div class="text-left">  
+                        <a href="{!!route('talents.create')!!}" class="btn btn-primary btn-xs">Adicionar</a>
+                    </div>
+                    <br>
+
                     <input class="form-control" id="myInput" type="text" placeholder="Filtrar..">
                     <table class="table table-bordered table-hover" style="font-size:10px;">
                         <thead>

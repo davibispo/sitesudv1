@@ -10,8 +10,8 @@
 
                 <div class="panel-body">
                     <div>
-                        <a href="{!! route('calleds.create') !!}" class="btn btn-primary btn-sm">
-                            <i class="fas fa-plus"></i> Indicar
+                        <a href="{!! route('calleds.create') !!}" class="btn btn-primary btn-xs">
+                            <i class="fas fa-up"></i> Nova indicação
                         </a>
                     </div>
                     <br>

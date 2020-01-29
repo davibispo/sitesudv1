@@ -10,9 +10,9 @@
 
                 <div class="panel-body">
                     <div>
-                        <a href="{{route('equipment-rents.create')}}" class="btn btn-primary btn-sm">Solicitar Equipamento</a>
+                        <a href="{{route('equipment-rents.create')}}" class="btn btn-primary btn-xs">Solicitar Equipamento</a>
                         @can('equipment_index')
-                            <a href="{{route('equipments.index')}}" class="btn btn-sm btn-success">
+                            <a href="{{route('equipments.index')}}" class="btn btn-xs btn-success">
                                 <i class="fas fa-list"></i> Lista de Equipamentos
                             </a>
                         @endcan
