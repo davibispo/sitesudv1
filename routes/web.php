@@ -12,6 +12,10 @@ Route::group(['middleware'=>'web'], function(){
     
     Route::get('/home', 'HomeController@index')->name('home');
     
+    //Relatorios
+    Route::resource('/stakes/reports', 'ReportController');
+    Route::resource('/stakes/reportsumos', 'ReportsumoController');
+
     //help
     Route::resource('/stakes/help', 'HelpController');
     //role
