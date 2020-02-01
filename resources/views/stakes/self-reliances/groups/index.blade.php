@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-            <div class="panel-heading"><b>Grupos de Autossuficiência de {{strtoupper($ward)}}</b></div>
+            <div class="panel-heading"><b>Grupos de Autossuficiência da Estaca {{$stake}} </b></div>
             <!--<div class="panel-heading">Inscrições para Cursos <b>ENGLISH CONNECT</b></div>-->
 
                 <div class="panel-body">

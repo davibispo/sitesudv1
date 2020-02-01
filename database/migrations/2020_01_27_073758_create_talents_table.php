@@ -15,6 +15,11 @@ class CreateTalentsTable extends Migration
     {
         Schema::create('talents', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nome');
+            $table->string('telefone1');
+            $table->string('telefone2')->nullable();
+            $table->string('unidade');
+            $table->text('habilidades');
             $table->timestamps();
         });
     }

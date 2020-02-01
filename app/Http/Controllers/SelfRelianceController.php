@@ -16,8 +16,8 @@ class SelfRelianceController extends Controller
      */
     public function index()
     {
-        
-        return view('stakes.self-reliances.index');
+        $stake = auth()->user()->stake;
+        return view('stakes.self-reliances.index', compact('stake'));
     }
 
     /**

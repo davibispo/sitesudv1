@@ -241,6 +241,7 @@
         <script>
             $(document).ready(function () {
                 $("#phone").mask('(00) 00000-0000', {reverse: false});
+                $("#phone2").mask('(00) 00000-0000', {reverse: false});
                 $('#bus').mask('0000,00' , { reverse : true});
                 $("#accommodation").mask('0000,00' , { reverse : true});
             });

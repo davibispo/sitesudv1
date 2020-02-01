@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Talents;
 use Illuminate\Http\Request;
 
 class TalentsController extends Controller
@@ -13,7 +14,8 @@ class TalentsController extends Controller
      */
     public function index()
     {
-        return view('stakes.self-reliances.talents.index');
+        $talents = Talents::all()->sortBy('unidade');
+        return view('stakes.self-reliances.talents.index', compact('talents'));
     }
 
     /**
@@ -34,7 +36,17 @@ class TalentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $talent = new Talents();
+
+        $talent->nome = $request->nome;
+        $talent->telefone1 = $request->telefone1;
+        $talent->telefone2 = $request->telefone2;
+        $talent->unidade = $request->unidade;
+        $talent->habilidades = $request->habilidades;
+
+        $talent->save();
+
+        return redirect()->route('talents.index')->with('alertSuccess','Talento cadastrado com sucesso!');
     }
 
     /**
@@ -79,6 +91,9 @@ class TalentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $talent = Talents::find($id);
+        $talent->delete();
+
+        return redirect()->back()->with('alertDanger','Excluído com sucesso!');
     }
 }
