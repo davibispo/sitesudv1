@@ -84,15 +84,30 @@
                             </tbody>
                         </table>
                     </div>
+
+                    @php
+                        //calculo das vagas restantes
+                        $qtdPoltronas = $caravan->qtdPoltronas;
+                        $listaPrincipal = 0;
+                        foreach ($caravanUsers as $caravanUser){
+                            if($caravanUser->caravan_id == $caravan->id && $caravanUser->poltrona > 0 && $caravanUser->poltrona != 99){
+                                $listaPrincipal++;
+                            }
+                        }
+                        $vagas = $qtdPoltronas - $listaPrincipal;
+                    @endphp
                     
-                    <div>
-                        <p class="text-center">Após clicar no botão abaixo, verifique se seu nome consta na lista.</p>
-                    </div>
-                    <div class="form-group">
-                        <div class="text-center">
-                            {!! Form::submit('Reservar Sua Vaga', ['class'=>'btn btn-success']) !!}
+                    @if ($vagas != 0)
+                        <div>
+                            <p class="text-center">Após clicar no botão abaixo, verifique se seu nome consta na lista.</p>
+                            
+                            <div class="form-group">
+                                <div class="text-center">
+                                    {!! Form::submit('Reservar Sua Vaga', ['class'=>'btn btn-success']) !!}
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    @endif
                     
                     {!! Form::close() !!}
 

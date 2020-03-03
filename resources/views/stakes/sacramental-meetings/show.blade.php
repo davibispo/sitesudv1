@@ -5,15 +5,7 @@
 <div class="container">
 
     <div class="col-md-12">
-        <!-- controle de permissão -->
-        @if ($sacramentalMeeting->ward != $ward)
-        <div class="alert alert-danger">
-            <p>
-                Sem permissão para acesso!
-            </p>
-        </div>
-        @else    
-        <!-- Se o usuário for da mesma unidade, então mostra -->
+       
         <div class="panel-heading text-center">Agenda Sacramental - <b>{{strtoupper($sacramentalMeeting->ward)}}</b> - Estaca {{$stake}}</div>
 
         <a onclick="javascript:window.print();" class="btn btn-link btn-xs">
@@ -388,7 +380,7 @@
                 <p style="font-size:12px">{{$sacramentalMeeting->obs}}</p>
             </div>
         @endif
-        @endif         
+                 
     </div>
 </div>
 

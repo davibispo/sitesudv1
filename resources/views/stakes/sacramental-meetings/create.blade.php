@@ -22,7 +22,7 @@
                             <td><b>Data <i style="color:red">*</i></b> {!! Form::date('date',null, ['class'=>'form-control', 'required']) !!}</td>
                             <td><b>Presidida <i style="color:red">*</i></b> {!! Form::text('presidida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
                             <td><b>Dirigida <i style="color:red">*</i></b> {!! Form::text('dirigida',null, ['class'=>'form-control','maxlength'=>'35','required']) !!}</td>
-                            <td><b>Frequência</b> {!! Form::text('frequencia',null, ['class'=>'form-control','maxlength'=>'4']) !!}</td>
+                            <td><b>Frequência</b> {!! Form::number('frequencia',null, ['class'=>'form-control','min'=>'0']) !!}</td>
                         </tr>
 
                         <!--Reconhecimentos-->

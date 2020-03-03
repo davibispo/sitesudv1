@@ -19,9 +19,7 @@
                     <!-- controle de permissão -->
                     @if ($sacramentalMeeting->ward != $ward)
                     <div class="alert alert-danger">
-                        <p>
-                            Sem permissão para acesso!
-                        </p>
+                        <p>Sem permissão para acesso!</p>
                     </div>
                     @else    
                     <!-- Se o usuário for da mesma unidade, então mostra -->
@@ -36,7 +34,7 @@
                             <td><b>Data</b> {!! Form::date('date',null, ['class'=>'form-control', 'required']) !!}</td>
                             <td><b>Presidida</b> {!! Form::text('presidida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
                             <td><b>Dirigida</b> {!! Form::text('dirigida',null, ['class'=>'form-control','maxlength'=>'35', 'required']) !!}</td>
-                            <td><b>Frequência</b> {!! Form::text('frequencia',null, ['class'=>'form-control']) !!}</td>
+                            <td><b>Frequência</b> {!! Form::number('frequencia',null, ['class'=>'form-control','min'=>'0','required']) !!}</td>
                         </tr>
 
                         <!--Reconhecimentos-->
