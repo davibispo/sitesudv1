@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Calendar;
+use Illuminate\Support\Facades\DB;
 
 class CalendarController extends Controller {
 
@@ -125,9 +126,9 @@ class CalendarController extends Controller {
 
     public function calendarioAnterior(){
         $stake = auth()->user()->stake;
-
-        $calendars = Calendar::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
         
+        $calendars = Calendar::all()->where('stake', $stake)->where('ativo','1')->sortBy('data');
+
         //pega data por extenso em portugues
         setlocale(LC_TIME, 'portuguese');
         date_default_timezone_set('America/Sao_Paulo');

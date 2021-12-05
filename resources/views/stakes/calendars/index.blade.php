@@ -16,10 +16,10 @@
                         </a>
                         @endcan
                         <a href="{{route('calendars.calendario-anterior')}}" target="_blank" class="btn btn-default btn-xs">
-                            <i class="fas fa-search"></i> Calendário {{ date('Y', strtotime('-1 year')) }}
+                            <i class="fas fa-search"></i> Calendário Anterior
                         </a>
                         <a href="{{route('calendars.print.imprimir')}}" target="_blank" class="btn btn-default btn-xs">
-                            <i class="fas fa-search"></i> Calendário {{ date('Y') }} completo
+                            <i class="fas fa-search"></i> Calendário <b>{{ date('Y') }}</b> completo
                         </a>
                         <a href="{{route('calendars.pre-calendario')}}" target="_blank" class="btn btn-default btn-xs">
                             <i class="fas fa-search"></i> Pré-calendário {{ date('Y', strtotime('+1 year')) }}
