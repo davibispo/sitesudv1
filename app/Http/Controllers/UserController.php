@@ -16,7 +16,7 @@ class UserController extends Controller {
     public function index() {
         $users = User::all()->where('ativo', true)->sortByDesc('id');
         
-        return view('adm.users.index', compact('users','roles','roleUser'));
+        return view('adm.users.index', compact('users'));
     }
 
     /**
