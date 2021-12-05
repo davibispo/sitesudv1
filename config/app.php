@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://sitesud.meuacesso.site/public'),
+    'url' => env('APP_URL', 'http://estaca.net/public'),
 
     /*
     |--------------------------------------------------------------------------

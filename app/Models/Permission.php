@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permission extends Model
 {
-    protected $table = 'sitesud.permissions';
+    protected $table = 'u728505871_sitesud.permissions';
     public function roles() {
         return $this->belongsToMany(Role::class);
     }
